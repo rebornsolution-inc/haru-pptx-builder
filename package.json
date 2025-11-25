@@ -1,0 +1,28 @@
+{
+  "name": "haru-presentation-builder",
+  "version": "2.0.0",
+  "description": "AI-powered presentation generator with multi-source input support (URL, PDF, Manual)",
+  "main": "index.js",
+  "scripts": {
+    "integrate": "node scripts/integrate_presentation_pipeline.js",
+    "generate": "node scripts/generate_presentation.js",
+    "build": "npm run integrate && npm run generate",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "presentation",
+    "slides",
+    "ai",
+    "mcp",
+    "web-scraper",
+    "pdf-analysis",
+    "design-tokens"
+  ],
+  "author": "Reborn Solution Inc.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rebornsolution-inc/haru-presentation-builder.git"
+  }
+}
+

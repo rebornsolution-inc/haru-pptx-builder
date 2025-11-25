@@ -1,0 +1,201 @@
+{
+  "HTMLBuilderGuidelines": {
+    "finalOutputPolicy": {
+      "singleFile": true,
+      "requiredElements": [
+        "semantic HTML structure",
+        "internal <script> block",
+        "TailwindCSS Browser v4 script",
+        "ALL libraries specified in JSON (GSAP, Three.js, etc.)",
+        "external dependencies ARE ALLOWED when JSON specifies complex features"
+      ],
+      "complexFeatureSupport": {
+        "mode": "FULL_IMPLEMENTATION_REQUIRED",
+        "policy": "If JSON specifies advanced features, include necessary libraries",
+        "allowedLibraries": [
+          "GSAP + ScrollTrigger (for advanced animations)",
+          "Three.js (for 3D graphics/Canvas)",
+          "D3.js (for data visualizations)",
+          "Chart.js (for charts)",
+          "Swiper.js (for carousels)",
+          "Any library explicitly mentioned in JSON"
+        ]
+      },
+      "headInjectionExample": [
+        "<script src=\"https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4\"></script>",
+        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js\"></script>",
+        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js\"></script>",
+        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js\"></script>",
+        "<style type=\"text/tailwindcss\">/* Tailwind directives */</style>",
+        "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />"
+      ]
+    },
+    "navigationAndContentTransitionPolicy": {
+      "tabNavigation": {
+        "placement": "top or sidebar",
+        "behavior": "click → scroll/move to target section",
+        "activeClass": "active",
+        "mobile": "fully functional hamburger menu",
+        "stylingPrinciple": {
+          "oneTime": "Tailwind utility classes",
+          "commonRepeating": "pure CSS (no @apply)"
+        },
+        "cssExample": ".active { font-weight: 600; color: var(--color-accent); border-bottom: 2px solid var(--color-accent); }"
+      },
+      "sectionBasedNavigation": {
+        "rule": "only one section visible at a time",
+        "tracking": "URL hash or global state variable",
+        "visibilityControl": "Tailwind utilities (hidden, block, opacity-0, pointer-events-none)"
+      },
+      "dynamicTransitions": {
+        "principle": "smooth transitions",
+        "examples": ["transition-opacity duration-300 ease-out", "translate-y-*", "opacity-*"]
+      },
+      "exception": "fullpage scroll transitions only if explicitly requested"
+    },
+    "coreStructureModel": {
+      "data": "content/settings stored in JSON",
+      "markup": "semantic HTML with explicit id / data-*",
+      "interaction": "vanilla JS with central event management",
+      "state": "global state object reflects all UI interactions",
+      "flow": "User Action → Event Handler → State Update (setState) → Re-render (render)",
+      "stylingPrinciple": {
+        "layoutSpacingMinor": "Tailwind utilities",
+        "repeatedPatterns": "pure CSS components (btn, card, etc.)",
+        "forbidden": "@apply"
+      }
+    },
+    "namingConventions": {
+      "idFormat": "{role}-{target}-{index} (lowercase-hyphen)",
+      "jsSelectors": "prefer id or data-role (not style classes)",
+      "classUsage": {
+        "oneTime": "Tailwind utilities",
+        "commonRepeating": "pure CSS components"
+      },
+      "roleTargetExamples": {
+        "roles": ["container", "controller", "indicator", "modal"],
+        "targets": ["hdr", "nav", "sec", "card", "gal", "btn", "frm"]
+      },
+      "componentIdPolicy": {
+        "requirement": "EVERY component MUST have a unique ID",
+        "purpose": "Enable easy post-generation editing and maintenance",
+        "format": "{section}-{type}-{identifier}",
+        "examples": [
+          "hero-section-main",
+          "about-card-01",
+          "works-gallery-item-03",
+          "contact-form-submit",
+          "nav-menu-home",
+          "footer-social-instagram"
+        ],
+        "rules": [
+          "All sections must have id: {section-name}-section",
+          "All cards/items in a list must have sequential ids: {type}-{nn}",
+          "All interactive elements (buttons, links, inputs) must have descriptive ids",
+          "All images must have id: {context}-img-{nn}",
+          "All forms must have id: {purpose}-form",
+          "All modal/overlay elements must have id: modal-{purpose}"
+        ]
+      }
+    },
+    "dataDrivenRendering": {
+      "pattern": "siteData → render() → genHTML() + bindEvents()",
+      "example": "const siteData = { content: {}, structure: {}, behavior: {}, theme: {} };"
+    },
+    "globalStateManagement": {
+      "pattern": "setState() merges new values, triggers re-render",
+      "defaultState": {
+        "section": "home",
+        "tab": "intro",
+        "slider": 0,
+        "menu": false,
+        "lightbox": null
+      }
+    },
+    "tailwindDesignGuide": {
+      "designSystemTokens": {
+        "definition": "use @theme inside <style type=\"text/tailwindcss\">",
+        "principle": "pure CSS for reusable components, reference tokens with var(--token)"
+      },
+      "componentExamples": {
+        "btn": "inline-flex, align-items center, radius, padding, accent background, hover opacity",
+        "card": "rounded, border, padding, background, shadow, dark-mode variant"
+      },
+      "responsiveLayout": {
+        "mobile": "≤768px: single column, touch-friendly, hamburger menu",
+        "desktop": "≥1024px: multi-column, visible nav, hover interactions",
+        "utilities": ["container mx-auto px-4", "grid grid-cols-1 lg:grid-cols-3 gap-6"]
+      }
+    },
+    "commonUtilitiesPolicy": {
+      "forbidden": "@apply",
+      "preferred": "pure CSS classes for repeating patterns",
+      "examples": [".active", ".btn", ".card", ".chip", ".badge", ".menu-item", ".modal"],
+      "compositionPrinciple": {
+        "coreStyle": "pure CSS",
+        "layoutSpacingAdjustments": "Tailwind utilities",
+        "darkMode": ".dark root modifier"
+      }
+    },
+    "imageInsertion": {
+      "policy": "Smart image handling - distinguish functional vs decorative",
+      "functionalImages": {
+        "description": "Images with special purpose (3D textures, video thumbnails, interactive diagrams)",
+        "rule": "MUST use exact path from JSON",
+        "indicators": [
+          "Parent has: type='3d-*', type='video', type='interactive-*', type='document-*'",
+          "Image has animation properties",
+          "Image is part of Canvas/WebGL element",
+          "Image is video thumbnail or poster"
+        ]
+      },
+      "decorativeImages": {
+        "description": "General layout images (logos, products, portraits, illustrations)",
+        "rule": "Use picsum.photos placeholders",
+        "examples": [
+          "Company/partner logos → <img src='https://picsum.photos/seed/company-logo/200/100' />",
+          "Product photos → <img src='https://picsum.photos/seed/product-1/400/300' />",
+          "Team portraits → <img src='https://picsum.photos/seed/person-name/300/300' />",
+          "Card illustrations → <img src='https://picsum.photos/seed/illustration-1/600/400' />"
+        ],
+        "format": "https://picsum.photos/seed/[descriptive-name]/[width]/[height]?random=[unique-id]"
+      },
+      "decisionLogic": {
+        "if": "Image context includes: 3D, video, interactive, animation",
+        "then": "Use exact JSON path",
+        "else": "Use picsum placeholder with descriptive seed"
+      },
+      "cacheBusting": "append ?random=[unique-id] for placeholder images only"
+    },
+    "complianceRequirements": [
+      "strict adherence to guidelines",
+      "all interactions/state logic must be clear",
+      "pure CSS for common styles, Tailwind utilities for one-time styling",
+      "no @apply usage"
+    ],
+    "reviewChecklist": [
+      "remove unused JS",
+      "validate DOM structure/layout",
+      "test mobile/desktop layouts and interactions",
+      "check for missing/empty sections",
+      "avoid Tailwind utility overuse/duplication",
+      "scan for @apply with regex and replace with pure CSS",
+      "validate dark mode and keyboard accessibility",
+      "✅ VERIFY: Every section has a unique id",
+      "✅ VERIFY: Every card/item in lists has sequential ids",
+      "✅ VERIFY: All buttons, links, and inputs have descriptive ids",
+      "✅ VERIFY: All images have context-based ids",
+      "✅ VERIFY: No duplicate IDs in the entire document"
+    ],
+    "metadataAndJSONLD": {
+      "rule": "only final values allowed (no placeholders)",
+      "allowedExample": "<script type=\"application/ld+json\">{\"headline\":\"AI Website Auto-Generator\"}</script>",
+      "forbiddenExample": "<script type=\"application/ld+json\">{\"headline\":\"loading\"}</script>"
+    },
+    "deliverables": {
+      "outputDirectory": "output/web/",
+      "outputFile": "index.html",
+      "description": "Single-file Tailwind CSS v4 application with all functionality embedded"
+    }
+  }
+}

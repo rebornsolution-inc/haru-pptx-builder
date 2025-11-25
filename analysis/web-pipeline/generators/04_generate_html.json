@@ -1,0 +1,310 @@
+{
+  "systemName": "HTML-Builder",
+  "version": "1.0.0",
+  "description": "Generates production-ready HTML/CSS/JS code from IntegrationPrompt.json specification",
+  "trigger": "/html",
+  "inputRequired": "IntegrationPrompt.json",
+  "outputFormat": {
+    "structure": "multi-file",
+    "files": [
+      "index.html",
+      "styles/main.css",
+      "styles/responsive.css",
+      "scripts/main.js",
+      "assets/images/"
+    ]
+  },
+  "buildPrinciples": {
+    "semanticHTML": {
+      "enabled": true,
+      "rules": [
+        "Use <header>, <nav>, <main>, <section>, <article>, <aside>, <footer>",
+        "Use <h1>-<h6> in proper hierarchy",
+        "Use <button> for actions, <a> for navigation",
+        "Use <figure> and <figcaption> for images with captions"
+      ]
+    },
+    "accessibility": {
+      "level": "WCAG 2.1 AA",
+      "requirements": [
+        "All images must have descriptive alt text",
+        "Form inputs must have associated <label> elements",
+        "Interactive elements must be keyboard accessible",
+        "Color contrast ratio minimum 4.5:1 for body text",
+        "ARIA labels for complex UI components",
+        "Skip navigation link for screen readers"
+      ]
+    },
+    "cssArchitecture": {
+      "methodology": "BEM (Block Element Modifier)",
+      "namingConvention": "kebab-case",
+      "structure": {
+        "variables": "CSS Custom Properties for theming",
+        "reset": "Modern CSS reset included",
+        "layout": "CSS Grid and Flexbox",
+        "components": "Modular, reusable components",
+        "utilities": "Helper classes for common patterns"
+      },
+      "organization": [
+        "/* 1. CSS Variables */",
+        "/* 2. Reset & Base Styles */",
+        "/* 3. Layout */",
+        "/* 4. Components */",
+        "/* 5. Utilities */",
+        "/* 6. Animations */",
+        "/* 7. Media Queries */"
+      ]
+    },
+    "javascript": {
+      "style": "Vanilla ES6+",
+      "patterns": [
+        "Module pattern for organization",
+        "Event delegation for performance",
+        "Intersection Observer for scroll animations",
+        "Debounce/throttle for scroll/resize events"
+      ],
+      "features": [
+        "Smooth scroll navigation",
+        "Mobile menu toggle",
+        "Form validation",
+        "Lazy loading images",
+        "Scroll-triggered animations",
+        "Dark mode toggle (if specified)"
+      ]
+    },
+    "responsive": {
+      "approach": "Mobile-first",
+      "breakpoints": {
+        "mobile": "320px - 767px",
+        "tablet": "768px - 1023px",
+        "desktop": "1024px - 1439px",
+        "wide": "1440px+"
+      },
+      "fluidTypography": "clamp() for scalable text sizes",
+      "imageOptimization": "<picture> with multiple sources"
+    },
+    "performance": {
+      "criticalCSS": "Inline critical styles in <head>",
+      "asyncScripts": "Defer non-critical JavaScript",
+      "lazyLoading": "Native loading='lazy' for images",
+      "minification": "Comment with minification recommendations",
+      "webfonts": "font-display: swap for custom fonts"
+    }
+  },
+  "codeGeneration": {
+    "htmlStructure": {
+      "doctype": "<!DOCTYPE html>",
+      "language": "Set based on targetAudience.country",
+      "head": {
+        "required": [
+          "<meta charset='UTF-8'>",
+          "<meta name='viewport' content='width=device-width, initial-scale=1.0'>",
+          "<meta name='description' content='[from devPromptJSON.pages[].meta.description]'>",
+          "<title>[from devPromptJSON.pages[].title]</title>",
+          "<link rel='stylesheet' href='styles/main.css'>",
+          "<link rel='stylesheet' href='styles/responsive.css'>"
+        ],
+        "optional": [
+          "Open Graph tags (if features.seo enabled)",
+          "Twitter Card tags",
+          "Favicon links",
+          "Preconnect to external resources",
+          "Google Fonts or custom font links"
+        ]
+      },
+      "body": {
+        "structure": [
+          "<!-- Skip to main content link -->",
+          "<header>",
+          "  <nav> (generated from components.header)",
+          "</header>",
+          "<main>",
+          "  <section> (for each section in devPromptJSON.pages[].sections)",
+          "</main>",
+          "<footer> (from components.footer)",
+          "<script src='scripts/main.js' defer></script>"
+        ]
+      }
+    },
+    "cssGeneration": {
+      "variables": {
+        "source": "devPromptJSON.assets",
+        "generate": [
+          "--color-primary: [from colors.primary]",
+          "--color-secondary: [from colors.secondary]",
+          "--color-accent: [from colors.accent]",
+          "--font-heading: [from typography.fontStack.heading]",
+          "--font-body: [from typography.fontStack.body]",
+          "--spacing-unit: [from spacing.unit]",
+          "--transition-base: [from transitions.base]",
+          "--shadow-small: [from shadows.small]"
+        ]
+      },
+      "componentStyles": {
+        "method": "BEM naming",
+        "example": ".hero { } .hero__title { } .hero__title--large { }",
+        "responsive": "Mobile styles first, then @media for larger screens"
+      },
+      "animations": {
+        "keyframes": "Generate @keyframes from devPromptJSON.interactions.scrollAnimations",
+        "transitions": "Apply to interactive elements (hover, focus, active states)",
+        "reducedMotion": "Include @media (prefers-reduced-motion: reduce) wrapper"
+      }
+    },
+    "javascriptGeneration": {
+      "structure": [
+        "// Utility functions (debounce, throttle, etc.)",
+        "// Navigation (smooth scroll, mobile menu)",
+        "// Scroll animations (Intersection Observer)",
+        "// Form handling (if contact form exists)",
+        "// Theme toggle (if darkMode feature enabled)",
+        "// Initialize on DOMContentLoaded"
+      ],
+      "scrollAnimations": {
+        "method": "Intersection Observer API",
+        "trigger": "Elements with data-animate attribute",
+        "classes": "Add 'is-visible' class when in viewport"
+      },
+      "mobileMenu": {
+        "trigger": "Button with aria-label='Toggle navigation'",
+        "behavior": "Toggle 'is-open' class on <nav>",
+        "accessibility": "Trap focus when open, close on Escape key"
+      }
+    }
+  },
+  "sectionMapping": {
+    "hero": {
+      "htmlPattern": "<section class='hero' id='hero'>\n  <div class='hero__content'>\n    <h1 class='hero__title'>[content.elements.h1]</h1>\n    <p class='hero__description'>[content.elements.p]</p>\n    <a href='#contact' class='hero__cta btn btn--primary'>[CTA text]</a>\n  </div>\n  <div class='hero__image'>\n    <img src='[imageAssets or random]' alt='[descriptive alt]' loading='lazy'>\n  </div>\n</section>",
+      "cssPattern": ".hero {\n  [layout properties from section.layout]\n  [styles from section.styles]\n}\n\n.hero__title {\n  [typography from section.styles.typography.h1]\n  [animations from section.animations]\n}"
+    },
+    "contact-form": {
+      "htmlPattern": "<section class='contact' id='contact'>\n  <form class='contact__form' action='[backend endpoint]' method='POST'>\n    [Generate inputs from formElements]\n    <button type='submit' class='btn btn--primary'>[submit text]</button>\n  </form>\n</section>",
+      "validation": "Add HTML5 validation attributes (required, type='email', pattern, etc.)",
+      "javascript": "Add client-side validation and error display logic"
+    },
+    "portfolio-gallery": {
+      "htmlPattern": "<section class='gallery' id='works'>\n  <div class='gallery__grid'>\n    [For each project item]\n    <article class='gallery__item'>\n      <img src='[image or random]' alt='[project.title]' loading='lazy'>\n      <div class='gallery__overlay'>\n        <h3>[project.title]</h3>\n        <p>[project.description]</p>\n      </div>\n    </article>\n  </div>\n</section>",
+      "interaction": "Add hover effects from section.interactions"
+    }
+  },
+  "imageHandling": {
+    "policy": "Distinguish between functional images and decorative layout images",
+    "functionalImages": {
+      "description": "Images that are part of animations, interactions, or specific visual features",
+      "rule": "MUST use exact path specified in JSON",
+      "examples": [
+        "3D canvas textures",
+        "Video thumbnails",
+        "SVG diagrams with animations",
+        "Interactive UI mockups",
+        "Document viewers",
+        "Map overlays"
+      ],
+      "detection": "Check if parent component has: type='3d-*', type='video', type='interactive-*', type='document-*', animation properties"
+    },
+    "decorativeImages": {
+      "description": "General layout images for visual appeal (logos, product photos, portraits, illustrations)",
+      "rule": "Can use picsum.photos placeholders",
+      "examples": [
+        "Company logos",
+        "Product photos",
+        "Team member portraits",
+        "Testimonial avatars",
+        "General illustrations",
+        "Background images without specific animation"
+      ],
+      "detection": "Simple image tags without complex parent features",
+      "placeholder": "https://picsum.photos/seed/[descriptive-name]/[width]/[height]"
+    },
+    "decisionFlow": {
+      "step1": "Check JSON image context",
+      "step2_functional": "If image is in: visual.type='3d-*'|'video'|'interactive-*'|'document-*' OR has animation property → Use exact path",
+      "step2_decorative": "If image is in: simple cards, logos, portraits, general illustrations → Use picsum placeholder",
+      "step3": "When unsure, default to exact path from JSON"
+    },
+    "aspectRatios": {
+      "16:9": "width=1600&height=900",
+      "4:3": "width=1200&height=900",
+      "1:1": "width=1000&height=1000",
+      "portrait": "width=400&height=600"
+    },
+    "optimization": [
+      "Use <picture> element for responsive images",
+      "Provide multiple sizes with srcset",
+      "Add width and height attributes to prevent CLS",
+      "Use loading='lazy' for below-the-fold images"
+    ]
+  },
+  "complexFeaturePolicy": {
+    "mode": "FULL_IMPLEMENTATION",
+    "description": "All features specified in JSON must be implemented completely - no simplification",
+    "rules": [
+      "1. 3D animations: Implement with Three.js or CSS 3D transforms as specified",
+      "2. Video players: Use HTML5 <video> with full controls",
+      "3. SVG diagrams: Generate actual SVG paths and animations",
+      "4. Interactive elements: Implement all hover/click/scroll behaviors",
+      "5. Complex layouts: Use specified technology (Canvas, WebGL, etc.)",
+      "6. Never replace complex features with 'placeholder' divs"
+    ],
+    "libraryPolicy": {
+      "allowed": [
+        "Three.js (for 3D graphics)",
+        "GSAP (for complex animations)",
+        "D3.js (for data visualizations)",
+        "Any library specified in JSON's 'animations' or 'framework' field"
+      ],
+      "integration": "Include via CDN in <head> section with integrity hashes"
+    },
+    "fallbackNotAllowed": [
+      "Do NOT replace 3D with 2D placeholders",
+      "Do NOT replace videos with static images",
+      "Do NOT replace SVG diagrams with plain divs",
+      "Do NOT simplify interactive elements"
+    ]
+  },
+  "qualityChecks": {
+    "beforeDelivery": [
+      "✓ Valid HTML5 (no errors in W3C validator)",
+      "✓ All interactive elements keyboard accessible",
+      "✓ All images have alt text",
+      "✓ Forms have proper labels and validation",
+      "✓ Mobile menu functional on small screens",
+      "✓ Responsive breakpoints work correctly",
+      "✓ Console has no errors",
+      "✓ Links are not empty or pointing to '#'",
+      "✓ Color contrast meets WCAG AA standards",
+      "✓ Page loads under 3 seconds (unminified)"
+    ]
+  },
+  "deliverables": {
+    "outputDirectory": "output/web/",
+    "fileStructure": {
+      "index.html": "Main HTML file with semantic structure",
+      "styles/main.css": "Main stylesheet with variables, reset, layout, components",
+      "styles/responsive.css": "Media queries for responsive design",
+      "scripts/main.js": "Vanilla JavaScript for interactions",
+      "assets/images/": "Placeholder folder with .gitkeep",
+      "README.md": "Documentation with setup instructions and notes"
+    },
+    "documentation": {
+      "include": [
+        "Project structure overview",
+        "How to replace placeholder images",
+        "How to connect form backend",
+        "Browser compatibility notes",
+        "Performance optimization tips",
+        "Accessibility features implemented"
+      ]
+    }
+  },
+  "notes": [
+    "Code should be production-ready but unminified for readability",
+    "Include comments for complex logic or CSS tricks",
+    "Follow the exact design specifications from IntegrationPrompt.json",
+    "Prioritize semantic HTML and accessibility",
+    "Use modern CSS features (Grid, Flexbox, Custom Properties)",
+    "Keep JavaScript vanilla (no framework dependencies)",
+    "All placeholder images should use picsum.photos",
+    "Generate clean, maintainable, well-documented code"
+  ]
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLUEHIVE - 2025 오션 제너레이션 액셀러레이터</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+    
+    * {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    
+    :root {
+      --primary-blue: #5B7BFF;
+      --bg-dark: #0A1428;
+      --bg-darker: #1A2438;
+      --text-primary: #FFFFFF;
+      --text-secondary: #E0E6F0;
+      --text-muted: #8899BB;
+      --card-bg: rgba(59, 123, 255, 0.1);
+      --card-border: rgba(59, 123, 255, 0.3);
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+    
+    .slide-container {
+      scroll-snap-type: x mandatory;
+      display: flex;
+      overflow-x: auto;
+      height: 100vh;
+      scrollbar-width: none;
+    }
+    
+    .slide-container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .slide {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 100px;
+      box-sizing: border-box;
+    }
+    
+    /* Dotted background pattern */
+    .dotted-bg {
+      background-image: radial-gradient(circle, rgba(74, 90, 122, 0.3) 2px, transparent 2px);
+      background-size: 50px 50px;
+    }
+    
+    /* Gradient background */
+    .gradient-bg {
+      background: linear-gradient(135deg, #0A1428 0%, #1A2850 100%);
+    }
+    
+    /* Split background */
+    .split-bg {
+      background: linear-gradient(90deg, #0A1428 0%, #0A1428 50%, #1A2438 50%, #1A2438 100%);
+    }
+    
+    /* Navigation */
+    .nav-controls {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+    }
+    
+    .nav-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-dot.active {
+      background: var(--primary-blue);
+      width: 36px;
+      border-radius: 6px;
+    }
+    
+    /* Card hover effect */
+    .toc-card {
+      transition: all 0.3s ease;
+    }
+    
+    .toc-card:hover {
+      background: rgba(59, 123, 255, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(59, 123, 255, 0.3);
+    }
+    
+    /* Icon styles */
+    .icon-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .icon-globe::before {
+      content: "🌐";
+      font-size: 20px;
+    }
+    
+    .icon-building::before {
+      content: "🏢";
+      font-size: 20px;
+    }
+    
+    .icon-people::before {
+      content: "👥";
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container" id="slideContainer">
+    
+    <!-- Slide 1: Hero/Cover -->
+    <div class="slide dotted-bg" style="background-color: var(--bg-dark);">
+      <div class="text-center space-y-10">
+        <!-- Logo -->
+        <h1 class="text-9xl font-black text-[#5B7BFF] tracking-widest">
+          BLUEHIVE
+        </h1>
+        
+        <!-- Title -->
+        <h2 class="text-4xl font-bold text-white mt-12">
+          2025년「오션 제너레이션 액셀러레이터」
+        </h2>
+        
+        <!-- Subtitle -->
+        <p class="text-xl text-[#E0E6F0] leading-relaxed mt-6">
+          AI 기반 및 IoT를 활용한 실시간 모니터링<br>
+          스마트 양식장
+        </p>
+      </div>
+      
+      <!-- Footer -->
+      <div class="absolute bottom-12 text-white text-lg font-medium">
+        오션이노베이션랩
+      </div>
+    </div>
+    
+    <!-- Slide 2: Table of Contents -->
+    <div class="slide gradient-bg">
+      <div class="w-full max-w-5xl">
+        <!-- Heading -->
+        <h2 class="text-6xl font-bold text-white text-center mb-16">
+          목차
+        </h2>
+        
+        <!-- Grid Cards -->
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="toc-card bg-[rgba(59,123,255,0.1)] border border-[rgba(59,123,255,0.3)] rounded-xl p-8 flex items-center gap-4 cursor-pointer">
+            <div class="icon-circle">
+              <span class="text-[#5B7BFF] text-sm font-bold">○</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-[#5B7BFF] text-2xl font-bold">01</span>
+              <span class="text-white text-lg font-medium">추진배경 및 필요성</span>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="toc-card bg-[rgba(59,123,255,0.1)] border border-[rgba(59,123,255,0.3)] rounded-xl p-8 flex items-center gap-4 cursor-pointer">
+            <div class="icon-globe"></div>
+            <div class="flex items-center gap-4">
+              <span class="text-[#5B7BFF] text-2xl font-bold">02</span>
+              <span class="text-white text-lg font-medium">연구개발 및 실증방안</span>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="toc-card bg-[rgba(59,123,255,0.1)] border border-[rgba(59,123,255,0.3)] rounded-xl p-8 flex items-center gap-4 cursor-pointer">
+            <div class="icon-building"></div>
+            <div class="flex items-center gap-4">
+              <span class="text-[#5B7BFF] text-2xl font-bold">03</span>
+              <span class="text-white text-lg font-medium">시장성 및 산업성과</span>
+            </div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="toc-card bg-[rgba(59,123,255,0.1)] border border-[rgba(59,123,255,0.3)] rounded-xl p-8 flex items-center gap-4 cursor-pointer">
+            <div class="icon-people"></div>
+            <div class="flex items-center gap-4">
+              <span class="text-[#5B7BFF] text-2xl font-bold">04</span>
+              <span class="text-white text-lg font-medium">자금조달 및 일정계</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 3: Section Divider -->
+    <div class="slide split-bg">
+      <div class="text-center space-y-16">
+        <!-- Section Number -->
+        <div class="text-[180px] font-black text-[#5B7BFF] leading-none opacity-90">
+          01
+        </div>
+        
+        <!-- Section Title -->
+        <h2 class="text-5xl font-bold text-white">
+          추진배경 및 필요성
+        </h2>
+      </div>
+      
+      <!-- Page Number -->
+      <div class="absolute bottom-12 right-16 text-[#8899BB] text-sm">
+        3 / 20
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- Navigation Controls -->
+  <div class="nav-controls">
+    <div class="nav-dot active" data-slide="0"></div>
+    <div class="nav-dot" data-slide="1"></div>
+    <div class="nav-dot" data-slide="2"></div>
+  </div>
+  
+  <script>
+    const slideContainer = document.getElementById('slideContainer');
+    const navDots = document.querySelectorAll('.nav-dot');
+    const slides = document.querySelectorAll('.slide');
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const currentScroll = slideContainer.scrollLeft;
+      const slideWidth = window.innerWidth;
+      
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        slideContainer.scrollTo({
+          left: currentScroll + slideWidth,
+          behavior: 'smooth'
+        });
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        slideContainer.scrollTo({
+          left: currentScroll - slideWidth,
+          behavior: 'smooth'
+        });
+      }
+    });
+    
+    // Nav dot navigation
+    navDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.dataset.slide);
+        slideContainer.scrollTo({
+          left: slideIndex * window.innerWidth,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Update active nav dot on scroll
+    slideContainer.addEventListener('scroll', () => {
+      const currentSlide = Math.round(slideContainer.scrollLeft / window.innerWidth);
+      navDots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    });
+    
+    // TOC card click navigation
+    document.querySelectorAll('.toc-card').forEach((card, index) => {
+      card.addEventListener('click', () => {
+        slideContainer.scrollTo({
+          left: 2 * window.innerWidth, // Navigate to slide 3 (section divider)
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
