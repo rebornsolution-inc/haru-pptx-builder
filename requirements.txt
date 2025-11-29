@@ -1,0 +1,12 @@
+# Haru Presentation Builder - Python Dependencies
+# ==============================================
+
+# PPTX 생성
+python-pptx>=0.6.21
+
+# HTML 렌더링 및 스크린샷 캡처 (HTML → PPTX 변환용)
+playwright>=1.40.0
+
+# HTML 파싱 (옵션)
+beautifulsoup4>=4.12.0
+lxml>=4.9.0

@@ -1,0 +1,2823 @@
+{
+  "projectName": "eumlogistic",
+  "version": "1.0",
+  "lastModified": "2025-01-01",
+  "designTokens": {
+    "colors": {
+      "primary": "#5B6CF9",
+      "primary-light": "#7B8BFF",
+      "primary-dark": "#4A5AE8",
+      "secondary": "#0F172A",
+      "secondary-light": "#1E293B",
+      "accent": "#06B6D4",
+      "accent-light": "#22D3EE",
+      "text": "#1E293B",
+      "text-light": "#64748B",
+      "text-muted": "#94A3B8",
+      "text-on-dark": "#FFFFFF",
+      "highlight": "#F59E0B",
+      "success": "#10B981"
+    },
+    "backgrounds": {
+      "background": "#FFFFFF",
+      "background-dark": "#0F172A",
+      "background-alt": "#F8FAFC"
+    },
+    "gradients": {
+      "hero": "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
+      "cta": "linear-gradient(135deg, #5B6CF9 0%, #4A5AE8 100%)",
+      "stats": "linear-gradient(180deg, #0F172A 0%, #1E293B 100%)"
+    },
+    "shadows": {
+      "card": "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)",
+      "button": "0 4px 14px rgba(91,108,249,0.4)"
+    },
+    "radius": {
+      "default": "16px",
+      "sm": "8px",
+      "lg": "24px",
+      "full": "9999px"
+    }
+  },
+  "slides": [
+    {
+      "id": 1,
+      "slideNumber": 1,
+      "pageLabel": "슬라이드 1",
+      "title": "글로벌 물류의 새로운 기준",
+      "template": "hero-cover",
+      "elements": {
+        "texts": [
+          {
+            "text": "EE-UM LOGISTIC",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "E-UM LOGISTIC",
+            "type": "body",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "✦ 신뢰할 수 있는 물류 파트너글로벌 물류의 새로운 기준이음로지스틱해상・항공 포워딩부터 내륙운송, 물류 인프라까지고객의 화물에 최적화된 토탈 물류 솔루션을 제공합니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✦ 신뢰할 수 있는 물류 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "글로벌 물류의 새로운 기준",
+            "type": "heading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "이음로지스틱",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "var(--primary-light)"
+          },
+          {
+            "text": "해상・항공 포워딩부터 내륙운송, 물류 인프라까지고객의 화물에 최적화된 토탈 물류 솔루션을 제공합니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&h=200&fit=crop",
+            "alt": "컨테이너선"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=200&fit=crop",
+            "alt": "항공기"
+          }
+        ]
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "EE-UM LOGISTIC",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "E-UM LOGISTIC",
+            "type": "body",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "✦ 신뢰할 수 있는 물류 파트너글로벌 물류의 새로운 기준이음로지스틱해상・항공 포워딩부터 내륙운송, 물류 인프라까지고객의 화물에 최적화된 토탈 물류 솔루션을 제공합니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✦ 신뢰할 수 있는 물류 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "글로벌 물류의 새로운 기준",
+            "type": "heading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "이음로지스틱",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "var(--primary-light)"
+          },
+          {
+            "text": "해상・항공 포워딩부터 내륙운송, 물류 인프라까지고객의 화물에 최적화된 토탈 물류 솔루션을 제공합니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&h=200&fit=crop",
+            "alt": "컨테이너선"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=200&fit=crop",
+            "alt": "항공기"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "slideNumber": 2,
+      "pageLabel": "슬라이드 2",
+      "title": "이음로지스틱 주식회사",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "COMPANY PROFILE이음로지스틱 주식회사국제 포워딩 전문 기업으로서 해상・항공 물류의 모든 것을 책임집니다.🏢 본사서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호📍 부산지사경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호📞 연락처Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153✉️ 이메일info@e-umlk.com2020설립연도35억연평균 매출7명전문 인력3.3억자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "COMPANY PROFILE",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "이음로지스틱 주식회사",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "국제 포워딩 전문 기업으로서 해상・항공 물류의 모든 것을 책임집니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "🏢 본사서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호📍 부산지사경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호📞 연락처Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153✉️ 이메일info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏢 본사서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏢 본사",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📍 부산지사경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📍 부산지사",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📞 연락처Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📞 연락처",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✉️ 이메일info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✉️ 이메일",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020설립연도35억연평균 매출7명전문 인력3.3억자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020설립연도",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "설립연도",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "35억연평균 매출",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "35억",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "연평균 매출",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "7명전문 인력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "7명",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "전문 인력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "3.3억자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "3.3억",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "COMPANY PROFILE이음로지스틱 주식회사국제 포워딩 전문 기업으로서 해상・항공 물류의 모든 것을 책임집니다.🏢 본사서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호📍 부산지사경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호📞 연락처Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153✉️ 이메일info@e-umlk.com2020설립연도35억연평균 매출7명전문 인력3.3억자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "COMPANY PROFILE",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "이음로지스틱 주식회사",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "국제 포워딩 전문 기업으로서 해상・항공 물류의 모든 것을 책임집니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "🏢 본사서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호📍 부산지사경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호📞 연락처Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153✉️ 이메일info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏢 본사서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏢 본사",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "서울 강서구 마곡중앙로 161-8\n두산더랜드파크 B동 510호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📍 부산지사경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📍 부산지사",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "경남 창원시 진해구 신항7로 63\nMS디스트리파크 용동물류센터 206호",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📞 연락처Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "📞 연락처",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Tel: +82 2 3662 8150~5\nFax: +82 2 6442 8153",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✉️ 이메일info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✉️ 이메일",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020설립연도35억연평균 매출7명전문 인력3.3억자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020설립연도",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "설립연도",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "35억연평균 매출",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "35억",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "연평균 매출",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "7명전문 인력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "7명",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "전문 인력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "3.3억자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "3.3억",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "자본금",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      }
+    },
+    {
+      "id": 3,
+      "slideNumber": 3,
+      "pageLabel": "슬라이드 3",
+      "title": "빠르게 성장하는 물류 파트너",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "HISTORY빠르게 성장하는 물류 파트너설립 5년 만에 20개 이상의 주요 고객사와 글로벌 네트워크 구축2020이음로지스틱 설립롯데웰푸드 계약가온전선 계약MS디스트리파크 협력2021부산 지사 설립신항 물류 거점 확보비제이신항 협력2022사업 확장삼양식품통합물류 계약2023글로벌 진출태국 YC리사이클파트너십2024인프라 강화페트로마인물류 인프라 구축2025서비스 다각화광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "HISTORY",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "빠르게 성장하는 물류 파트너",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "설립 5년 만에 20개 이상의 주요 고객사와 글로벌 네트워크 구축",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "2020이음로지스틱 설립롯데웰푸드 계약가온전선 계약MS디스트리파크 협력2021부산 지사 설립신항 물류 거점 확보비제이신항 협력2022사업 확장삼양식품통합물류 계약2023글로벌 진출태국 YC리사이클파트너십2024인프라 강화페트로마인물류 인프라 구축2025서비스 다각화광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020이음로지스틱 설립롯데웰푸드 계약가온전선 계약MS디스트리파크 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "이음로지스틱 설립",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "롯데웰푸드 계약가온전선 계약MS디스트리파크 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2021부산 지사 설립신항 물류 거점 확보비제이신항 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2021",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "부산 지사 설립",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신항 물류 거점 확보비제이신항 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2022사업 확장삼양식품통합물류 계약",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2022",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "사업 확장",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "삼양식품통합물류 계약",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2023글로벌 진출태국 YC리사이클파트너십",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2023",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "글로벌 진출",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "태국 YC리사이클파트너십",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2024인프라 강화페트로마인물류 인프라 구축",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2024",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "인프라 강화",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "페트로마인물류 인프라 구축",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2025서비스 다각화광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2025",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "서비스 다각화",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "HISTORY빠르게 성장하는 물류 파트너설립 5년 만에 20개 이상의 주요 고객사와 글로벌 네트워크 구축2020이음로지스틱 설립롯데웰푸드 계약가온전선 계약MS디스트리파크 협력2021부산 지사 설립신항 물류 거점 확보비제이신항 협력2022사업 확장삼양식품통합물류 계약2023글로벌 진출태국 YC리사이클파트너십2024인프라 강화페트로마인물류 인프라 구축2025서비스 다각화광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "HISTORY",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "빠르게 성장하는 물류 파트너",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "설립 5년 만에 20개 이상의 주요 고객사와 글로벌 네트워크 구축",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "2020이음로지스틱 설립롯데웰푸드 계약가온전선 계약MS디스트리파크 협력2021부산 지사 설립신항 물류 거점 확보비제이신항 협력2022사업 확장삼양식품통합물류 계약2023글로벌 진출태국 YC리사이클파트너십2024인프라 강화페트로마인물류 인프라 구축2025서비스 다각화광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020이음로지스틱 설립롯데웰푸드 계약가온전선 계약MS디스트리파크 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2020",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "이음로지스틱 설립",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "롯데웰푸드 계약가온전선 계약MS디스트리파크 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2021부산 지사 설립신항 물류 거점 확보비제이신항 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2021",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "부산 지사 설립",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신항 물류 거점 확보비제이신항 협력",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2022사업 확장삼양식품통합물류 계약",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2022",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "사업 확장",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "삼양식품통합물류 계약",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2023글로벌 진출태국 YC리사이클파트너십",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2023",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "글로벌 진출",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "태국 YC리사이클파트너십",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2024인프라 강화페트로마인물류 인프라 구축",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2024",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "인프라 강화",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "페트로마인물류 인프라 구축",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2025서비스 다각화광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2025",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "서비스 다각화",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "광메탈 운송 계약삼성헬스토리 냉동물류",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      }
+    },
+    {
+      "id": 4,
+      "slideNumber": 4,
+      "pageLabel": "슬라이드 4",
+      "title": "신뢰를 잇는 물류,\n가치를 잇는 파트너십",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "WHY E-UM신뢰를 잇는 물류,\n가치를 잇는 파트너십NVOCC(Non-Vessel Operating Common Carrier)로서 해상・항공 수출입 화물운송의 풍부한 경험으로 신뢰할 수 있는 서비스를 제공합니다.🛡️신뢰성20개 이상의 주요 고객사가 선택한 검증된 물류 파트너🌍글로벌 네트워크5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망⚡전문성해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "WHY E-UM",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신뢰를 잇는 물류,\n가치를 잇는 파트너십",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "NVOCC(Non-Vessel Operating Common Carrier)로서 해상・항공 수출입 화물운송의 풍부한 경험으로 신뢰할 수 있는 서비스를 제공합니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "🛡️신뢰성20개 이상의 주요 고객사가 선택한 검증된 물류 파트너🌍글로벌 네트워크5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망⚡전문성해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🛡️신뢰성20개 이상의 주요 고객사가 선택한 검증된 물류 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🛡️",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신뢰성",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "20개 이상의 주요 고객사가 선택한 검증된 물류 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🌍글로벌 네트워크5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "글로벌 네트워크",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "⚡전문성해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "전문성",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "WHY E-UM신뢰를 잇는 물류,\n가치를 잇는 파트너십NVOCC(Non-Vessel Operating Common Carrier)로서 해상・항공 수출입 화물운송의 풍부한 경험으로 신뢰할 수 있는 서비스를 제공합니다.🛡️신뢰성20개 이상의 주요 고객사가 선택한 검증된 물류 파트너🌍글로벌 네트워크5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망⚡전문성해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "WHY E-UM",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신뢰를 잇는 물류,\n가치를 잇는 파트너십",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "NVOCC(Non-Vessel Operating Common Carrier)로서 해상・항공 수출입 화물운송의 풍부한 경험으로 신뢰할 수 있는 서비스를 제공합니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "🛡️신뢰성20개 이상의 주요 고객사가 선택한 검증된 물류 파트너🌍글로벌 네트워크5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망⚡전문성해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🛡️신뢰성20개 이상의 주요 고객사가 선택한 검증된 물류 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🛡️",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신뢰성",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "20개 이상의 주요 고객사가 선택한 검증된 물류 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🌍글로벌 네트워크5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "글로벌 네트워크",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "5개 대륙, 30개국 이상의 파트너사와 함께하는 글로벌 물류망",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "⚡전문성해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "전문성",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "해상・항공・특수화물까지 토탈 포워딩 솔루션 제공",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      }
+    },
+    {
+      "id": 5,
+      "slideNumber": 5,
+      "pageLabel": "슬라이드 5",
+      "title": "통합 물류 서비스",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "SERVICES통합 물류 서비스🚢해상 포워딩Ocean Freight ForwardingFCL/LCL 수출입, 정기선 서비스, Weekly Consolidation✈️항공 포워딩Air Freight ForwardingDaily Air Consolidation, 긴급 화물, 특송 서비스🚛내륙 운송Inland Transportation일반/보세/특수화물 운송, Door to Door 서비스📦프로젝트 카고Project & Heavy Cargo중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SERVICES",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "통합 물류 서비스",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢해상 포워딩Ocean Freight ForwardingFCL/LCL 수출입, 정기선 서비스, Weekly Consolidation✈️항공 포워딩Air Freight ForwardingDaily Air Consolidation, 긴급 화물, 특송 서비스🚛내륙 운송Inland Transportation일반/보세/특수화물 운송, Door to Door 서비스📦프로젝트 카고Project & Heavy Cargo중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢해상 포워딩Ocean Freight ForwardingFCL/LCL 수출입, 정기선 서비스, Weekly Consolidation",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "해상 포워딩",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Ocean Freight Forwarding",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "FCL/LCL 수출입, 정기선 서비스, Weekly Consolidation",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✈️항공 포워딩Air Freight ForwardingDaily Air Consolidation, 긴급 화물, 특송 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✈️",
+            "type": "body",
+            "fontSize": "28px",
+            "color": null
+          },
+          {
+            "text": "항공 포워딩",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Air Freight Forwarding",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Daily Air Consolidation, 긴급 화물, 특송 서비스",
+            "type": "body",
+            "fontSize": "14px",
+            "color": null
+          },
+          {
+            "text": "🚛내륙 운송Inland Transportation일반/보세/특수화물 운송, Door to Door 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "내륙 운송",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Inland Transportation",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "일반/보세/특수화물 운송, Door to Door 서비스",
+            "type": "body",
+            "fontSize": "14px",
+            "color": null
+          },
+          {
+            "text": "📦프로젝트 카고Project & Heavy Cargo중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "프로젝트 카고",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Project & Heavy Cargo",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": "14px",
+            "color": null
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=500&fit=crop",
+            "alt": "해상 포워딩"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=300&fit=crop",
+            "alt": "항공 포워딩"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&h=300&fit=crop",
+            "alt": "내륙 운송"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop",
+            "alt": "프로젝트 카고"
+          }
+        ]
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "SERVICES통합 물류 서비스🚢해상 포워딩Ocean Freight ForwardingFCL/LCL 수출입, 정기선 서비스, Weekly Consolidation✈️항공 포워딩Air Freight ForwardingDaily Air Consolidation, 긴급 화물, 특송 서비스🚛내륙 운송Inland Transportation일반/보세/특수화물 운송, Door to Door 서비스📦프로젝트 카고Project & Heavy Cargo중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SERVICES",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "통합 물류 서비스",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢해상 포워딩Ocean Freight ForwardingFCL/LCL 수출입, 정기선 서비스, Weekly Consolidation✈️항공 포워딩Air Freight ForwardingDaily Air Consolidation, 긴급 화물, 특송 서비스🚛내륙 운송Inland Transportation일반/보세/특수화물 운송, Door to Door 서비스📦프로젝트 카고Project & Heavy Cargo중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢해상 포워딩Ocean Freight ForwardingFCL/LCL 수출입, 정기선 서비스, Weekly Consolidation",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "해상 포워딩",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Ocean Freight Forwarding",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "FCL/LCL 수출입, 정기선 서비스, Weekly Consolidation",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✈️항공 포워딩Air Freight ForwardingDaily Air Consolidation, 긴급 화물, 특송 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✈️",
+            "type": "body",
+            "fontSize": "28px",
+            "color": null
+          },
+          {
+            "text": "항공 포워딩",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Air Freight Forwarding",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Daily Air Consolidation, 긴급 화물, 특송 서비스",
+            "type": "body",
+            "fontSize": "14px",
+            "color": null
+          },
+          {
+            "text": "🚛내륙 운송Inland Transportation일반/보세/특수화물 운송, Door to Door 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "내륙 운송",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Inland Transportation",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "일반/보세/특수화물 운송, Door to Door 서비스",
+            "type": "body",
+            "fontSize": "14px",
+            "color": null
+          },
+          {
+            "text": "📦프로젝트 카고Project & Heavy Cargo중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "프로젝트 카고",
+            "type": "title",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Project & Heavy Cargo",
+            "type": "caption",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "중장비, 기계류, 위험물, 부정기선 업무",
+            "type": "body",
+            "fontSize": "14px",
+            "color": null
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=500&fit=crop",
+            "alt": "해상 포워딩"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=300&fit=crop",
+            "alt": "항공 포워딩"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&h=300&fit=crop",
+            "alt": "내륙 운송"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop",
+            "alt": "프로젝트 카고"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "slideNumber": 6,
+      "pageLabel": "슬라이드 6",
+      "title": "파트너사를 위한\n물류 인프라 지원",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "SUPPORT INFRASTRUCTURE파트너사를 위한\n물류 인프라 지원포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스✓통관 및 서류 대행수출입 통관 원스톱 서비스✓배송 거점 제공협력사 임시 보관 및 배송 거점✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SUPPORT INFRASTRUCTURE",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "파트너사를 위한\n물류 인프라 지원포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스✓통관 및 서류 대행수출입 통관 원스톱 서비스✓배송 거점 제공협력사 임시 보관 및 배송 거점✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "파트너사를 위한\n물류 인프라 지원",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스✓통관 및 서류 대행수출입 통관 원스톱 서비스✓배송 거점 제공협력사 임시 보관 및 배송 거점✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "물류 거점 보관 지원",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "일반/보세/냉장/냉동 창고 보관 서비스",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓통관 및 서류 대행수출입 통관 원스톱 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "통관 및 서류 대행수출입 통관 원스톱 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "통관 및 서류 대행",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "수출입 통관 원스톱 서비스",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓배송 거점 제공협력사 임시 보관 및 배송 거점",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "배송 거점 제공협력사 임시 보관 및 배송 거점",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "배송 거점 제공",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "협력사 임시 보관 및 배송 거점",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SCM/3PL 지원",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop",
+            "alt": "물류 창고 내부"
+          }
+        ]
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "SUPPORT INFRASTRUCTURE파트너사를 위한\n물류 인프라 지원포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스✓통관 및 서류 대행수출입 통관 원스톱 서비스✓배송 거점 제공협력사 임시 보관 및 배송 거점✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SUPPORT INFRASTRUCTURE",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "파트너사를 위한\n물류 인프라 지원포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스✓통관 및 서류 대행수출입 통관 원스톱 서비스✓배송 거점 제공협력사 임시 보관 및 배송 거점✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "파트너사를 위한\n물류 인프라 지원",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스✓통관 및 서류 대행수출입 통관 원스톱 서비스✓배송 거점 제공협력사 임시 보관 및 배송 거점✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "✓물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "물류 거점 보관 지원일반/보세/냉장/냉동 창고 보관 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "물류 거점 보관 지원",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "일반/보세/냉장/냉동 창고 보관 서비스",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓통관 및 서류 대행수출입 통관 원스톱 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "통관 및 서류 대행수출입 통관 원스톱 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "통관 및 서류 대행",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "수출입 통관 원스톱 서비스",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓배송 거점 제공협력사 임시 보관 및 배송 거점",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "배송 거점 제공협력사 임시 보관 및 배송 거점",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "배송 거점 제공",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "협력사 임시 보관 및 배송 거점",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "✓SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SCM/3PL 지원공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "SCM/3PL 지원",
+            "type": "body",
+            "fontSize": "18px",
+            "color": null
+          },
+          {
+            "text": "공급망 관리 파트너 서비스",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-light)"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop",
+            "alt": "물류 창고 내부"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "slideNumber": 7,
+      "pageLabel": "슬라이드 7",
+      "title": "전 세계를 잇는 물류 네트워크",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "GLOBAL NETWORK전 세계를 잇는 물류 네트워크30+파트너 국가Asia8개국China, Japan, Vietnam...Europe8개국Germany, UK, France...Middle East7개국UAE, Saudi Arabia...Americas6개국USA, Canada, Brazil...Africa2개국South Africa, Algeria",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "GLOBAL NETWORK",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "전 세계를 잇는 물류 네트워크",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "30+파트너 국가",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "30+",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--primary)"
+          },
+          {
+            "text": "파트너 국가",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Asia8개국China, Japan, Vietnam...Europe8개국Germany, UK, France...Middle East7개국UAE, Saudi Arabia...Americas6개국USA, Canada, Brazil...Africa2개국South Africa, Algeria",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Asia8개국China, Japan, Vietnam...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Asia",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "8개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "China, Japan, Vietnam...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Europe8개국Germany, UK, France...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Europe",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Germany, UK, France...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Middle East7개국UAE, Saudi Arabia...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Middle East",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "7개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "UAE, Saudi Arabia...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Americas6개국USA, Canada, Brazil...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Americas",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "6개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "USA, Canada, Brazil...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Africa2개국South Africa, Algeria",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Africa",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "South Africa, Algeria",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=400&fit=crop",
+            "alt": "World Map"
+          }
+        ]
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "GLOBAL NETWORK전 세계를 잇는 물류 네트워크30+파트너 국가Asia8개국China, Japan, Vietnam...Europe8개국Germany, UK, France...Middle East7개국UAE, Saudi Arabia...Americas6개국USA, Canada, Brazil...Africa2개국South Africa, Algeria",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "GLOBAL NETWORK",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "전 세계를 잇는 물류 네트워크",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "30+파트너 국가",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "30+",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--primary)"
+          },
+          {
+            "text": "파트너 국가",
+            "type": "body",
+            "fontSize": "16px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Asia8개국China, Japan, Vietnam...Europe8개국Germany, UK, France...Middle East7개국UAE, Saudi Arabia...Americas6개국USA, Canada, Brazil...Africa2개국South Africa, Algeria",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Asia8개국China, Japan, Vietnam...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Asia",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "8개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "China, Japan, Vietnam...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Europe8개국Germany, UK, France...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Europe",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Germany, UK, France...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Middle East7개국UAE, Saudi Arabia...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Middle East",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "7개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "UAE, Saudi Arabia...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Americas6개국USA, Canada, Brazil...",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Americas",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "6개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "USA, Canada, Brazil...",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "Africa2개국South Africa, Algeria",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Africa",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "2개국",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "South Africa, Algeria",
+            "type": "body",
+            "fontSize": "12px",
+            "color": "var(--text-muted)"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=400&fit=crop",
+            "alt": "World Map"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "slideNumber": 8,
+      "pageLabel": "슬라이드 8",
+      "title": "20개 이상의 기업이\n이음로지스틱과 함께합니다",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "TRUSTED BY20개 이상의 기업이\n이음로지스틱과 함께합니다다양한 산업군의 주요 기업들에게 토탈 물류 서비스를 제공하고 있습니다.가온전선롯데제과팔도HY삼양식품유앤아이원JK인터내셔널YC리싸이클에코비트프리텍롯데웰푸드CM코아광메탈페트로마인나우리소스삼성헬스토리대건비철팜인터내셔널신영금속디씨팩브링스글로벌",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "TRUSTED BY",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "20개 이상의 기업이\n이음로지스틱과 함께합니다",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "다양한 산업군의 주요 기업들에게 토탈 물류 서비스를 제공하고 있습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "가온전선롯데제과팔도HY삼양식품유앤아이원JK인터내셔널YC리싸이클에코비트프리텍롯데웰푸드CM코아광메탈페트로마인나우리소스삼성헬스토리대건비철팜인터내셔널신영금속디씨팩브링스글로벌",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "가온전선",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "롯데제과",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "팔도",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "HY",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "삼양식품",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "유앤아이원",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "JK인터내셔널",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "YC리싸이클",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "에코비트프리텍",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "롯데웰푸드",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "CM코아",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "광메탈",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "페트로마인",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "나우리소스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "삼성헬스토리",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "대건비철",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "팜인터내셔널",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신영금속",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "디씨팩",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "브링스글로벌",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "TRUSTED BY20개 이상의 기업이\n이음로지스틱과 함께합니다다양한 산업군의 주요 기업들에게 토탈 물류 서비스를 제공하고 있습니다.가온전선롯데제과팔도HY삼양식품유앤아이원JK인터내셔널YC리싸이클에코비트프리텍롯데웰푸드CM코아광메탈페트로마인나우리소스삼성헬스토리대건비철팜인터내셔널신영금속디씨팩브링스글로벌",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "TRUSTED BY",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "20개 이상의 기업이\n이음로지스틱과 함께합니다",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "다양한 산업군의 주요 기업들에게 토탈 물류 서비스를 제공하고 있습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "가온전선롯데제과팔도HY삼양식품유앤아이원JK인터내셔널YC리싸이클에코비트프리텍롯데웰푸드CM코아광메탈페트로마인나우리소스삼성헬스토리대건비철팜인터내셔널신영금속디씨팩브링스글로벌",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "가온전선",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "롯데제과",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "팔도",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "HY",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "삼양식품",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "유앤아이원",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "JK인터내셔널",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "YC리싸이클",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "에코비트프리텍",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "롯데웰푸드",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "CM코아",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "광메탈",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "페트로마인",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "나우리소스",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "삼성헬스토리",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "대건비철",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "팜인터내셔널",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "신영금속",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "디씨팩",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "브링스글로벌",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      }
+    },
+    {
+      "id": 9,
+      "slideNumber": 9,
+      "pageLabel": "슬라이드 9",
+      "title": "프로젝트 수행 실적",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "PROJECT PORTFOLIO프로젝트 수행 실적중장비, 기계류, 특수화물 등 다양한 프로젝트 카고 경험🚢 컨테이너 선적 작업해상운송🏗️ 대형 구조물 선적프로젝트 카고🏭 항만 크레인 작업항만 하역🚛 특수 화물 운송내륙운송⚙️ 대형 탱크 운송????🔧 압력용기 선적특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "PROJECT PORTFOLIO",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "프로젝트 수행 실적",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "중장비, 기계류, 특수화물 등 다양한 프로젝트 카고 경험",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "🚢 컨테이너 선적 작업해상운송🏗️ 대형 구조물 선적프로젝트 카고🏭 항만 크레인 작업항만 하역🚛 특수 화물 운송내륙운송⚙️ 대형 탱크 운송????🔧 압력용기 선적특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢 컨테이너 선적 작업해상운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢 컨테이너 선적 작업",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "해상운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏗️ 대형 구조물 선적프로젝트 카고",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏗️ 대형 구조물 선적",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "프로젝트 카고",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏭 항만 크레인 작업항만 하역",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏭 항만 크레인 작업",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "항만 하역",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚛 특수 화물 운송내륙운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚛 특수 화물 운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "내륙운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "⚙️ 대형 탱크 운송????",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "⚙️ 대형 탱크 운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "????",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🔧 압력용기 선적특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🔧 압력용기 선적",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "PROJECT PORTFOLIO프로젝트 수행 실적중장비, 기계류, 특수화물 등 다양한 프로젝트 카고 경험🚢 컨테이너 선적 작업해상운송🏗️ 대형 구조물 선적프로젝트 카고🏭 항만 크레인 작업항만 하역🚛 특수 화물 운송내륙운송⚙️ 대형 탱크 운송????🔧 압력용기 선적특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "PROJECT PORTFOLIO",
+            "type": "label",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "프로젝트 수행 실적",
+            "type": "subheading",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "중장비, 기계류, 특수화물 등 다양한 프로젝트 카고 경험",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          },
+          {
+            "text": "🚢 컨테이너 선적 작업해상운송🏗️ 대형 구조물 선적프로젝트 카고🏭 항만 크레인 작업항만 하역🚛 특수 화물 운송내륙운송⚙️ 대형 탱크 운송????🔧 압력용기 선적특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢 컨테이너 선적 작업해상운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚢 컨테이너 선적 작업",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "해상운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏗️ 대형 구조물 선적프로젝트 카고",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏗️ 대형 구조물 선적",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "프로젝트 카고",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏭 항만 크레인 작업항만 하역",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🏭 항만 크레인 작업",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "항만 하역",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚛 특수 화물 운송내륙운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🚛 특수 화물 운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "내륙운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "⚙️ 대형 탱크 운송????",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "⚙️ 대형 탱크 운송",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "????",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🔧 압력용기 선적특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🔧 압력용기 선적",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "특수화물",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          }
+        ],
+        "images": []
+      }
+    },
+    {
+      "id": 10,
+      "slideNumber": 10,
+      "pageLabel": "슬라이드 10",
+      "title": "우리는 크지 않습니다.\n하지만, 우리의 능력은 작지 않습니다.",
+      "template": "section-divider",
+      "elements": {
+        "texts": [
+          {
+            "text": "우리는 크지 않습니다.\n하지만, 우리의 능력은 작지 않습니다.저희는 경쟁이 아닌 협력을 추구합니다.\n포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.\n무엇을 해야 할지, 어떻게 해야 할지, 어디로 가야 할지 잘 알고 있습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "우리는 크지 않습니다.\n하지만, 우리의 능력은 작지 않습니다.",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "저희는 경쟁이 아닌 협력을 추구합니다.\n포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.\n무엇을 해야 할지, 어떻게 해야 할지, 어디로 가야 할지 잘 알고 있습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "rgba(255,255,255,0.8)"
+          }
+        ],
+        "images": []
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "우리는 크지 않습니다.\n하지만, 우리의 능력은 작지 않습니다.저희는 경쟁이 아닌 협력을 추구합니다.\n포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.\n무엇을 해야 할지, 어떻게 해야 할지, 어디로 가야 할지 잘 알고 있습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "우리는 크지 않습니다.\n하지만, 우리의 능력은 작지 않습니다.",
+            "type": "subheading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "저희는 경쟁이 아닌 협력을 추구합니다.\n포워딩 파트너사의 물류망 확장을 지원하는 든든한 인프라가 되겠습니다.\n무엇을 해야 할지, 어떻게 해야 할지, 어디로 가야 할지 잘 알고 있습니다.",
+            "type": "body",
+            "fontSize": null,
+            "color": "rgba(255,255,255,0.8)"
+          }
+        ],
+        "images": []
+      }
+    },
+    {
+      "id": 11,
+      "slideNumber": 11,
+      "pageLabel": "슬라이드 11",
+      "title": "Thank You",
+      "template": "content-text",
+      "elements": {
+        "texts": [
+          {
+            "text": "Thank You신뢰를 잇는 물류, 세계를 잇는 파트너E이음 로지스틱 주식회사🌐 www.e-umlk.com✉️ info@e-umlk.com📞 +82 2 3662 8150© 2025 EUM LOGISTIC CO., LTD. All rights reserved.",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Thank You",
+            "type": "heading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "신뢰를 잇는 물류, 세계를 잇는 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "이음 로지스틱 주식회사",
+            "type": "body",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "🌐 www.e-umlk.com✉️ info@e-umlk.com📞 +82 2 3662 8150",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🌐 www.e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "✉️ info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "📞 +82 2 3662 8150",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "© 2025 EUM LOGISTIC CO., LTD. All rights reserved.",
+            "type": "caption",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          }
+        ],
+        "images": []
+      },
+      "content": {
+        "texts": [
+          {
+            "text": "Thank You신뢰를 잇는 물류, 세계를 잇는 파트너E이음 로지스틱 주식회사🌐 www.e-umlk.com✉️ info@e-umlk.com📞 +82 2 3662 8150© 2025 EUM LOGISTIC CO., LTD. All rights reserved.",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "Thank You",
+            "type": "heading",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "신뢰를 잇는 물류, 세계를 잇는 파트너",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "이음 로지스틱 주식회사",
+            "type": "body",
+            "fontSize": null,
+            "color": "white"
+          },
+          {
+            "text": "🌐 www.e-umlk.com✉️ info@e-umlk.com📞 +82 2 3662 8150",
+            "type": "body",
+            "fontSize": null,
+            "color": null
+          },
+          {
+            "text": "🌐 www.e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "✉️ info@e-umlk.com",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "📞 +82 2 3662 8150",
+            "type": "body",
+            "fontSize": null,
+            "color": "var(--text-muted)"
+          },
+          {
+            "text": "© 2025 EUM LOGISTIC CO., LTD. All rights reserved.",
+            "type": "caption",
+            "fontSize": null,
+            "color": "var(--text-light)"
+          }
+        ],
+        "images": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "sourceFile": "IRdeck_bluehive1.pdf",
+    "analyzedAt": "2025-11-25T00:00:00Z",
+    "analysisMethod": "visual-capture-pdf",
+    "totalPages": 5,
+    "analyzedPages": [1, 2, 3]
+  },
+  "slideStructures": [
+    {
+      "slideNumber": 1,
+      "type": "hero-cover",
+      "layout": "centered-single-column",
+      "elements": {
+        "logo": {
+          "text": "BLUEHIVE",
+          "position": "top-center",
+          "fontSize": "140px",
+          "color": "#5B7BFF",
+          "fontWeight": "900",
+          "letterSpacing": "0.05em"
+        },
+        "title": {
+          "text": "2025년「오션 제너레이션 액셀러레이터」",
+          "position": "center",
+          "fontSize": "32px",
+          "color": "#FFFFFF",
+          "fontWeight": "700"
+        },
+        "subtitle": {
+          "text": "AI 기반 및 IoT를 활용한 실시간 모니터링\n스마트 양식장",
+          "position": "center-below-title",
+          "fontSize": "20px",
+          "color": "#E0E6F0",
+          "fontWeight": "400",
+          "lineHeight": "1.6"
+        },
+        "footer": {
+          "text": "오션이노베이션랩",
+          "position": "bottom-center",
+          "fontSize": "16px",
+          "color": "#FFFFFF",
+          "fontWeight": "500"
+        }
+      },
+      "background": {
+        "color": "#0A1428",
+        "pattern": "dotted-grid",
+        "patternColor": "#4A5A7A",
+        "patternOpacity": 0.3
+      },
+      "spacing": {
+        "padding": "100px",
+        "gap": "40px"
+      }
+    },
+    {
+      "slideNumber": 2,
+      "type": "table-of-contents",
+      "layout": "centered-grid-2x2",
+      "elements": {
+        "heading": {
+          "text": "목차",
+          "position": "top-center",
+          "fontSize": "64px",
+          "color": "#FFFFFF",
+          "fontWeight": "700"
+        },
+        "cards": [
+          {
+            "number": "01",
+            "icon": "circle",
+            "text": "추진배경 및 필요성",
+            "background": "rgba(59, 123, 255, 0.1)",
+            "border": "1px solid rgba(59, 123, 255, 0.3)"
+          },
+          {
+            "number": "02",
+            "icon": "globe",
+            "text": "연구개발 및 실증방안",
+            "background": "rgba(59, 123, 255, 0.1)",
+            "border": "1px solid rgba(59, 123, 255, 0.3)"
+          },
+          {
+            "number": "03",
+            "icon": "building",
+            "text": "시장성 및 산업성과",
+            "background": "rgba(59, 123, 255, 0.1)",
+            "border": "1px solid rgba(59, 123, 255, 0.3)"
+          },
+          {
+            "number": "04",
+            "icon": "people",
+            "text": "자금조달 및 일정계",
+            "background": "rgba(59, 123, 255, 0.1)",
+            "border": "1px solid rgba(59, 123, 255, 0.3)"
+          }
+        ]
+      },
+      "background": {
+        "color": "#0A1428",
+        "gradient": "linear-gradient(135deg, #0A1428 0%, #1A2850 100%)"
+      },
+      "cardStyle": {
+        "width": "400px",
+        "height": "120px",
+        "borderRadius": "12px",
+        "padding": "24px 32px",
+        "display": "flex",
+        "alignItems": "center",
+        "gap": "16px"
+      },
+      "spacing": {
+        "padding": "80px",
+        "gridGap": "24px"
+      }
+    },
+    {
+      "slideNumber": 3,
+      "type": "section-divider",
+      "layout": "centered-minimal",
+      "elements": {
+        "sectionNumber": {
+          "text": "01",
+          "position": "center-top",
+          "fontSize": "140px",
+          "color": "#5B7BFF",
+          "fontWeight": "900",
+          "opacity": 0.9
+        },
+        "sectionTitle": {
+          "text": "추진배경 및 필요성",
+          "position": "center",
+          "fontSize": "48px",
+          "color": "#FFFFFF",
+          "fontWeight": "700"
+        },
+        "pageNumber": {
+          "text": "3 / 20",
+          "position": "bottom-right",
+          "fontSize": "14px",
+          "color": "#8899BB",
+          "fontWeight": "400"
+        }
+      },
+      "background": {
+        "color": "#0A1428",
+        "splitEffect": {
+          "left": "#0A1428",
+          "right": "#1A2438",
+          "splitRatio": "50/50",
+          "transition": "smooth"
+        }
+      },
+      "spacing": {
+        "padding": "100px",
+        "gap": "60px"
+      }
+    }
+  ],
+  "designTokens": {
+    "colors": {
+      "primary": {
+        "main": "#5B7BFF",
+        "description": "Bright blue, used for logo and main headings",
+        "usage": ["logo", "headings", "brand-text"]
+      },
+      "background": {
+        "main": "#0A1428",
+        "secondary": "#1A2438",
+        "description": "Deep navy blue, tech-focused dark theme",
+        "usage": ["page-background", "sections"]
+      },
+      "text": {
+        "primary": "#FFFFFF",
+        "secondary": "#E0E6F0",
+        "description": "White and light gray for body text",
+        "usage": ["headings", "body", "subtitles"]
+      },
+      "accent": {
+        "dots": "#4A5A7A",
+        "description": "Muted blue-gray for decorative elements",
+        "usage": ["background-dots", "decorative-elements"]
+      }
+    },
+    "typography": {
+      "heading": {
+        "fontFamily": "sans-serif, bold",
+        "fontWeight": "700-900",
+        "fontSize": {
+          "hero": "120-140px",
+          "section": "48-64px",
+          "subtitle": "24-32px"
+        },
+        "letterSpacing": "0.02em",
+        "textTransform": "uppercase (for logo)",
+        "description": "Bold, modern sans-serif for impact"
+      },
+      "body": {
+        "fontFamily": "sans-serif, regular",
+        "fontWeight": "400-500",
+        "fontSize": {
+          "main": "18-22px",
+          "small": "14-16px"
+        },
+        "lineHeight": "1.6-1.8",
+        "description": "Clean, readable body text"
+      }
+    },
+    "spacing": {
+      "page": {
+        "horizontal": "80-120px",
+        "vertical": "60-100px",
+        "description": "Generous padding for professional look"
+      },
+      "sections": {
+        "gap": "40-60px",
+        "description": "Space between content blocks"
+      }
+    },
+    "layout": {
+      "alignment": "center",
+      "structure": "single-column-centered",
+      "aspectRatio": "16:9",
+      "description": "Centered layout typical of presentation decks"
+    },
+    "visualEffects": {
+      "backgroundPattern": {
+        "type": "dotted-grid",
+        "color": "#4A5A7A",
+        "opacity": "0.3",
+        "size": "2-3px dots",
+        "spacing": "40-50px",
+        "description": "Subtle dot pattern creates tech/digital feeling"
+      },
+      "shadows": {
+        "type": "minimal",
+        "description": "Clean, flat design with minimal shadows"
+      }
+    }
+  },
+  "componentPatterns": {
+    "hero-slide": {
+      "layout": "centered-text-block",
+      "elements": ["logo", "main-heading", "subtitle", "metadata"],
+      "background": "dark-with-dots",
+      "textAlign": "center",
+      "usage": "Opening slide, company introduction"
+    },
+    "table-of-contents-slide": {
+      "layout": "centered-grid",
+      "elements": ["heading", "numbered-cards-with-icons"],
+      "background": "dark-gradient",
+      "textAlign": "left-in-cards",
+      "cardCount": "4 (2x2 grid)",
+      "usage": "Agenda, navigation overview"
+    },
+    "section-divider-slide": {
+      "layout": "centered-minimal",
+      "elements": ["large-section-number", "section-title"],
+      "background": "split-two-tone",
+      "textAlign": "center",
+      "usage": "Chapter breaks, section transitions"
+    },
+    "content-slide": {
+      "layout": "title-top-content-center",
+      "elements": ["section-heading", "body-text", "visuals"],
+      "background": "dark-or-white",
+      "textAlign": "left-or-center",
+      "usage": "Main content slides (not yet analyzed)"
+    }
+  },
+  "recommendations": {
+    "tailwindClasses": {
+      "background": "bg-[#0A1428]",
+      "primaryText": "text-white",
+      "primaryHeading": "text-[#5B7BFF]",
+      "heroText": "text-8xl md:text-9xl font-bold uppercase tracking-wide",
+      "bodyText": "text-lg md:text-xl text-gray-200 leading-relaxed",
+      "container": "max-w-7xl mx-auto px-12 py-16"
+    },
+    "cssVariables": {
+      "--color-primary": "#5B7BFF",
+      "--color-bg-dark": "#0A1428",
+      "--color-bg-light": "#1A2438",
+      "--color-text-primary": "#FFFFFF",
+      "--color-text-secondary": "#E0E6F0",
+      "--spacing-page-x": "120px",
+      "--spacing-page-y": "100px",
+      "--font-heading": "'Inter', 'Pretendard', sans-serif",
+      "--font-body": "'Inter', 'Pretendard', sans-serif"
+    }
+  },
+  "extractionNotes": {
+    "limitations": [
+      "PDF embed prevents full DOM extraction",
+      "Text content cannot be automatically extracted (OCR needed)",
+      "Only visual style analysis possible from screenshots",
+      "Icon assets would need manual recreation or library matching"
+    ],
+    "strengths": [
+      "Color palette accurately captured",
+      "Typography style clearly visible",
+      "Layout patterns identifiable across 3 slide types",
+      "Background effects documented",
+      "Card components fully analyzable",
+      "Spacing and sizing measurable from screenshots"
+    ],
+    "slideTypesCovered": [
+      "Hero/Cover slide (full)",
+      "Table of Contents with grid cards (full)",
+      "Section Divider with split background (full)"
+    ],
+    "recommendation": "Use this style analysis as theme reference, combine with manual content input for full presentation generation. 3 slide types provide enough pattern diversity for complete theme extraction."
+  },
+  "implementationReadiness": {
+    "tailwindGeneration": "✅ Ready - All styles mappable to Tailwind",
+    "htmlStructure": "✅ Ready - Clear component hierarchy",
+    "contentInput": "⚠️ Manual - Text requires OCR or user input",
+    "iconLibrary": "⚠️ Partial - Circle, Globe, Building, People icons needed",
+    "animationPotential": "✅ Ready - Slide transitions, card hover effects"
+  }
+}

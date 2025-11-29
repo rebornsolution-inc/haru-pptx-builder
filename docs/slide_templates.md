@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 
-Haru Presentation Builder supports **5 core slide types** extracted from PDF analysis. Each template has specific use cases, layout patterns, and styling guidelines.
+Haru Presentation Builder는 **5가지 핵심 슬라이드 템플릿**을 지원합니다. 각 템플릿은 특정 용도, 레이아웃 패턴, 스타일 가이드라인을 갖습니다.
 
 ---
 
@@ -10,21 +10,21 @@ Haru Presentation Builder supports **5 core slide types** extracted from PDF ana
 
 ### 1. Hero/Cover Slide (`hero-cover`)
 
-**Purpose:** Opening slide, company introduction, title page
+**용도:** 오프닝 슬라이드, 회사 소개, 타이틀 페이지
 
-**Layout:** Centered single-column
+**레이아웃:** 중앙 단일 컬럼
 
-**Elements:**
-- **Logo/Brand:** Large text (140px), bold (900), centered top
-- **Main Title:** Primary heading (32-48px), centered
-- **Subtitle:** Secondary text (20px), centered below title
-- **Footer:** Small text (16px), centered bottom (company name, date, etc.)
+**요소:**
+- **Logo/Brand:** 대형 텍스트 (140px), Bold (900), 상단 중앙
+- **Main Title:** 주요 제목 (32-48px), 중앙
+- **Subtitle:** 부제목 (20px), 타이틀 하단
+- **Footer:** 소형 텍스트 (16px), 하단 중앙 (회사명, 날짜 등)
 
-**Background:**
-- Solid color with optional dotted grid pattern
-- Example: Dark navy (#0A1428) + subtle dots (#4A5A7A, 30% opacity)
+**배경:**
+- 단색 + 도트 패턴 옵션
+- 예: Dark navy (#0A1428) + 은은한 도트 (#4A5A7A, 30% opacity)
 
-**Example JSON:**
+**JSON 예시:**
 ```json
 {
   "type": "hero-cover",
@@ -38,40 +38,29 @@ Haru Presentation Builder supports **5 core slide types** extracted from PDF ana
 }
 ```
 
-**Use Cases:**
-- Presentation cover page
-- Section opener with company branding
-- Title slides for webinars
-
 ---
 
 ### 2. Table of Contents (`table-of-contents`)
 
-**Purpose:** Agenda overview, navigation menu, feature list
+**용도:** 목차, 아젠다, 기능 목록
 
-**Layout:** Centered grid (2x2, 3x2, or custom)
+**레이아웃:** 중앙 그리드 (2x2, 3x2, 커스텀)
 
-**Elements:**
+**요소:**
 - **Heading:** "목차", "Agenda", "Contents" (64px, bold)
-- **Cards:** Numbered items with optional icons
-  - Number badge (e.g., "01", "02")
-  - Icon (circle, globe, building, people)
-  - Text label (18-20px)
-  - Click target (link to specific slide)
+- **Cards:** 번호가 있는 항목들
+  - 번호 배지 (예: "01", "02")
+  - 아이콘 (원, 지구본, 빌딩, 사람)
+  - 텍스트 라벨 (18-20px)
 
-**Card Styling:**
-- Background: Semi-transparent blue (rgba(59, 123, 255, 0.1))
-- Border: 1px solid rgba(59, 123, 255, 0.3)
-- Border radius: 12px
-- Padding: 24px 32px
-- Size: ~400px × 120px
+**카드 스타일:**
+- 배경: 반투명 파란색 (rgba(59, 123, 255, 0.1))
+- 테두리: 1px solid rgba(59, 123, 255, 0.3)
+- 테두리 반경: 12px
+- 패딩: 24px 32px
+- 크기: ~400px × 120px
 
-**Hover Effects:**
-- Background brightens (0.1 → 0.2 opacity)
-- Lift animation (translateY -4px)
-- Box shadow (0 8px 24px)
-
-**Example JSON:**
+**JSON 예시:**
 ```json
 {
   "type": "table-of-contents",
@@ -86,29 +75,24 @@ Haru Presentation Builder supports **5 core slide types** extracted from PDF ana
 }
 ```
 
-**Use Cases:**
-- Presentation agenda
-- Service/feature list (4-6 items)
-- Navigation hub for sections
-
 ---
 
 ### 3. Section Divider (`section-divider`)
 
-**Purpose:** Chapter breaks, section transitions, visual separator
+**용도:** 챕터 구분, 섹션 전환, 시각적 구분자
 
-**Layout:** Centered minimal (2-3 elements only)
+**레이아웃:** 중앙 최소화 (2-3개 요소만)
 
-**Elements:**
-- **Section Number:** Very large (180px), bold (900), semi-transparent (90% opacity)
-- **Section Title:** Medium heading (48px), bold (700)
-- **Page Number:** Small text (14px), bottom-right corner (e.g., "3 / 20")
+**요소:**
+- **Section Number:** 초대형 (180px), Bold (900), 반투명 (90% opacity)
+- **Section Title:** 중형 제목 (48px), Bold (700)
+- **Page Number:** 소형 텍스트 (14px), 우하단 (예: "3 / 20")
 
-**Background:**
-- Split two-tone effect (50/50 vertical split)
-- Example: Left #0A1428, Right #1A2438
+**배경:**
+- 2톤 분할 효과 (50/50 수직 분할)
+- 예: 좌측 #0A1428, 우측 #1A2438
 
-**Example JSON:**
+**JSON 예시:**
 ```json
 {
   "type": "section-divider",
@@ -121,28 +105,20 @@ Haru Presentation Builder supports **5 core slide types** extracted from PDF ana
 }
 ```
 
-**Use Cases:**
-- Section start markers (Chapter 1, Chapter 2)
-- Visual breaks between topics
-- Breathing space in long presentations
-
 ---
 
 ### 4. Content with Text (`content-text`)
 
-**Purpose:** Main content slides with paragraphs and optional images
+**용도:** 본문 슬라이드, 단락 + 선택적 이미지
 
-**Layout:** Split horizontal (60/40 or 50/50)
+**레이아웃:** 수평 분할 (60/40 또는 50/50)
 
-**Elements:**
-- **Title:** Section heading (48px), left-aligned
-- **Body Text:** Paragraph (20px), left-aligned, line-height 1.8
-- **Image (optional):** Right side, 40% width, rounded corners
+**요소:**
+- **Title:** 섹션 제목 (48px), 좌측 정렬
+- **Body Text:** 본문 (20px), 좌측 정렬, line-height 1.8
+- **Image (선택):** 우측, 40% 너비, 둥근 모서리
 
-**Background:**
-- Solid color (dark or light depending on theme)
-
-**Example JSON:**
+**JSON 예시:**
 ```json
 {
   "type": "content-text",
@@ -155,29 +131,21 @@ Haru Presentation Builder supports **5 core slide types** extracted from PDF ana
 }
 ```
 
-**Use Cases:**
-- Detailed explanations
-- Case studies
-- Product descriptions
-
 ---
 
 ### 5. Bullet List (`bullet-list`)
 
-**Purpose:** Key points, features, takeaways
+**용도:** 핵심 포인트, 기능 목록, 요약
 
-**Layout:** Centered list (3-5 items)
+**레이아웃:** 중앙 리스트 (3-5개 항목)
 
-**Elements:**
-- **Title:** Section heading (48px), centered
-- **Bullets:** List items (24px), left-aligned or centered
-  - Custom bullet color (e.g., primary blue)
-  - Gap between items: 24px
+**요소:**
+- **Title:** 섹션 제목 (48px), 중앙
+- **Bullets:** 목록 항목 (24px), 좌측 또는 중앙 정렬
+  - 커스텀 불릿 색상 (예: 프라이머리 블루)
+  - 항목 간 간격: 24px
 
-**Background:**
-- Solid color (usually dark for emphasis)
-
-**Example JSON:**
+**JSON 예시:**
 ```json
 {
   "type": "bullet-list",
@@ -193,101 +161,51 @@ Haru Presentation Builder supports **5 core slide types** extracted from PDF ana
 }
 ```
 
-**Use Cases:**
-- Feature lists (3-5 items)
-- Summary slides
-- Key takeaways
-
 ---
 
-## 🎨 Design Token Reference
+## 🎨 Design Tokens
 
-### Colors (from PDF analysis)
-```css
---primary-blue: #5B7BFF;
---bg-dark: #0A1428;
---bg-darker: #1A2438;
---text-primary: #FFFFFF;
---text-secondary: #E0E6F0;
---text-muted: #8899BB;
-```
+> **참고:** 디자인 토큰(색상, 타이포그래피, 간격)은 **프로젝트별로 다릅니다.**  
+> PDF 분석 시 `source_style.json`에 자동 추출되며, 해당 값을 기준으로 HTML을 생성합니다.
 
-### Typography
-```css
---font-hero: 140px / 900;
---font-h1: 64px / 700;
---font-h2: 48px / 700;
---font-body: 20px / 400;
---font-small: 16px / 500;
-```
-
-### Spacing
-```css
---page-padding: 100px;
---section-gap: 60px;
---card-gap: 24px;
-```
+**일반적인 토큰 구조:**
+- `colors`: 배경, 텍스트, 강조색
+- `typography`: 폰트 패밀리, 크기, 가중치, 줄간격
+- `spacing`: 페이지 패딩, 섹션 간격, 카드 gap
 
 ---
 
 ## 📐 Layout Guidelines
 
-### Aspect Ratio
-- **Default:** 16:9 (1920×1080, 1440×810, etc.)
-- **Full-screen:** `width: 100vw; height: 100vh`
+### 비율
+- **기본:** 16:9 (1920×1080, 1440×810 등)
+- **풀스크린:** `width: 100vw; height: 100vh`
 
-### Alignment Rules
-- **Hero/Cover:** Center everything
-- **TOC:** Center heading, grid cards below
-- **Section Divider:** Center number + title vertically
-- **Content:** Left-align text, right-align image
-- **Bullet List:** Center title, left-align bullets
+### 정렬 규칙
+- **Hero/Cover:** 모든 요소 중앙
+- **TOC:** 제목 중앙, 카드 그리드 하단
+- **Section Divider:** 번호 + 타이틀 수직 중앙
+- **Content:** 텍스트 좌측, 이미지 우측
+- **Bullet List:** 타이틀 중앙, 불릿 좌측
 
-### Safe Zones
-- **Padding:** Minimum 80px on all sides (desktop)
-- **Tablet:** 60px padding
-- **Mobile:** 40px padding
+### 안전 영역
+- **패딩:** 최소 80px (데스크탑)
+- **태블릿:** 60px 패딩
+- **모바일:** 40px 패딩
 
 ---
 
-## 🔄 Template Selection Logic
+## 📚 Template 선택 가이드
 
-**When analyzing a slide, choose template based on:**
-
-| Content Type | Template |
-|--------------|----------|
-| Logo + Title only | `hero-cover` |
-| 4-6 numbered cards | `table-of-contents` |
-| Large number + short title | `section-divider` |
-| Paragraph text + image | `content-text` |
-| 3-5 bullet points | `bullet-list` |
+| 콘텐츠 유형 | 템플릿 |
+|------------|--------|
+| 로고 + 타이틀만 | `hero-cover` |
+| 4-6개 번호 카드 | `table-of-contents` |
+| 큰 번호 + 짧은 타이틀 | `section-divider` |
+| 단락 텍스트 + 이미지 | `content-text` |
+| 3-5개 불릿 포인트 | `bullet-list` |
 
 **Edge cases:**
-- Mixed content (text + bullets + image) → Use `content-text` with bullets
-- Many items (7+) → Split into multiple `bullet-list` slides
-- Complex layouts → Break into 2-3 simpler slides
-
----
-
-## 💡 Template Customization
-
-### Adding New Templates
-1. Analyze PDF for new patterns
-2. Add to `02_style_theme.json` under `slideTemplates`
-3. Define layout, elements, background, spacing
-4. Document in this file
-5. Create HTML template in `components/slide-templates/`
-
-### Modifying Existing Templates
-1. Update `02_style_theme.json`
-2. Regenerate `03_integrate_presentation.json`
-3. Test with `node scripts/generate_presentation.js`
-
----
-
-## 📚 Examples
-
-See `output/presentation/bluehive_sample.html` for working examples of:
-- Hero/Cover slide (Slide 1)
-- Table of Contents (Slide 2)
-- Section Divider (Slide 3)
+- 혼합 콘텐츠 (텍스트 + 불릿 + 이미지) → `content-text` 사용
+- 항목 7개 이상 → 여러 `bullet-list` 슬라이드로 분할
+- 복잡한 레이아웃 → 2-3개 단순 슬라이드로 분할

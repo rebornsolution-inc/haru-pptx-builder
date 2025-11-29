@@ -1,308 +1,146 @@
 # Haru Presentation Builder
 
-AI-powered presentation generator that creates slide-based web presentations from multiple input sources.
+PDF 인쇄용 정적 HTML 프레젠테이션을 생성하는 AI 기반 빌더입니다.
 
 ## 🎯 Overview
 
-Haru Presentation Builder is an intelligent system that combines AI analysis with the Model Context Protocol (MCP) to generate professional slide-based presentations. It supports multiple input sources: URL analysis for content, PDF for style extraction, and manual JSON input.
+Haru Presentation Builder는 다양한 입력 소스를 분석하여 **브라우저 인쇄(Ctrl+P)로 PDF 변환 가능한 정적 HTML**을 생성합니다.
 
-**Key Features:**
-- 🔍 **Multi-Source Input** - URL content analysis + PDF style extraction
-- 🎨 **Design System Extraction** - Automatic design token generation from PDFs
-- 💻 **Slide Generation** - Production-ready HTML presentations with keyboard navigation
-- 🤖 **MCP Integration** - Kapture MCP for real browser interaction
-- 📱 **Responsive Slides** - Full-screen slides with 16:9 aspect ratio
-- ⌨️ **Keyboard Navigation** - Arrow keys, Space, Home/End for slide control
+**출력 특징:**
+- 🖨️ **PDF 인쇄 최적화** - `@media print`, `page-break-after` 적용
+- 📐 **16:9 기본 비율** - A4 용지, 여백 없음 설정
+- ❌ **정적 문서** - 키보드 네비게이션, 슬라이드 인디케이터 없음
+- 🔄 **PPTX 변환 지원** - JSON 기반 편집 가능 PPTX 생성
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 16+
+- Python 3.9+ (PPTX 변환용)
 - VS Code with GitHub Copilot
-- Kapture MCP extension (for web/PDF exploration)
+- Kapture MCP extension (PDF 분석용)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/rebornsolution-inc/haru-presentation-builder.git
-cd haru-presentation-builder
+git clone https://github.com/rebornsolution-inc/haru-pptx-builder.git
+cd haru-pptx-builder
 
-# Install dependencies (if needed)
+# Node.js dependencies
 npm install
+
+# Python dependencies (PPTX 변환용)
+python -m venv .venv
+.venv\Scripts\activate
+pip install playwright python-pptx
+playwright install chromium
 ```
-
-### Usage
-
-#### Option 1: PDF Style + Manual Content (Fastest)
-
-```bash
-# 1. Open PDF in Chrome
-open file:///path/to/your/presentation.pdf
-
-# 2. Analyze PDF style (AI will capture design tokens)
-# AI generates: analysis/pdf-analysis/[filename]_style_analysis.json
-
-# 3. Create content JSON manually or let AI generate from topic
-# File: analysis/presentation-pipeline/01_contents_slides.json
-
-# 4. Integrate style + content
-node scripts/integrate_presentation_pipeline.js
-
-# 5. Generate HTML presentation
-node scripts/generate_presentation.js
-
-# Output: output/presentation/index.html
-```
-
-#### Option 2: URL Content + PDF Style (Hybrid)
-
-```bash
-# 1. Analyze website for content structure
-# AI converts sections → slides
-
-# 2. Analyze PDF for brand style
-# AI extracts colors, fonts, layouts
-
-# 3. Merge URL content with PDF style
-node scripts/integrate_presentation_pipeline.js
-
-# 4. Generate HTML presentation
-node scripts/generate_presentation.js
-```
-
-#### Option 3: URL Only (Auto-conversion)
-
-```bash
-# 1. Analyze website
-# AI converts long-scroll website → slide-based presentation
-
-# 2. Generate presentation
-node scripts/integrate_presentation_pipeline.js
-node scripts/generate_presentation.js
-```
-
-# Install dependencies
-npm install
-```
-
-### Configuration
-
-The project uses MCP (Model Context Protocol) for web exploration. Configuration is in `.vscode/mcp.json`.
 
 ## 📖 Usage
 
-### Basic Web Analysis
+### Step 1: 프로젝트 폴더 생성
 
 ```bash
-# In VS Code with Copilot Chat
-/web https://example.com
+# 새 프로젝트 폴더 생성
+mkdir projects/my-project
 ```
 
-This will:
-1. Explore the website (MCP-based browser interaction)
-2. Analyze the website structure (content) → `01_contents_web.json`
-3. Extract design system (style) → `02_style_web.json`
-4. ⚠️ **Auto-stop here** (integration and code generation require manual commands)
-
-### Complete Workflow
+### Step 2: PDF 스타일 분석
 
 ```bash
-# Step 1: Analysis (Auto-stop after this)
-/web https://example.com
-# → Outputs: 01_contents_web.json + 02_style_web.json
+# Chrome에서 PDF 열기
+# AI에게 요청: "/pdf my-project"
+# 결과: 
+#   - projects/my-project/source_style.json (원본 분석)
+#   - projects/my-project/presentation.json (작업용 복사본)
+```
 
-# Step 2: Integration (Manual request)
-/integrate
-# → Outputs: 03_integrate_web.json
+### Step 3: 콘텐츠 수정 (필요시)
 
-# Step 3: Code Generation (Manual request)
-/generate
-# → Outputs: output/web/index.html
+```bash
+# presentation.json에서 직접 수정
+# source_style.json은 수정하지 않음 (롤백용 보존)
+```
+
+### Step 4: HTML 생성
+
+```bash
+# AI에게 요청: "/generate my-project"
+# 결과: projects/my-project/presentation.html
+```
+
+### Step 5: PDF 또는 PPTX 변환
+
+**PDF 변환:**
+```
+1. 브라우저에서 HTML 파일 열기
+2. Ctrl+P (인쇄)
+3. 대상: "PDF로 저장"
+4. 여백: "없음"
+5. 배경 그래픽: 활성화
+6. 저장
+```
+
+**PPTX 변환 (편집 가능):**
+```bash
+# 방법 1: JSON 기반 (기본)
+# AI에게 요청: "/pptx my-project"
+
+# 방법 2: HTML 수정 후 (HTML → JSON 자동 동기화)
+# HTML 파일에서 텍스트/스타일 수정 후
+# AI에게 요청: "/pptx my-project.html"
+# → 자동으로 JSON 업데이트 + PPTX 생성
 ```
 
 ## 📁 Project Structure
 
 ```
-haru-web-builder/
+haru-pptx-builder/
 ├── .github/
-│   └── copilot-instructions.md    # AI behavior rules
-├── .vscode/
-│   └── mcp.json                   # MCP configuration
-├── analysis/
-│   └── web-pipeline/
-│       ├── 01_contents_web.json   # Content analysis output
-│       ├── 02_style_web.json      # Style analysis output
-│       ├── 03_integrate_web.json  # Integrated specification
-│       └── generators/
-│           └── 04_generate_tailwind.json
-├── output/
-│   ├── web_contents.json          # Public content spec
-│   ├── web_style.json             # Public style spec
-│   ├── WebDevSpec.json            # Public integration spec
-│   └── web/
-│       └── index.html             # Generated code
+│   └── copilot-instructions.md    # AI 동작 규칙 (상세)
 ├── docs/
+│   ├── presentation_workflow.md   # 워크플로우 가이드
+│   └── slide_templates.md         # 슬라이드 템플릿 문서
+├── projects/                      # 프로젝트별 폴더
+│   └── [project-name]/
+│       ├── source_style.json      # PDF 분석 원본 (READ-ONLY)
+│       ├── presentation.json      # 작업용 (수정 가능)
+│       ├── presentation.html      # 생성된 HTML
+│       └── ...
 └── scripts/
+    ├── json_to_pptx.py            # JSON→PPTX (편집 가능)
+    └── html_to_json.py            # HTML→JSON (역변환)
 ```
 
-## 🎨 Features
+## 🎨 Slide Templates
 
-### Progressive 5% Scroll Analysis
-
-The system uses a **21-checkpoint scrolling protocol** (0%, 5%, 10%...100%) to ensure complete coverage:
-
-- Captures every visual change
-- Detects all scroll animations (fade-in, parallax, etc.)
-- Tests interactive elements at each checkpoint
-- Documents state changes systematically
-
-### Design Token Extraction
-
-Automatically extracts:
-- Color system (primary, secondary, accent, neutrals)
-- Typography (font families, sizes, weights, line heights)
-- Spacing system (margins, padding, gaps)
-- Component patterns (buttons, cards, forms)
-- Animation timings and easings
-
-### Code Generation Options
-
-**Tailwind Single-Page (Default)**
-- Single HTML file with Tailwind v4 CDN
-- Utility-first approach
-- Fast prototyping
-- Easy maintenance
+| 템플릿 | 용도 | 레이아웃 |
+|--------|------|----------|
+| `hero-cover` | 타이틀 슬라이드 | 중앙 정렬 |
+| `table-of-contents` | 목차 | 2x2 또는 3x2 그리드 |
+| `section-divider` | 섹션 구분 | 중앙 최소화 |
+| `content-text` | 본문 내용 | 좌우 분할 |
+| `bullet-list` | 요점 목록 | 중앙 리스트 |
 
 ## 🛠️ Commands
 
-| Command | Execution | Output | Description |
-|---------|-----------|--------|-------------|
-| `/web [url]` | **AUTO** | `01_contents_web.json`<br>`02_style_web.json` | Web exploration + analysis (auto-stop) |
-| `/integrate` | **MANUAL** | `03_integrate_web.json` | Merge content + style specs |
-| `/generate` | **MANUAL** | `output/web/index.html` | Generate production code |
+| 명령어 | 설명 |
+|--------|------|
+| `/pdf [project]` | PDF 스타일 분석 → `source_style.json` + `presentation.json` |
+| `/web [project] [URL]` | 웹사이트 디자인 분석 |
+| `/generate [project]` | HTML 생성 → `presentation.html` |
+| `/pptx [project or HTML]` | PPTX 변환 (JSON 기반 또는 HTML 자동 동기화) |
+| `/review [project] [URL]` | QA 검토 (JSON 명세 + 심미성 분석) → `review_report.md` |
 
-## 📋 Analysis Quality Checklist
-
-**Content Analysis (01_contents_web.json)**
-- [ ] Complete page structure
-- [ ] Navigation hierarchy
-- [ ] SEO metadata
-- [ ] Interactive elements documented
-- [ ] Accessibility requirements
-- [ ] **Complex features with full implementation details**
-
-**Style Analysis (02_style_web.json)**
-- [ ] Color system with states
-- [ ] Responsive typography
-- [ ] Spacing system
-- [ ] Component patterns
-- [ ] Animation specifications (with code hints)
-- [ ] 21-checkpoint scroll coverage
-- [ ] **All animations include: type, trigger, properties, library, codeHint**
-
-**Integration (03_integrate_web.json)**
-- [ ] Content + style merged
-- [ ] No hard-coded values
-- [ ] All states documented
-- [ ] Responsive behavior defined
-- [ ] Accessibility mapped
-- [ ] **Implementation details preserved from analysis**
-
-**Code Generation**
-- [ ] Production-ready code
-- [ ] WCAG 2.1 AA compliance
-- [ ] SEO optimized
-- [ ] All animations implemented
-- [ ] No placeholder content (except images)
-- [ ] **✅ JSON-to-HTML Fidelity Check (MANDATORY)**
-  - [ ] Every visual element from JSON is rendered
-  - [ ] All animations from JSON are implemented
-  - [ ] All images use exact paths from JSON (no placeholders unless specified)
-  - [ ] All complex features (3D, video, SVG) are fully implemented
-  - [ ] All specified libraries are included via CDN
-  - [ ] No simplification or placeholder replacements
-  - [ ] Interactive behaviors match JSON specifications
-
-## 🔒 Core Principles
-
-### 1. MCP Tool Policy
-- ✅ Use Kapture MCP exclusively (`mcp_kapture_*`)
-- ❌ No Microsoft Playwright MCP
-- ❌ No generic browser MCP
-
-### 2. Screenshot Policy
-- Take via MCP → Analyze immediately
-- No file saving (memory-based analysis)
-- Compare with conversation history
-
-### 3. No Shortcuts
-- Complete 21-checkpoint process mandatory
-- No "End" key jumps
-- No "fast analysis"
-- Systematic approach required
-
-## 🤖 AI Integration
-
-This project is designed to work with **GitHub Copilot** using detailed instructions in `.github/copilot-instructions.md`.
-
-The AI follows strict protocols:
-- 21-checkpoint progressive scrolling
-- Mandatory interaction testing
-- Complete feature implementation
-- No simplification of complex features
-- **Detailed JSON schemas to prevent information loss**
-
-### Key Feature: Information Preservation
-
-**Problem Solved:** AI analyzes in detail but JSON simplification causes implementation detail loss
-
-**Solution:**
-- Content JSON includes full `implementation` objects
-- Style JSON includes `codeHint` for animations
-- Integration JSON preserves all technical specifications
-- Code generation has complete implementation instructions
-
-**Example:**
-```
-Analysis: "Ship moves in 3D with scroll, ocean has parallax"
-     ↓
-JSON: { type: "3d-canvas-animation", implementation: { technology: "Three.js", 
-       trigger: "scroll", details: "Ship translateX 0→100vw, ocean -20% parallax",
-       codeHint: "gsap.to('.ship', {x:'100vw', scrollTrigger:{scrub:true}})" }}
-     ↓
-Code: Full Three.js implementation with GSAP ScrollTrigger
-```
-
-## 🎯 Use Cases
-
-- **Website Replication** - Recreate existing sites
-- **Design System Documentation** - Extract design tokens
-- **Prototype Generation** - Quick mockups from reference
-- **Accessibility Audit** - Analyze WCAG compliance
-- **Responsive Analysis** - Multi-viewport testing
+> 📖 **상세 명령어 스펙:** `.github/copilot-instructions.md` 참조
 
 ## 📄 License
 
 MIT License - See LICENSE file for details
 
-## 🤝 Contributing
-
-Contributions welcome! Please read our contributing guidelines first.
-
-## 📞 Support
-
-- Issues: [GitHub Issues](https://github.com/YOUR_USERNAME/haru-web-builder/issues)
-- Discussions: [GitHub Discussions](https://github.com/YOUR_USERNAME/haru-web-builder/discussions)
-
-## 🙏 Acknowledgments
-
-- Built with [GitHub Copilot](https://github.com/features/copilot)
-- Uses [Kapture MCP](https://github.com/microsoft/mcp) for web exploration
-- Powered by [Tailwind CSS v4](https://tailwindcss.com/)
-
 ---
 
-**Version:** 2.2.0  
-**Last Updated:** November 11, 2025
+**Version:** 3.6.0  
+**Last Updated:** November 2025

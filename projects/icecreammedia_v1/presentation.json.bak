@@ -1,0 +1,590 @@
+{
+  "projectName": "icecreammedia",
+  "version": "1.1.0",
+  "createdAt": "2025-11-28",
+  "metadata": {
+    "company": "아이스크림미디어",
+    "documentType": "제안서",
+    "documentDate": "2024. 01. 22",
+    "aspectRatio": "16:9",
+    "printSize": "A4 landscape",
+    "projectFocus": "몰 통합 플랫폼 및 ERP 구축"
+  },
+  "designTokens": {
+    "colors": {
+      "primary": "#FF5722",
+      "primaryLight": "#FF8A65",
+      "primaryDark": "#E64A19",
+      "secondary": "#4A90E2",
+      "accent": "#FFA726",
+      "background": {
+        "white": "#FFFFFF",
+        "light": "#F5F5F5",
+        "dark": "#000000",
+        "orange": "#FF5722",
+        "gradient": "linear-gradient(135deg, #FF5722 0%, #FF8A65 100%)"
+      },
+      "text": {
+        "primary": "#212121",
+        "secondary": "#757575",
+        "inverse": "#FFFFFF",
+        "light": "#9E9E9E"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "'Noto Sans KR', sans-serif",
+        "secondary": "'Roboto', sans-serif",
+        "display": "'Inter', sans-serif"
+      },
+      "fontSize": {
+        "hero": "96px",
+        "h1": "60px",
+        "h2": "48px",
+        "h3": "36px",
+        "h4": "28px",
+        "h5": "24px",
+        "body": "16px",
+        "small": "14px",
+        "tiny": "12px"
+      },
+      "fontWeight": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "black": 900
+      },
+      "lineHeight": {
+        "tight": 1.2,
+        "normal": 1.5,
+        "relaxed": 1.8
+      }
+    },
+    "spacing": {
+      "xs": "8px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "32px",
+      "xl": "48px",
+      "xxl": "64px",
+      "xxxl": "80px"
+    },
+    "borderRadius": {
+      "small": "4px",
+      "medium": "8px",
+      "large": "16px",
+      "xlarge": "24px"
+    }
+  },
+  "slides": [
+    {
+      "id": 1,
+      "template": "hero-cover",
+      "background": {
+        "type": "gradient",
+        "value": "linear-gradient(135deg, #FF5722 0%, #FF8A65 100%)"
+      },
+      "elements": [
+        {
+          "type": "badge",
+          "content": "가온소프트랩",
+          "style": {
+            "position": "absolute",
+            "top": "64px",
+            "left": "64px",
+            "fontSize": "14px",
+            "fontWeight": 500,
+            "color": "#FFFFFF",
+            "textTransform": "uppercase",
+            "letterSpacing": "0.1em",
+            "opacity": 0.9,
+            "border": "1px solid rgba(255,255,255,0.5)",
+            "padding": "8px 16px",
+            "borderRadius": "20px"
+          }
+        },
+        {
+          "type": "badge",
+          "content": "2024. 01. 22",
+          "style": {
+            "position": "absolute",
+            "top": "64px",
+            "right": "64px",
+            "fontSize": "14px",
+            "fontWeight": 500,
+            "color": "#FFFFFF",
+            "textTransform": "uppercase",
+            "letterSpacing": "0.1em",
+            "opacity": 0.9
+          }
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "content": "㈜아이스크림미디어",
+          "style": {
+            "position": "absolute",
+            "top": "240px",
+            "left": "64px",
+            "fontSize": "80px",
+            "fontWeight": 900,
+            "color": "#FFFFFF",
+            "lineHeight": 1.1,
+            "maxWidth": "80%"
+          }
+        },
+        {
+          "type": "text",
+          "content": "몰 통합 플랫폼 및 ERP 구축",
+          "style": {
+            "position": "absolute",
+            "top": "400px",
+            "left": "64px",
+            "fontSize": "32px",
+            "fontWeight": 400,
+            "color": "#FFFFFF",
+            "opacity": 0.95,
+            "maxWidth": "70%"
+          }
+        },
+        {
+          "type": "decorative",
+          "content": "",
+          "style": {
+            "position": "absolute",
+            "right": "0",
+            "top": "0",
+            "width": "40%",
+            "height": "100%",
+            "background": "radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%)",
+            "opacity": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "template": "table-of-contents",
+      "background": {
+        "type": "solid",
+        "value": "#FFFFFF"
+      },
+      "elements": [
+        {
+          "type": "container",
+          "id": "left-column",
+          "style": {
+            "position": "absolute",
+            "left": "0",
+            "top": "0",
+            "width": "35%",
+            "height": "100%",
+            "background": "#F5F5F5",
+            "padding": "64px"
+          },
+          "children": [
+            {
+              "type": "heading",
+              "level": 1,
+              "content": "Contents",
+              "style": {
+                "fontSize": "60px",
+                "fontWeight": 900,
+                "color": "#FF5722",
+                "marginBottom": "32px"
+              }
+            },
+            {
+              "type": "text",
+              "content": "사회연대은행\n소상공인 온라인마케팅\n지원사업",
+              "style": {
+                "fontSize": "24px",
+                "fontWeight": 500,
+                "color": "#212121",
+                "lineHeight": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "type": "container",
+          "id": "right-column",
+          "style": {
+            "position": "absolute",
+            "left": "35%",
+            "top": "0",
+            "width": "65%",
+            "height": "100%",
+            "padding": "64px 80px",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "gap": "24px"
+          },
+          "children": [
+            {
+              "type": "container",
+              "style": { "display": "flex", "gap": "24px", "alignItems": "baseline" },
+              "children": [
+                { "type": "text", "content": "Ⅰ", "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "width": "40px" } },
+                { "type": "container", "children": [
+                    { "type": "text", "content": "제안개요", "style": { "fontSize": "20px", "fontWeight": "bold", "color": "#212121", "marginBottom": "4px" } },
+                    { "type": "text", "content": "제안사가 이해 하고 있는 본 사업의 추진 배경과 기대 효과", "style": { "fontSize": "14px", "color": "#757575" } }
+                ]}
+              ]
+            },
+            {
+              "type": "container",
+              "style": { "display": "flex", "gap": "24px", "alignItems": "baseline" },
+              "children": [
+                { "type": "text", "content": "Ⅱ", "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "width": "40px" } },
+                { "type": "container", "children": [
+                    { "type": "text", "content": "제안사 일반현황", "style": { "fontSize": "20px", "fontWeight": "bold", "color": "#212121", "marginBottom": "4px" } },
+                    { "type": "text", "content": "제안사의 대외 신인도 및 온라인 쇼핑몰 유사실적", "style": { "fontSize": "14px", "color": "#757575" } }
+                ]}
+              ]
+            },
+            {
+              "type": "container",
+              "style": { "display": "flex", "gap": "24px", "alignItems": "baseline" },
+              "children": [
+                { "type": "text", "content": "Ⅲ", "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "width": "40px" } },
+                { "type": "container", "children": [
+                    { "type": "text", "content": "사업수행", "style": { "fontSize": "20px", "fontWeight": "bold", "color": "#212121", "marginBottom": "4px" } },
+                    { "type": "text", "content": "아이스크림 온라인몰 컨설팅 전략 / 구축 수행 방안", "style": { "fontSize": "14px", "color": "#757575" } }
+                ]}
+              ]
+            },
+            {
+              "type": "container",
+              "style": { "display": "flex", "gap": "24px", "alignItems": "baseline" },
+              "children": [
+                { "type": "text", "content": "IV", "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "width": "40px" } },
+                { "type": "container", "children": [
+                    { "type": "text", "content": "성능 및 품질", "style": { "fontSize": "20px", "fontWeight": "bold", "color": "#212121", "marginBottom": "4px" } },
+                    { "type": "text", "content": "사업 결과물의 성능 및 품질 확보 전략", "style": { "fontSize": "14px", "color": "#757575" } }
+                ]}
+              ]
+            },
+            {
+              "type": "container",
+              "style": { "display": "flex", "gap": "24px", "alignItems": "baseline" },
+              "children": [
+                { "type": "text", "content": "V", "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "width": "40px" } },
+                { "type": "container", "children": [
+                    { "type": "text", "content": "프로젝트 관리", "style": { "fontSize": "20px", "fontWeight": "bold", "color": "#212121", "marginBottom": "4px" } },
+                    { "type": "text", "content": "효과적인 사업 성공을 위한 전략적인 구축 방안", "style": { "fontSize": "14px", "color": "#757575" } }
+                ]}
+              ]
+            },
+            {
+              "type": "container",
+              "style": { "display": "flex", "gap": "24px", "alignItems": "baseline" },
+              "children": [
+                { "type": "text", "content": "Ⅵ", "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "width": "40px" } },
+                { "type": "container", "children": [
+                    { "type": "text", "content": "프로젝트 지원", "style": { "fontSize": "20px", "fontWeight": "bold", "color": "#212121", "marginBottom": "4px" } },
+                    { "type": "text", "content": "효율적인 사업 운영을 위한 합리적인 지원 방안", "style": { "fontSize": "14px", "color": "#757575" } }
+                ]}
+              ]
+            },
+            {
+              "type": "container",
+              "style": { "display": "flex", "gap": "24px", "alignItems": "baseline" },
+              "children": [
+                { "type": "text", "content": "Ⅶ", "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "width": "40px" } },
+                { "type": "container", "children": [
+                    { "type": "text", "content": "기타사항", "style": { "fontSize": "20px", "fontWeight": "bold", "color": "#212121", "marginBottom": "4px" } },
+                    { "type": "text", "content": "성공적인 프로젝트를 위한 추가 제안 사항", "style": { "fontSize": "14px", "color": "#757575" } }
+                ]}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "template": "content-text",
+      "background": {
+        "type": "solid",
+        "value": "#FFFFFF"
+      },
+      "elements": [
+        {
+          "type": "badge",
+          "content": "사업 범위",
+          "style": {
+            "position": "absolute",
+            "top": "48px",
+            "left": "64px",
+            "fontSize": "14px",
+            "color": "#FF5722",
+            "fontWeight": "bold",
+            "textTransform": "uppercase"
+          }
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "content": "목표 및 핵심 추진전략",
+          "style": {
+            "position": "absolute",
+            "top": "80px",
+            "left": "64px",
+            "fontSize": "48px",
+            "fontWeight": 900,
+            "color": "#212121"
+          }
+        },
+        {
+          "type": "text",
+          "content": "제안사의 업무 범위는 총 7단계로 구분 됩니다. 이중 “시스템 분석 및 요구사항 정의＂가 전체 사업 기간의 33%를 차지 합니다.",
+          "style": {
+            "position": "absolute",
+            "top": "160px",
+            "left": "64px",
+            "fontSize": "18px",
+            "color": "#757575",
+            "maxWidth": "800px",
+            "lineHeight": 1.6
+          }
+        },
+        {
+          "type": "container",
+          "id": "steps-grid",
+          "style": {
+            "position": "absolute",
+            "left": "64px",
+            "top": "240px",
+            "width": "calc(100% - 128px)",
+            "display": "grid",
+            "gridTemplateColumns": "repeat(2, 1fr)",
+            "gap": "24px"
+          },
+          "children": [
+            {
+              "type": "container",
+              "style": { "display": "flex", "flexDirection": "column", "gap": "16px" },
+              "children": [
+                {
+                  "type": "card",
+                  "style": { "background": "#F5F5F5", "padding": "20px", "borderRadius": "8px", "borderLeft": "4px solid #FF5722" },
+                  "children": [
+                    { "type": "text", "content": "1. 시스템 분석 및 요구사항 정의", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px" } },
+                    { "type": "text", "content": "현재 시스템 분석, 비즈니스 요구사항 수집, 시스템 개선점 도출.", "style": { "fontSize": "14px", "color": "#616161" } }
+                  ]
+                },
+                {
+                  "type": "card",
+                  "style": { "background": "#F5F5F5", "padding": "20px", "borderRadius": "8px", "borderLeft": "4px solid #FF5722" },
+                  "children": [
+                    { "type": "text", "content": "2. 커머스 플랫폼 및 ERP 설계 , 개발 및 연동", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px" } },
+                    { "type": "text", "content": "요구 사항을 반영한 커머스 플랫폼 개발 / ERP 연동 구축 물류 시스템등 업무 시스템과의 연계 .", "style": { "fontSize": "14px", "color": "#616161" } }
+                  ]
+                },
+                {
+                  "type": "card",
+                  "style": { "background": "#F5F5F5", "padding": "20px", "borderRadius": "8px", "borderLeft": "4px solid #FF5722" },
+                  "children": [
+                    { "type": "text", "content": "3. UI/UX 개선", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px" } },
+                    { "type": "text", "content": "사용자 중심의 디자인을 적용한 UI/UX 개선.", "style": { "fontSize": "14px", "color": "#616161" } }
+                  ]
+                },
+                {
+                  "type": "card",
+                  "style": { "background": "#F5F5F5", "padding": "20px", "borderRadius": "8px", "borderLeft": "4px solid #FF5722" },
+                  "children": [
+                    { "type": "text", "content": "4. 업무 효율성 개선을 위한 시스템 개발", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px" } },
+                    { "type": "text", "content": "수불 현황, 제조사 입찰, 입점사 평가, 예약 판매 기능 등", "style": { "fontSize": "14px", "color": "#616161" } }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "container",
+              "style": { "display": "flex", "flexDirection": "column", "gap": "16px" },
+              "children": [
+                {
+                  "type": "card",
+                  "style": { "background": "#F5F5F5", "padding": "20px", "borderRadius": "8px", "borderLeft": "4px solid #FF5722" },
+                  "children": [
+                    { "type": "text", "content": "5. 데이터 구조 검증 및 마이그레이션 , 통합", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px" } },
+                    { "type": "text", "content": "기존 가비아 시스템에서 새로운 커머스 시스템으로의 데이터 마이그레이션 및 데이터 통합.", "style": { "fontSize": "14px", "color": "#616161" } }
+                  ]
+                },
+                {
+                  "type": "card",
+                  "style": { "background": "#F5F5F5", "padding": "20px", "borderRadius": "8px", "borderLeft": "4px solid #FF5722" },
+                  "children": [
+                    { "type": "text", "content": "6. 시스템 테스트 및 검증", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px" } },
+                    { "type": "text", "content": "개발된 시스템의 기능성, 성능, 보안 등을 검증하는 테스트 수행.", "style": { "fontSize": "14px", "color": "#616161" } }
+                  ]
+                },
+                {
+                  "type": "card",
+                  "style": { "background": "#F5F5F5", "padding": "20px", "borderRadius": "8px", "borderLeft": "4px solid #FF5722" },
+                  "children": [
+                    { "type": "text", "content": "7. 교육 및 지원", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px" } },
+                    { "type": "text", "content": "사용자 및 관리자를 위한 시스템 사용법 교육, 기술 지원 및 유지보수.", "style": { "fontSize": "14px", "color": "#616161" } }
+                  ]
+                },
+                {
+                  "type": "card",
+                  "style": { "background": "#212121", "padding": "20px", "borderRadius": "8px", "color": "white" },
+                  "children": [
+                    { "type": "text", "content": "최종 산출물", "style": { "fontSize": "16px", "fontWeight": "bold", "marginBottom": "8px", "color": "#FF5722" } },
+                    { "type": "text", "content": "• 신규 통합 플랫폼 및 ERP 시스템\n• 시스템 문서 (설계, 기획, 매뉴얼)\n• 데이터 마이그레이션 보고서\n• 테스트 및 검증 보고서", "style": { "fontSize": "14px", "color": "#E0E0E0", "lineHeight": 1.6, "whiteSpace": "pre-line" } }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "template": "content-text",
+      "background": {
+        "type": "solid",
+        "value": "#FFFFFF"
+      },
+      "elements": [
+        {
+          "type": "badge",
+          "content": "제안의 특장점",
+          "style": {
+            "position": "absolute",
+            "top": "48px",
+            "left": "64px",
+            "fontSize": "14px",
+            "color": "#FF5722",
+            "fontWeight": "bold",
+            "textTransform": "uppercase"
+          }
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "content": "목표 및 핵심 추진전략",
+          "style": {
+            "position": "absolute",
+            "top": "80px",
+            "left": "64px",
+            "fontSize": "48px",
+            "fontWeight": 900,
+            "color": "#212121"
+          }
+        },
+        {
+          "type": "text",
+          "content": "많은 SI 기업이 커머스 / ERP 구축을 경험 했습니다. 하지만 기업의 레퍼런스와 실제 경험한 개발자가 프로젝트에 투입 되는 것은 다른 이야기 입니다.",
+          "style": {
+            "position": "absolute",
+            "top": "160px",
+            "left": "64px",
+            "fontSize": "18px",
+            "color": "#757575",
+            "maxWidth": "800px",
+            "lineHeight": 1.6
+          }
+        },
+        {
+          "type": "container",
+          "id": "features-container",
+          "style": {
+            "position": "absolute",
+            "left": "64px",
+            "top": "240px",
+            "width": "calc(100% - 128px)",
+            "display": "grid",
+            "gridTemplateColumns": "1fr 1fr",
+            "gap": "48px"
+          },
+          "children": [
+            {
+              "type": "container",
+              "children": [
+                {
+                  "type": "heading",
+                  "level": 3,
+                  "content": "인적 자원의 특장점",
+                  "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "marginBottom": "24px", "borderBottom": "2px solid #FF5722", "paddingBottom": "8px" }
+                },
+                {
+                  "type": "container",
+                  "style": { "display": "flex", "flexDirection": "column", "gap": "24px" },
+                  "children": [
+                    {
+                      "type": "container",
+                      "children": [
+                        { "type": "text", "content": "검증된 커머스 구축 경험", "style": { "fontSize": "18px", "fontWeight": "bold", "color": "#212121", "marginBottom": "8px" } },
+                        { "type": "text", "content": "이미 커머스 플랫폼 및 ERP 연동울 성공적으로 구축한 경험이 있는 모든 팀원들이 프로젝트에 참여합니다. 이는 프로젝트의 리스크를 최소화하고, 실제 시장에서 검증된 솔루션을 제공할 수 있음을 의미 합니다.", "style": { "fontSize": "14px", "color": "#616161", "lineHeight": 1.6 } }
+                      ]
+                    },
+                    {
+                      "type": "container",
+                      "children": [
+                        { "type": "text", "content": "전문가 그룹과의 협업", "style": { "fontSize": "18px", "fontWeight": "bold", "color": "#212121", "marginBottom": "8px" } },
+                        { "type": "text", "content": "ERP 전문가 그룹과의 긴밀한 협업을 통해, 복잡한 회계 및 물류 프로세스에 대한 심층적인 이해와 전문성을 바탕으로 한 고품질의 컨설팅 결과물을 도출합니다.", "style": { "fontSize": "14px", "color": "#616161", "lineHeight": 1.6 } }
+                      ]
+                    },
+                    {
+                      "type": "container",
+                      "children": [
+                        { "type": "text", "content": "전문성 있는 기획 결과물", "style": { "fontSize": "18px", "fontWeight": "bold", "color": "#212121", "marginBottom": "8px" } },
+                        { "type": "text", "content": "커머스 전문 기획 그룹과 협업을 통해 사용자 중심의, 직관적이며 매력적인 쇼핑몰 디자인과 구조를 제공합니다. 이는 사용자 경험을 극대화하고, 사용자 만족도를 높이는 데 기여합니다.", "style": { "fontSize": "14px", "color": "#616161", "lineHeight": 1.6 } }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "container",
+              "children": [
+                {
+                  "type": "heading",
+                  "level": 3,
+                  "content": "기술 특장점",
+                  "style": { "fontSize": "24px", "fontWeight": "bold", "color": "#FF5722", "marginBottom": "24px", "borderBottom": "2px solid #FF5722", "paddingBottom": "8px" }
+                },
+                {
+                  "type": "container",
+                  "style": { "display": "flex", "flexDirection": "column", "gap": "24px" },
+                  "children": [
+                    {
+                      "type": "container",
+                      "children": [
+                        { "type": "text", "content": "데이터 기반 의사 결정이 가능한 기술적 기반 마련", "style": { "fontSize": "18px", "fontWeight": "bold", "color": "#212121", "marginBottom": "8px" } },
+                        { "type": "text", "content": "AWS의 S3를 활용하여 데이터 레이크를 구성할 수 있는 기술 기반을 마련할 수 있습니다.", "style": { "fontSize": "14px", "color": "#616161", "lineHeight": 1.6 } }
+                      ]
+                    },
+                    {
+                      "type": "container",
+                      "children": [
+                        { "type": "text", "content": "자체 커머스 솔루션의 고도화 / 공급", "style": { "fontSize": "18px", "fontWeight": "bold", "color": "#212121", "marginBottom": "8px" } },
+                        { "type": "text", "content": "자체 보유한 커머스 솔루션을 지속적으로 고도화하여, 최신 기능과 기술 트렌드를 반영합니다. 이는 고객에게 현대적이고 경쟁력 있는 쇼핑 경험을 제공할 수 있도록 합니다. (MSA 방식의 솔루션 형태로 공급)", "style": { "fontSize": "14px", "color": "#616161", "lineHeight": 1.6 } }
+                      ]
+                    },
+                    {
+                      "type": "container",
+                      "children": [
+                        { "type": "text", "content": "고객 세분화 마케팅이 가능한 솔루션 제안", "style": { "fontSize": "18px", "fontWeight": "bold", "color": "#212121", "marginBottom": "8px" } },
+                        { "type": "text", "content": "구글 애널리틱스를 비롯 고객 구매 행동 패턴을 예측하여, 매출을 증진 시킬 수 있는 마케팅 솔루션을 제안 합니다.", "style": { "fontSize": "14px", "color": "#616161", "lineHeight": 1.6 } }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "totalSlides": 4
+}

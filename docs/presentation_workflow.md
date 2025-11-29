@@ -2,346 +2,205 @@
 
 ## 🎯 Overview
 
-Haru Presentation Builder supports **3 main workflows** for generating slide-based presentations. Choose based on your input sources and requirements.
+Haru Presentation Builder는 **PDF 인쇄용 정적 HTML**을 생성합니다.
+
+### 출력 형식
+
+| 형식 | 용도 | 특징 |
+|------|------|------|
+| **HTML** | PDF 인쇄용 | 브라우저 Ctrl+P로 PDF 변환 |
+| **PPTX** | 편집/발표용 | JSON 기반 (편집 가능) |
 
 ---
 
-## 📋 Workflow 1: PDF Style + Manual Content (Fastest)
+## 📁 프로젝트 구조 (Hybrid Pipeline)
 
-**Best for:** When you have a design reference (PDF) but need custom content
+```
+projects/
+├── eumlogistic/                   # 프로젝트 1
+│   ├── source_style.json          # PDF 분석 원본 (READ-ONLY)
+│   ├── presentation.json          # 작업용 (수정 가능)
+│   ├── presentation.html          # 생성된 HTML
+│   ├── presentation.pptx          # 변환된 PPTX (선택)
+│   ├── review_report.md           # QA 검토 결과 (선택)
+│   └── screenshots/               # QA 비교용 스크린샷 (선택)
+│       ├── html/                  # HTML 원본
+│       └── pptx/                  # PPTX 결과물
+│
+└── bluehive/                      # 프로젝트 2
+    └── ...
+```
 
-### Input Requirements
-- ✅ PDF file with design elements (colors, fonts, layouts)
-- ✅ Manual content creation or topic outline
+### 핵심 원칙
 
-### Steps
+| 파일 | 역할 | 수정 가능 |
+|------|------|----------|
+| `source_style.json` | 원본 분석 데이터 (롤백용) | ❌ READ-ONLY |
+| `presentation.json` | 작업용 (콘텐츠/스타일 수정) | ✅ 수정 가능 |
+| `review_report.md` | QA 검토 결과 | - 자동 생성 |
 
-#### 1. Open PDF in Chrome
+---
+
+## 📋 워크플로우
+
+### Step 1: 프로젝트 폴더 생성
+
 ```bash
-# macOS/Linux
-open file:///path/to/your/presentation.pdf
-
-# Or drag PDF into Chrome browser
+mkdir projects/my-project
 ```
 
-#### 2. Analyze PDF with MCP Kapture
-**AI Command:** "이 PDF의 스타일을 분석해줘"
+### Step 2: PDF 스타일 분석
 
-**AI Actions:**
-- Connect to Chrome tab via `mcp_kapture_list_tabs()`
-- Navigate slides with `mcp_kapture_keypress({ key: "ArrowRight" })`
-- Capture screenshots with `mcp_kapture_screenshot()`
-- Analyze colors, fonts, layouts from visual data
-- Generate `analysis/pdf-analysis/[filename]_style_analysis.json`
+1. Chrome에서 PDF 열기
+2. AI에게 요청: `/pdf my-project`
+3. 결과:
+   - `projects/my-project/source_style.json` (원본 분석)
+   - `projects/my-project/presentation.json` (작업용 복사본)
 
-**Expected Output (PDF Analysis JSON):**
-```json
-{
-  "designTokens": {
-    "colors": { "primary": "#5B7BFF", "background": "#0A1428" },
-    "typography": { "fontSize": { "hero": "140px", "h1": "64px" } },
-    "spacing": { "page": "100px" }
-  },
-  "componentPatterns": {
-    "hero-cover": { "layout": "centered", "elements": {...} }
-  }
-}
-```
+**AI 동작:**
+- `mcp_kapture_keypress({ key: "ArrowRight" })`로 슬라이드 탐색
+- 스크린샷 캡처 및 디자인 토큰 분석
 
-#### 3. Create Content JSON
-**Option A: Manual Creation**
-- Edit `analysis/presentation-pipeline/01_contents_slides.json`
-- Define slide structure (type, layout, elements)
+### Step 3: 콘텐츠 수정 (필요시)
 
-**Option B: AI Generation from Topic**
-**User:** "주제: AI 기술 소개. 5개 슬라이드로 만들어줘"
-**AI:** Generates 01_contents_slides.json with:
-  - Slide 1: Hero (title + subtitle)
-  - Slide 2: TOC (4 topics)
-  - Slide 3: Section Divider
-  - Slide 4-5: Content slides
+**presentation.json에서 직접 수정:**
+- 슬라이드 텍스트 변경
+- 디자인 토큰 조정
+- 슬라이드 추가/삭제
 
-#### 4. Integrate Style + Content
+**롤백이 필요한 경우:**
 ```bash
-node scripts/integrate_presentation_pipeline.js
+# source_style.json에서 다시 복사
+cp projects/my-project/source_style.json projects/my-project/presentation.json
 ```
 
-**Output:** `analysis/presentation-pipeline/03_integrate_presentation.json`
-- Merged slides with theme styles
-- Design tokens applied to all elements
-- Navigation settings included
+### Step 4: HTML 생성
 
-#### 5. Generate HTML Presentation
+AI 요청: `/generate my-project`
+
+결과: `projects/my-project/presentation.html`
+
+### Step 5: HTML 검토 (JSON 명세 + 심미성 분석)
+
+HTML 생성 후 Live Server로 검토:
+
+1. `/generate` 완료 후 Live Server로 HTML 열기
+2. AI가 슬라이드별 스크린샷 캐처
+3. **`presentation.json` 명세와 비교하여 검증**
+
+**AI 검토 요청:**
+```
+/review my-project http://localhost:5500/projects/my-project/presentation.html
+```
+
+#### Phase 1: JSON 명세 검토
+- 슬라이드 개수 일치
+- 텍스트 내용 정확성
+- 색상 팔레트 적용
+- 레이아웃/템플릿 정확성
+- 이미지 로드 및 배치
+
+#### Phase 2: 심미성 분석 (Design Audit)
+LLM 이미지 분석으로 디자인 품질 검사:
+
+| 항목 | 설명 |
+|------|------|
+| 여백 일관성 | 슬라이드 간 padding/margin 통일 |
+| 타이포그래피 위계 | 제목 > 부제 > 본문 크기 구분 |
+| 색상 대비 | 텍스트와 배경 간 가독성 |
+| 정렬 일관성 | 좌/우/중앙 정렬 통일 |
+| 텍스트 밀도 | 슬라이드당 적정 텍스트 양 |
+| 시각적 균형 | 좌우/상하 요소 분포 |
+| 이미지 비율 | 왜곡 없이 자연스러운 비율 |
+| 요소 간격 | 카드, 리스트 등 반복 요소 간격 |
+
+**결과:**
+- `projects/my-project/review_report.md` (JSON 명세 + 심미성 분석)
+- `projects/my-project/screenshots/html/` (슬라이드별 스크린샷)
+
+### Step 6: PDF 또는 PPTX 변환
+
+**PDF 변환:**
+1. 브라우저에서 HTML 열기
+2. `Ctrl+P` → "PDF로 저장"
+3. 여백: 없음, 배경 그래픽: 활성화
+
+**PPTX 변환 (편집 가능):**
+
+**방법 1: JSON 기반 (기본)**
 ```bash
-node scripts/generate_presentation.js
+# AI에게 요청: "/pptx my-project"
 ```
 
-**Output:** `output/presentation/index.html`
-- Full-screen slides with keyboard navigation
-- Tailwind CSS styling
-- Transition animations
-
-#### 6. Preview & Iterate
-- Open `output/presentation/index.html` in browser
-- Use Arrow keys (←/→) or Space to navigate
-- Click navigation dots to jump to slides
-- Adjust content or style in JSON files and regenerate
-
-### Pros & Cons
-
-**✅ Pros:**
-- Full design control (exact PDF style replication)
-- Fast iteration (no web scraping)
-- Works offline (no internet needed for generation)
-
-**❌ Cons:**
-- Manual content creation required
-- PDF text extraction not automatic (OCR needed)
-
----
-
-## 📋 Workflow 2: URL Content + PDF Style (Hybrid)
-
-**Best for:** When you want website content with custom branding
-
-### Input Requirements
-- ✅ Website URL (for content structure)
-- ✅ PDF file (for brand style)
-
-### Steps
-
-#### 1. Analyze Website for Content
-**AI Command:** "/web https://example.com"
-
-**AI Actions:**
-- Progressive scroll analysis (30-80 checkpoints)
-- Extract sections, headings, text, images
-- Detect interactive elements
-- Generate `analysis/web-pipeline/01_contents_web.json`
-
-**Section-to-Slide Mapping:**
-```javascript
-// AI converts web sections → presentation slides
-{
-  "section-01-hero": {
-    type: "hero",
-    content: { heading: "...", subheading: "..." }
-  }
-}
-↓ Transform to
-{
-  "slide-01": {
-    type: "hero-cover",
-    elements: { logo: "...", title: "...", subtitle: "..." }
-  }
-}
-```
-
-#### 2. Analyze PDF for Style
-**AI Command:** "이 PDF의 스타일을 추출해줘"
-- Same as Workflow 1, Step 2
-
-#### 3. Merge URL Content + PDF Style
+**방법 2: HTML 수정 후 (자동 동기화)**
 ```bash
-node scripts/integrate_presentation_pipeline.js --mode hybrid
+# 1. HTML 파일에서 텍스트/스타일 수정
+# 2. AI에게 요청: "/pptx my-project.html" 
+# → 자동으로 HTML → JSON 동기화 + PPTX 생성
 ```
 
-**Merge Logic:**
-- Content structure from URL (headings, text, images)
-- Colors, fonts, spacing from PDF
-- Layout patterns from PDF (hero, toc, divider)
+**직접 실행 (터미널):**
+```powershell
+# JSON 기반
+.venv\Scripts\python.exe scripts/json_to_pptx.py projects/my-project/presentation.json
 
-**Output:** `03_integrate_presentation.json` with hybrid data
-
-#### 4-6. Same as Workflow 1 (Generate → Preview → Iterate)
-
-### Pros & Cons
-
-**✅ Pros:**
-- Automatic content extraction (no manual typing)
-- Brand consistency (PDF colors + fonts)
-- Best of both worlds
-
-**❌ Cons:**
-- Requires both URL and PDF
-- Longer processing time (web scraping + PDF analysis)
-- Section-to-slide mapping may need manual tweaks
-
----
-
-## 📋 Workflow 3: URL Only (Auto-conversion)
-
-**Best for:** Quick prototyping or when no design reference exists
-
-### Input Requirements
-- ✅ Website URL only
-
-### Steps
-
-#### 1. Analyze Website
-**AI Command:** "/web https://example.com"
-- Same as Workflow 2, Step 1
-
-#### 2. Auto-generate Style Theme
-**AI Actions:**
-- Extract colors from website
-- Detect font families and sizes
-- Calculate spacing patterns
-- Generate `analysis/presentation-pipeline/02_style_theme.json`
-
-**Auto-theme Logic:**
-```javascript
-// AI creates theme from website styles
-const theme = {
-  designTokens: {
-    colors: extractColorsFromCSS(website),
-    typography: detectFontSizes(website),
-    spacing: calculateSpacing(website)
-  }
-}
-```
-
-#### 3. Convert Sections → Slides
-**Conversion Rules:**
-- **Hero section** → hero-cover slide
-- **Feature grid (3-6 items)** → table-of-contents slide
-- **Text + Image section** → content-text slide
-- **Bullet list section** → bullet-list slide
-- **Between major sections** → section-divider slide
-
-#### 4-6. Same as Workflow 1 (Integrate → Generate → Preview)
-
-### Pros & Cons
-
-**✅ Pros:**
-- Fastest workflow (single URL input)
-- No manual design work
-- Good for prototyping
-
-**❌ Cons:**
-- Less design control
-- Auto-generated theme may not match brand
-- Web animations/interactions lost
-
----
-
-## 🔄 Workflow Comparison
-
-| Feature | PDF + Manual | URL + PDF | URL Only |
-|---------|-------------|-----------|----------|
-| **Speed** | ⚡⚡⚡ Fast | ⚡⚡ Medium | ⚡ Slow |
-| **Design Control** | ✅ Full | ✅ Full | ⚠️ Limited |
-| **Content Automation** | ❌ Manual | ✅ Auto | ✅ Auto |
-| **Brand Consistency** | ✅ High | ✅ High | ⚠️ Low |
-| **Complexity** | Low | Medium | Low |
-| **Best Use Case** | Branded decks | Website → Presentation | Quick prototypes |
-
----
-
-## 📊 Decision Tree
-
-```
-Do you have a design reference (PDF)?
-├─ Yes → Do you have content ready?
-│  ├─ Yes → Workflow 1 (PDF + Manual) ⚡⚡⚡
-│  └─ No → Do you have a website to scrape?
-│     ├─ Yes → Workflow 2 (URL + PDF) ⚡⚡
-│     └─ No → Create content manually → Workflow 1
-└─ No → Do you have a website to analyze?
-   ├─ Yes → Workflow 3 (URL Only) ⚡
-   └─ No → Start with blank template → Workflow 1
+# HTML 기반 (자동 동기화)
+.venv\Scripts\python.exe scripts/html_to_json.py projects/my-project/presentation.html
+.venv\Scripts\python.exe scripts/json_to_pptx.py projects/my-project/presentation.json
 ```
 
 ---
 
-## 🛠️ Advanced Usage
+### PPTX 변환 설정
 
-### Custom Slide Order
-Edit `01_contents_slides.json` to reorder slides:
-```json
-{
-  "slides": [
-    { "id": "slide-01", "order": 1, "type": "hero-cover" },
-    { "id": "slide-03", "order": 2, "type": "section-divider" },
-    { "id": "slide-02", "order": 3, "type": "table-of-contents" }
-  ]
-}
-```
+`json_to_pptx.py` 상단에서 제작마다 조정 가능:
 
-### Theme Overrides
-Edit `02_style_theme.json` to customize design:
-```json
-{
-  "designTokens": {
-    "colors": {
-      "primary": { "main": "#FF6635" }  // Change primary color
-    }
-  }
-}
-```
+| 설정 | 기본값 | 의미 | 조정 예시 |
+|------|--------|------|----------|
+| `FONT_SCALE` | 0.95 | 폰트 크기 비율 | 0.9 (-10%), 1.0 (원본) |
+| `LINE_SPACING_SCALE` | 0.83 | 줄간격 비율 (기준 1.2 대비) | 1.0 (1.2 유지), 0.75 (더 좁게) |
+| `PARAGRAPH_SPACING_SCALE` | 0.0 | 문단 간격 비율 (폰트 대비) | 0.5 (폰트의 50%) |
+| `IMAGE_CORNER_RATIO` | 0.05 | 이미지 라운딩 비율 | 0.0 (없음), 0.1 (10%) |
 
-### Slide Type Customization
-Add new slide types in `02_style_theme.json`:
-```json
-{
-  "slideTemplates": {
-    "my-custom-type": {
-      "layout": "split-vertical",
-      "elements": { ... }
-    }
-  }
-}
-```
+---
+
+## 🖨️ PDF 변환 설정
+
+| 항목 | 설정값 |
+|------|--------|
+| 대상 | PDF로 저장 |
+| 레이아웃 | 가로 (Landscape) |
+| 용지 크기 | A4 |
+| 여백 | 없음 |
+| 배경 그래픽 | ✅ 활성화 |
+
+---
+
+## 🛠️ 파일 설명
+
+| 파일 | 용도 | 수정 |
+|------|------|------|
+| `source_style.json` | PDF 분석 원본 (롤백용) | ❌ |
+| `presentation.json` | 작업용 (수정 시 여기서) | ✅ |
+| `presentation.html` | PDF 인쇄용 정적 HTML | - |
+| `presentation.pptx` | PowerPoint 파일 (선택) | - |
+| `review_report.md` | QA 검토 결과 (선택) | - |
+| `screenshots/` | HTML/PPTX 비교 스크린샷 (선택) | - |
 
 ---
 
 ## 🔍 Troubleshooting
 
-### Issue: PDF text not extracted
-**Solution:** PDF embed prevents DOM access. Use OCR or manual input.
+### Issue: PDF 텍스트 추출 안 됨
+**Solution:** PDF embed는 DOM 접근 불가. 수동 입력 사용.
 
-### Issue: Website sections don't map well to slides
-**Solution:** Manually edit `01_contents_slides.json` to adjust structure.
+### Issue: PPTX 변환 시 빈 슬라이드
+**Solution:** Python 패키지 설치 확인: `pip install python-pptx pillow`
 
-### Issue: Generated theme doesn't match brand
-**Solution:** Use Workflow 2 (URL + PDF) instead of Workflow 3.
-
-### Issue: Slides look empty after generation
-**Solution:** Check `03_integrate_presentation.json` for missing data. Re-run integration script.
+### Issue: 스타일 수정 후 원본 복원 필요
+**Solution:** `source_style.json`에서 `presentation.json`으로 다시 복사
 
 ---
 
-## 📚 Examples
-
-### Example 1: Corporate Presentation (PDF + Manual)
-```bash
-# Input: company_branding.pdf + manually written slides
-# Output: 10-slide deck with exact brand colors
-# Time: ~15 minutes
-```
-
-### Example 2: Website Redesign Pitch (URL + PDF)
-```bash
-# Input: https://client-website.com + brand_guidelines.pdf
-# Output: 20-slide deck showing "before" content with new branding
-# Time: ~30 minutes
-```
-
-### Example 3: Quick Demo (URL Only)
-```bash
-# Input: https://product-landing-page.com
-# Output: 5-slide overview with auto-extracted style
-# Time: ~10 minutes
-```
-
----
-
-## 🚀 Next Steps
-
-1. Choose your workflow based on inputs
-2. Follow step-by-step guide above
-3. Preview generated presentation
-4. Iterate on content/style as needed
-5. Export or deploy final HTML
-
-**Need help?** See `docs/slide_templates.md` for template details or `MIGRATION_LOG.md` for technical architecture.
+**Version:** 3.6.0  
+**Last Updated:** November 2025

@@ -1,0 +1,377 @@
+{
+  "projectName": "icecreammedia",
+  "sourceType": "style_sample_images",
+  "createdAt": "2025-11-28",
+  "designTokens": {
+    "colors": {
+      "primary": "#FF5722",
+      "primaryLight": "#FF8A65",
+      "primaryDark": "#E64A19",
+      "secondary": "#000000",
+      "accent": "#FFA726",
+      "background": {
+        "white": "#FFFFFF",
+        "light": "#F5F5F5",
+        "dark": "#000000",
+        "orange": "#FF5722",
+        "gradient": "linear-gradient(135deg, #FF5722 0%, #FF8A65 100%)"
+      },
+      "text": {
+        "primary": "#212121",
+        "secondary": "#757575",
+        "inverse": "#FFFFFF",
+        "light": "#9E9E9E"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "'Noto Sans KR', sans-serif",
+        "secondary": "'Roboto', sans-serif",
+        "display": "'Inter', sans-serif"
+      },
+      "fontSize": {
+        "hero": "96px",
+        "h1": "60px",
+        "h2": "48px",
+        "h3": "36px",
+        "h4": "28px",
+        "h5": "24px",
+        "body": "16px",
+        "small": "14px",
+        "tiny": "12px"
+      },
+      "fontWeight": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "black": 900
+      },
+      "lineHeight": {
+        "tight": 1.2,
+        "normal": 1.5,
+        "relaxed": 1.8
+      },
+      "letterSpacing": {
+        "tight": "-0.02em",
+        "normal": "0",
+        "wide": "0.02em"
+      }
+    },
+    "spacing": {
+      "xs": "8px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "32px",
+      "xl": "48px",
+      "xxl": "64px",
+      "xxxl": "80px"
+    },
+    "borderRadius": {
+      "small": "4px",
+      "medium": "8px",
+      "large": "16px",
+      "xlarge": "24px",
+      "circle": "50%"
+    },
+    "shadows": {
+      "small": "0 2px 4px rgba(0,0,0,0.1)",
+      "medium": "0 4px 8px rgba(0,0,0,0.15)",
+      "large": "0 8px 16px rgba(0,0,0,0.2)"
+    }
+  },
+  "slideTemplates": {
+    "hero-cover": {
+      "templateId": "hero-cover",
+      "name": "Hero Cover Slide",
+      "referenceImage": "style_sample/Intro/slide_001.png",
+      "description": "주황색 그라디언트 배경의 커버 슬라이드, 우측에 장식 요소",
+      "layout": {
+        "type": "centered",
+        "padding": "64px",
+        "alignment": "left"
+      },
+      "background": {
+        "type": "gradient",
+        "value": "linear-gradient(135deg, #FF5722 0%, #FF8A65 100%)"
+      },
+      "elements": {
+        "badge": {
+          "position": "top-left",
+          "fontSize": "12px",
+          "fontWeight": 500,
+          "color": "#FFFFFF",
+          "opacity": 0.9,
+          "textTransform": "uppercase",
+          "letterSpacing": "0.1em"
+        },
+        "mainHeading": {
+          "fontSize": "96px",
+          "fontWeight": 900,
+          "color": "#FFFFFF",
+          "lineHeight": 1.1,
+          "maxWidth": "70%",
+          "marginTop": "120px"
+        },
+        "subheading": {
+          "fontSize": "24px",
+          "fontWeight": 400,
+          "color": "#FFFFFF",
+          "opacity": 0.95,
+          "marginTop": "24px",
+          "maxWidth": "60%"
+        },
+        "decorativeElement": {
+          "position": "right",
+          "opacity": 0.8,
+          "type": "geometric-shape"
+        }
+      }
+    },
+    "table-of-contents": {
+      "templateId": "table-of-contents",
+      "name": "Table of Contents",
+      "referenceImage": "style_sample/Intro/slide_007.png",
+      "description": "좌측 차량 이미지, 우측 아젠다 리스트",
+      "layout": {
+        "type": "two-column",
+        "leftWidth": "35%",
+        "rightWidth": "65%",
+        "padding": "64px"
+      },
+      "background": {
+        "type": "solid",
+        "value": "#000000"
+      },
+      "elements": {
+        "leftColumn": {
+          "type": "image-overlay",
+          "image": {
+            "opacity": 0.4,
+            "filter": "grayscale(100%)"
+          },
+          "content": {
+            "badge": {
+              "fontSize": "12px",
+              "color": "#FFFFFF",
+              "opacity": 0.7
+            },
+            "title": {
+              "fontSize": "36px",
+              "fontWeight": 700,
+              "color": "#FFFFFF",
+              "marginTop": "24px"
+            }
+          }
+        },
+        "rightColumn": {
+          "heading": {
+            "fontSize": "60px",
+            "fontWeight": 900,
+            "color": "#FFFFFF",
+            "lineHeight": 1.1,
+            "marginBottom": "48px"
+          },
+          "subheading": {
+            "fontSize": "24px",
+            "fontWeight": 400,
+            "color": "#757575",
+            "marginBottom": "32px"
+          },
+          "listItems": {
+            "fontSize": "16px",
+            "color": "#FFFFFF",
+            "lineHeight": 2.2,
+            "gap": "8px",
+            "numbering": {
+              "type": "two-digit",
+              "color": "#757575",
+              "marginRight": "32px"
+            }
+          }
+        }
+      }
+    },
+    "bullet-list": {
+      "templateId": "bullet-list",
+      "name": "Bullet List with Icons",
+      "referenceImage": "style_sample/Intro/slide_016.png",
+      "description": "좌측 대형 제목, 우측 아이콘 카드 그리드",
+      "layout": {
+        "type": "split",
+        "leftWidth": "40%",
+        "rightWidth": "60%",
+        "padding": "64px",
+        "gap": "48px"
+      },
+      "background": {
+        "type": "solid",
+        "value": "#000000"
+      },
+      "elements": {
+        "leftSection": {
+          "heading": {
+            "fontSize": "72px",
+            "fontWeight": 700,
+            "color": "#FFFFFF",
+            "lineHeight": 1.2
+          },
+          "emoji": {
+            "fontSize": "48px",
+            "marginTop": "16px"
+          }
+        },
+        "rightSection": {
+          "grid": {
+            "columns": 2,
+            "rows": 3,
+            "gap": "24px"
+          },
+          "card": {
+            "background": "#1A1A1A",
+            "padding": "32px",
+            "borderRadius": "8px",
+            "icon": {
+              "size": "32px",
+              "color": "#FFFFFF",
+              "marginBottom": "16px"
+            },
+            "title": {
+              "fontSize": "16px",
+              "fontWeight": 500,
+              "color": "#FFFFFF",
+              "marginBottom": "12px"
+            },
+            "description": {
+              "fontSize": "14px",
+              "color": "#9E9E9E",
+              "lineHeight": 1.6
+            },
+            "divider": {
+              "height": "2px",
+              "width": "40px",
+              "background": "#FF5722",
+              "marginTop": "12px",
+              "marginBottom": "12px"
+            }
+          },
+          "highlightCard": {
+            "background": "#FF5722",
+            "icon": {
+              "color": "#FFFFFF"
+            },
+            "title": {
+              "color": "#FFFFFF"
+            },
+            "description": {
+              "color": "#FFFFFF",
+              "opacity": 0.9
+            }
+          }
+        }
+      }
+    },
+    "content-text": {
+      "templateId": "content-text",
+      "name": "Content with Statistics",
+      "referenceImage": "style_sample/Intro/slide_009.png",
+      "description": "좌측 인용문, 중앙/우측 통계와 차트",
+      "layout": {
+        "type": "three-column",
+        "leftWidth": "30%",
+        "centerWidth": "35%",
+        "rightWidth": "35%",
+        "padding": "64px"
+      },
+      "background": {
+        "type": "image-overlay",
+        "image": "aerial-highway.jpg",
+        "overlay": "rgba(0, 0, 0, 0.85)"
+      },
+      "elements": {
+        "leftSection": {
+          "badge": {
+            "fontSize": "12px",
+            "color": "#9E9E9E",
+            "marginBottom": "16px"
+          },
+          "quote": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "color": "#FFFFFF",
+            "lineHeight": 1.8,
+            "borderLeft": "3px solid #FF5722",
+            "paddingLeft": "16px"
+          }
+        },
+        "centerSection": {
+          "badge": {
+            "fontSize": "12px",
+            "color": "#FF5722",
+            "marginBottom": "16px"
+          },
+          "statistic": {
+            "value": {
+              "fontSize": "96px",
+              "fontWeight": 900,
+              "color": "#FFFFFF",
+              "lineHeight": 1
+            },
+            "description": {
+              "fontSize": "14px",
+              "color": "#9E9E9E",
+              "marginTop": "16px",
+              "lineHeight": 1.6
+            }
+          }
+        },
+        "rightSection": {
+          "heading": {
+            "fontSize": "24px",
+            "fontWeight": 700,
+            "color": "#FFFFFF",
+            "marginBottom": "24px"
+          },
+          "badge": {
+            "fontSize": "12px",
+            "color": "#FF5722",
+            "marginBottom": "16px"
+          },
+          "chart": {
+            "type": "horizontal-bar",
+            "bars": [
+              {
+                "label": "90%",
+                "color": "#FF5722",
+                "width": "100%"
+              },
+              {
+                "label": "42%",
+                "color": "#FF5722",
+                "width": "47%"
+              },
+              {
+                "label": "12%",
+                "color": "#D32F2F",
+                "width": "13%"
+              }
+            ],
+            "barHeight": "48px",
+            "gap": "16px",
+            "labelFontSize": "24px",
+            "labelFontWeight": 700
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "totalSlides": 4,
+    "aspectRatio": "16:9",
+    "printSize": "A4 landscape (297mm x 210mm)",
+    "designSystem": "Modern Investor Deck",
+    "colorScheme": "Orange & Black",
+    "notes": "스타일 샘플 이미지에서 추출한 디자인 토큰 및 슬라이드 템플릿"
+  }
+}

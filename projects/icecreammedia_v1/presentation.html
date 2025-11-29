@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>icecreammedia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .slide {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            background-color: white;
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            page-break-after: always;
+            break-after: page;
+        }
+
+        .slide * {
+            box-sizing: border-box;
+        }
+
+        @media print {
+            @page {
+                size: 297mm 167mm;
+                margin: 0;
+            }
+
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .slide {
+                width: 297mm !important;
+                height: 167mm !important;
+                max-height: 167mm !important;
+                min-height: 167mm !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                overflow: hidden !important;
+            }
+
+            .slide:not(.last-slide) {
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            .last-slide {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;">
+<span style="position: absolute; top: 64px; left: 64px; font-size: 14px; font-weight: 500; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; border: 1px solid rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 0px; ">가온소프트랩</span>
+<span style="position: absolute; top: 64px; right: 64px; font-size: 14px; font-weight: 500; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; ">2024. 01. 22</span>
+<h1 style="position: absolute; top: 240px; left: 64px; font-size: 96px; font-weight: 900; color: #FFFFFF; line-height: 0.9; max-width: 80%; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; margin: 0;">㈜아이스크림미디어</h1>
+<div style="position: absolute; top: 450px; left: 64px; font-size: 32px; font-weight: 400; color: #FFFFFF; opacity: 0.9; max-width: 70%; border-top: 2px solid #FF4D00; padding-top: 24px; ">몰 통합 플랫폼 및 ERP 구축 제안서</div>
+</div><!-- Slide -->
+<div class="slide" style="background-color: #000000;">
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?w=800&h=1200&fit=crop" alt="image" style="position: absolute; left: 0; top: 0; width: 35%; height: 100%; object-fit: cover; opacity: 0.4; ">
+<div style="position: absolute; left: 0; top: 0; width: 35%; height: 100%; background: rgba(17, 17, 17, 0.8); padding: 64px; ">
+<h1 style="font-size: 72px; font-weight: 900; color: #FFFFFF; margin-bottom: 32px; font-family: 'Oswald', sans-serif; text-transform: uppercase; margin: 0;">Contents</h1>
+<div style="font-size: 24px; font-weight: 500; color: #888888; line-height: 1.5; ">성공적인<br>통합 플랫폼 구축을 위한<br>단계별 전략</div>
+</div>
+<div style="position: absolute; left: 35%; top: 0; width: 65%; height: 100%; padding: 64px 80px; display: flex; flex-direction: column; justify-content: center; gap: 24px; ">
+<div style="display: flex; gap: 24px; align-items: baseline; ">
+<div style="font-size: 24px; font-weight: bold; color: #FF4D00; width: 40px; font-family: 'Oswald', sans-serif; ">01</div>
+<div style="">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 4px; text-transform: uppercase; ">제안 개요</div>
+<div style="font-size: 14px; color: #888888; ">사업 추진 배경 및 기대 효과</div>
+</div>
+</div>
+<div style="display: flex; gap: 24px; align-items: baseline; ">
+<div style="font-size: 24px; font-weight: bold; color: #FF4D00; width: 40px; font-family: 'Oswald', sans-serif; ">02</div>
+<div style="">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 4px; text-transform: uppercase; ">사업 수행 범위 (분석/설계)</div>
+<div style="font-size: 14px; color: #888888; ">시스템 분석, 요구사항 정의 및 UI/UX 설계</div>
+</div>
+</div>
+<div style="display: flex; gap: 24px; align-items: baseline; ">
+<div style="font-size: 24px; font-weight: bold; color: #FF4D00; width: 40px; font-family: 'Oswald', sans-serif; ">03</div>
+<div style="">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 4px; text-transform: uppercase; ">사업 수행 범위 (구축/이관)</div>
+<div style="font-size: 14px; color: #888888; ">플랫폼 개발, 데이터 마이그레이션 및 테스트</div>
+</div>
+</div>
+<div style="display: flex; gap: 24px; align-items: baseline; ">
+<div style="font-size: 24px; font-weight: bold; color: #FF4D00; width: 40px; font-family: 'Oswald', sans-serif; ">04</div>
+<div style="">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 4px; text-transform: uppercase; ">제안의 특장점 (인력)</div>
+<div style="font-size: 14px; color: #888888; ">검증된 전문가 그룹 및 협업 체계</div>
+</div>
+</div>
+<div style="display: flex; gap: 24px; align-items: baseline; ">
+<div style="font-size: 24px; font-weight: bold; color: #FF4D00; width: 40px; font-family: 'Oswald', sans-serif; ">05</div>
+<div style="">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 4px; text-transform: uppercase; ">제안의 특장점 (기술)</div>
+<div style="font-size: 14px; color: #888888; ">데이터 기반 기술 및 솔루션 고도화 전략</div>
+</div>
+</div>
+<div style="display: flex; gap: 24px; align-items: baseline; ">
+<div style="font-size: 24px; font-weight: bold; color: #FF4D00; width: 40px; font-family: 'Oswald', sans-serif; ">06</div>
+<div style="">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 4px; text-transform: uppercase; ">기대 효과</div>
+<div style="font-size: 14px; color: #888888; ">성공적인 프로젝트 수행을 통한 비즈니스 가치 창출</div>
+</div>
+</div>
+</div>
+</div><!-- Slide -->
+<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop" alt="image" style="position: absolute; right: 0; top: 0; width: 40%; height: 100%; object-fit: cover; opacity: 0.3; ">
+<span style="position: absolute; top: 48px; left: 64px; font-size: 14px; color: #FF4D00; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; ">01. 제안 개요</span>
+<h1 style="position: absolute; top: 80px; left: 64px; font-size: 48px; font-weight: 900; color: #FFFFFF; font-family: 'Oswald', sans-serif; text-transform: uppercase; margin: 0;">사업 추진 배경 및 목적</h1>
+<div style="position: absolute; top: 160px; left: 64px; font-size: 20px; color: #FFFFFF; max-width: 55%; line-height: 1.6; ">급변하는 이커머스 환경에 대응하고, 효율적인 자원 관리를 위해 통합 플랫폼 및 ERP 시스템 구축이 필수적입니다.</div>
+<div style="position: absolute; left: 64px; top: 280px; width: 55%; display: flex; flex-direction: column; gap: 32px; ">
+<div style="border-left: 4px solid #FF4D00; padding-left: 24px; ">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 8px; ">통합 관리 체계 부재</div>
+<div style="font-size: 16px; color: #888888; ">분산된 시스템으로 인한 데이터 불일치 및 관리 비효율성 증대</div>
+</div>
+<div style="border-left: 4px solid #FF4D00; padding-left: 24px; ">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 8px; ">업무 프로세스 비효율</div>
+<div style="font-size: 16px; color: #888888; ">수작업 의존도가 높아 업무 처리 속도 저하 및 휴먼 에러 발생 가능성</div>
+</div>
+<div style="border-left: 4px solid #FF4D00; padding-left: 24px; ">
+<div style="font-size: 20px; font-weight: bold; color: #FFFFFF; margin-bottom: 8px; ">확장성 한계</div>
+<div style="font-size: 16px; color: #888888; ">기존 레거시 시스템의 노후화로 인한 신규 비즈니스 대응의 어려움</div>
+</div>
+</div>
+</div><!-- Slide -->
+<div class="slide" style="background-color: #000000;">
+<span style="position: absolute; top: 48px; left: 64px; font-size: 14px; color: #FF4D00; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; ">02. 사업 수행 범위</span>
+<h1 style="position: absolute; top: 80px; left: 64px; font-size: 48px; font-weight: 900; color: #FFFFFF; font-family: 'Oswald', sans-serif; text-transform: uppercase; margin: 0;">분석 및 설계 단계</h1>
+<div style="position: absolute; top: 160px; left: 64px; font-size: 18px; color: #888888; max-width: 800px; line-height: 1.6; ">전체 사업 기간의 33%를 차지하는 핵심 단계로, 철저한 현황 분석과 사용자 중심의 설계를 수행합니다.</div>
+<div style="position: absolute; left: 64px; top: 240px; width: calc(100% - 128px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; ">
+<div style="background: #111111; padding: 32px; height: 300px; border-top: 4px solid #FF4D00; display: flex; flex-direction: column; justify-content: space-between; ">
+<div style="font-size: 14px; color: #FF4D00; font-weight: bold; ">STEP 01</div>
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 16px; line-height: 1.3; ">시스템 분석 및<br>요구사항 정의</div>
+<div style="font-size: 14px; color: #888888; line-height: 1.8; white-space: pre-line; ">• 현재 시스템(AS-IS) 분석<br>• 이해관계자 인터뷰<br>• 비즈니스 요구사항 도출<br>• 개선 과제 정의</div>
+</div>
+<div style="background: #111111; padding: 32px; height: 300px; border-top: 4px solid #FF4D00; display: flex; flex-direction: column; justify-content: space-between; ">
+<div style="font-size: 14px; color: #FF4D00; font-weight: bold; ">STEP 02</div>
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 16px; line-height: 1.3; ">플랫폼 및 ERP<br>상세 설계</div>
+<div style="font-size: 14px; color: #888888; line-height: 1.8; white-space: pre-line; ">• TO-BE 아키텍처 설계<br>• DB 스키마 설계<br>• API 명세서 작성<br>• ERP 연동 프로세스 정의</div>
+</div>
+<div style="background: #111111; padding: 32px; height: 300px; border-top: 4px solid #FF4D00; display: flex; flex-direction: column; justify-content: space-between; ">
+<div style="font-size: 14px; color: #FF4D00; font-weight: bold; ">STEP 03</div>
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 16px; line-height: 1.3; ">UI/UX<br>디자인 및 개선</div>
+<div style="font-size: 14px; color: #888888; line-height: 1.8; white-space: pre-line; ">• 사용자 여정 지도(Journey Map)<br>• 와이어프레임 및 프로토타입<br>• 디자인 시스템 구축<br>• 사용성 테스트</div>
+</div>
+</div>
+</div><!-- Slide -->
+<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;">
+<span style="position: absolute; top: 48px; left: 64px; font-size: 14px; color: #FF4D00; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; ">03. 사업 수행 범위</span>
+<h1 style="position: absolute; top: 80px; left: 64px; font-size: 48px; font-weight: 900; color: #FFFFFF; font-family: 'Oswald', sans-serif; text-transform: uppercase; margin: 0;">구축 및 이관 단계</h1>
+<div style="position: absolute; top: 160px; left: 64px; font-size: 18px; color: #888888; max-width: 800px; line-height: 1.6; ">안정적인 시스템 구현과 무결점 데이터 이관을 통해 성공적인 시스템 오픈을 보장합니다.</div>
+<div style="position: absolute; left: 64px; top: 240px; width: calc(100% - 128px); display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; ">
+<div style="display: flex; flex-direction: column; gap: 24px; ">
+<div style="background: #111111; padding: 24px; border-left: 4px solid #FF4D00; ">
+<div style="font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #FFFFFF; ">4. 업무 효율화 시스템 개발</div>
+<div style="font-size: 14px; color: #888888; ">수불 현황, 제조사 입찰, 입점사 평가, 예약 판매 등 핵심 업무 기능 구현</div>
+</div>
+<div style="background: #111111; padding: 24px; border-left: 4px solid #FF4D00; ">
+<div style="font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #FFFFFF; ">5. 데이터 마이그레이션</div>
+<div style="font-size: 14px; color: #888888; ">기존 가비아 시스템 데이터의 정제, 매핑, 검증 및 신규 시스템 이관</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 24px; ">
+<div style="background: #111111; padding: 24px; border-left: 4px solid #FF4D00; ">
+<div style="font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #FFFFFF; ">6. 테스트 및 검증</div>
+<div style="font-size: 14px; color: #888888; ">단위/통합 테스트, 성능 부하 테스트, 보안 취약점 점검 수행</div>
+</div>
+<div style="background: #111111; padding: 24px; border-left: 4px solid #FF4D00; ">
+<div style="font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #FFFFFF; ">7. 교육 및 안정화</div>
+<div style="font-size: 14px; color: #888888; ">관리자/사용자 매뉴얼 작성, 운영자 교육, 초기 운영 지원</div>
+</div>
+</div>
+</div>
+</div><!-- Slide -->
+<div class="slide" style="background-color: #000000;">
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop" alt="image" style="position: absolute; right: 0; top: 0; width: 40%; height: 100%; object-fit: cover; opacity: 0.2; ">
+<span style="position: absolute; top: 48px; left: 64px; font-size: 14px; color: #FF4D00; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; ">04. 제안의 특장점</span>
+<h1 style="position: absolute; top: 80px; left: 64px; font-size: 48px; font-weight: 900; color: #FFFFFF; font-family: 'Oswald', sans-serif; text-transform: uppercase; margin: 0;">인적 자원의 전문성</h1>
+<div style="position: absolute; top: 160px; left: 64px; font-size: 18px; color: #888888; max-width: 600px; line-height: 1.6; ">단순한 개발자가 아닌, 비즈니스를 이해하는 전문가들이 프로젝트를 주도합니다.</div>
+<div style="position: absolute; left: 64px; top: 260px; width: 55%; display: flex; flex-direction: column; gap: 32px; ">
+<div style="">
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; ">검증된 커머스 구축 경험</div>
+<div style="font-size: 16px; color: #888888; line-height: 1.6; ">이미 커머스 플랫폼 및 ERP 연동을 성공적으로 구축한 경험이 있는 팀원들이 프로젝트에 참여하여 리스크를 최소화합니다.</div>
+</div>
+<div style="">
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; ">전문가 그룹과의 협업</div>
+<div style="font-size: 16px; color: #888888; line-height: 1.6; ">ERP 전문가 그룹과의 긴밀한 협업을 통해 복잡한 회계 및 물류 프로세스에 대한 심층적인 이해를 바탕으로 고품질 컨설팅을 제공합니다.</div>
+</div>
+<div style="">
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; ">전문성 있는 기획 결과물</div>
+<div style="font-size: 16px; color: #888888; line-height: 1.6; ">커머스 전문 기획 그룹과의 협업으로 사용자 중심의 직관적이고 매력적인 쇼핑몰 디자인과 구조를 설계합니다.</div>
+</div>
+</div>
+</div><!-- Slide -->
+<div class="slide" style="background-color: #000000;">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="image" style="position: absolute; right: 0; top: 0; width: 40%; height: 100%; object-fit: cover; opacity: 0.2; ">
+<span style="position: absolute; top: 48px; left: 64px; font-size: 14px; color: #FF4D00; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; ">05. 제안의 특장점</span>
+<h1 style="position: absolute; top: 80px; left: 64px; font-size: 48px; font-weight: 900; color: #FFFFFF; font-family: 'Oswald', sans-serif; text-transform: uppercase; margin: 0;">기술적 우수성</h1>
+<div style="position: absolute; top: 160px; left: 64px; font-size: 18px; color: #888888; max-width: 600px; line-height: 1.6; ">최신 기술 트렌드를 반영한 확장 가능한 아키텍처와 데이터 기반 솔루션을 제공합니다.</div>
+<div style="position: absolute; left: 64px; top: 260px; width: 55%; display: flex; flex-direction: column; gap: 32px; ">
+<div style="">
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; ">데이터 기반 의사결정 지원</div>
+<div style="font-size: 16px; color: #888888; line-height: 1.6; ">AWS S3 기반의 데이터 레이크 구성 및 데이터 분석 환경을 구축하여 비즈니스 인사이트 도출을 지원합니다.</div>
+</div>
+<div style="">
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; ">MSA 기반 솔루션 공급</div>
+<div style="font-size: 16px; color: #888888; line-height: 1.6; ">자체 보유한 MSA(Microservices Architecture) 방식의 커머스 솔루션을 통해 유연하고 확장 가능한 시스템을 구축합니다.</div>
+</div>
+<div style="">
+<div style="font-size: 24px; font-weight: bold; color: #FFFFFF; margin-bottom: 12px; ">고객 세분화 마케팅 솔루션</div>
+<div style="font-size: 16px; color: #888888; line-height: 1.6; ">Google Analytics 및 고객 구매 행동 패턴 분석을 통한 타겟 마케팅 솔루션을 제안하여 매출 증대에 기여합니다.</div>
+</div>
+</div>
+</div><!-- Slide -->
+<div class="slide last-slide" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;">
+<h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 120px; font-weight: 900; color: #FFFFFF; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; margin: 0;">Thank You</h1>
+<div style="position: absolute; top: 65%; left: 50%; transform: translateX(-50%); font-size: 24px; font-weight: 400; color: #FF4D00; letter-spacing: 0.1em; ">성공적인 프로젝트 수행을 약속드립니다.</div>
+<div style="position: absolute; bottom: 64px; left: 50%; transform: translateX(-50%); font-size: 16px; color: #888888; ">가온소프트랩 | 2024. 01. 22</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+{
+  "company": {
+    "name": "아이스크림미디어",
+    "nameEnglish": "Ice Cream Media",
+    "documentType": "제안서",
+    "documentDate": "2024. 01. 22",
+    "projectFocus": "몰 통합 플랫폼 및 ERP 구축",
+    "overview": {
+      "coreValue": "핵심 가치",
+      "principles": [],
+      "additionalNote": ""
+    },
+    "proposal": {
+      "title": "제안의 배경",
+      "context": {
+        "breadcrumb": [],
+        "mainDescription": ""
+      },
+      "features": {
+        "title": "기능 정의",
+        "items": []
+      },
+      "expectedEffects": {
+        "title": "기대효과",
+        "items": []
+      }
+    },
+    "tableOfContents": {
+      "title": "Contents",
+      "subtitle": "사회연대은행 소상공인 온라인마케팅 지원사업",
+      "items": [
+        "Ⅰ. 제안개요 - 제안사가 이해 하고 있는 본 사업의 추진 배경과 기대 효과",
+        "II. 제안사 일반현황 - 제안사의 대외 신인도 및 온라인 쇼핑몰 유사실적",
+        "III. 사업수행 - 아이스크림 온라인몰 컨설팅 전략 / 구축 수행 방안",
+        "IV. 성능 및 품질 - 사업 결과물의 성능 및 품질 확보 전략",
+        "V . 프로젝트 관리 - 효과적인 사업 성공을 위한 전략적인 구축 방안",
+        "Ⅵ . 프로젝트 지원 - 효율적인 사업 운영을 위한 합리적인 지원 방안",
+        "Ⅶ . 기타사항 - 성공적인 프로젝트를 위한 추가 제안 사항"
+      ]
+    }
+  },
+  "brandIdentity": {
+    "colors": {
+      "primary": "#FF5722",
+      "primaryLight": "#FF8A65",
+      "primaryDark": "#E64A19",
+      "secondary": "#4A90E2",
+      "accent": "#FFA726",
+      "text": {
+        "primary": "#212121",
+        "secondary": "#757575",
+        "inverse": "#FFFFFF"
+      },
+      "background": {
+        "white": "#FFFFFF",
+        "light": "#F5F5F5",
+        "orange": "#FF5722"
+      },
+      "gradient": {
+        "orange": "linear-gradient(135deg, #FF5722 0%, #FF8A65 100%)"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "'Noto Sans KR', sans-serif",
+        "secondary": "'Roboto', sans-serif"
+      },
+      "fontSize": {
+        "h1": "48px",
+        "h2": "36px",
+        "h3": "28px",
+        "h4": "24px",
+        "body": "16px",
+        "small": "14px",
+        "tiny": "12px"
+      },
+      "fontWeight": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "bold": 700,
+        "black": 900
+      },
+      "lineHeight": {
+        "tight": 1.2,
+        "normal": 1.5,
+        "relaxed": 1.8
+      }
+    },
+    "spacing": {
+      "xs": "8px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "32px",
+      "xl": "48px",
+      "xxl": "64px"
+    },
+    "borderRadius": {
+      "small": "4px",
+      "medium": "8px",
+      "large": "16px",
+      "circle": "50%"
+    },
+    "shadows": {
+      "small": "0 2px 4px rgba(0,0,0,0.1)",
+      "medium": "0 4px 8px rgba(0,0,0,0.15)",
+      "large": "0 8px 16px rgba(0,0,0,0.2)"
+    }
+  },
+  "documentStructure": {
+    "slides": [
+      {
+        "id": 1,
+        "title": "표지",
+        "template": "hero-cover",
+        "purpose": "기업 소개 및 프로젝트 제목",
+        "content": {
+          "mainHeading": "㈜아이스크림미디어",
+          "subheading": "몰 통합 플랫폼 및 ERP 구축",
+          "labels": [
+            "가온소프트랩",
+            "2024. 01. 22"
+          ],
+          "visualElements": [
+            "decorative-element (우측, opacity 0.8)"
+          ]
+        },
+        "background": {
+          "type": "gradient",
+          "value": "linear-gradient(135deg, #FF5722 0%, #FF8A65 100%)"
+        }
+      },
+      {
+        "id": 2,
+        "title": "목차",
+        "template": "table-of-contents",
+        "purpose": "문서 구성 안내",
+        "content": {
+          "heading": "Contents",
+          "subheading": "사회연대은행 소상공인 온라인마케팅 지원사업",
+          "items": [
+            {
+              "number": "Ⅰ",
+              "title": "제안개요",
+              "description": "제안사가 이해 하고 있는 본 사업의 추진 배경과 기대 효과"
+            },
+            {
+              "number": "II",
+              "title": "제안사 일반현황",
+              "description": "제안사의 대외 신인도 및 온라인 쇼핑몰 유사실적"
+            },
+            {
+              "number": "III",
+              "title": "사업수행",
+              "description": "아이스크림 온라인몰 컨설팅 전략 / 구축 수행 방안"
+            },
+            {
+              "number": "IV",
+              "title": "성능 및 품질",
+              "description": "사업 결과물의 성능 및 품질 확보 전략"
+            },
+            {
+              "number": "V",
+              "title": "프로젝트 관리",
+              "description": "효과적인 사업 성공을 위한 전략적인 구축 방안"
+            },
+            {
+              "number": "Ⅵ",
+              "title": "프로젝트 지원",
+              "description": "효율적인 사업 운영을 위한 합리적인 지원 방안"
+            },
+            {
+              "number": "Ⅶ",
+              "title": "기타사항",
+              "description": "성공적인 프로젝트를 위한 추가 제안 사항"
+            }
+          ],
+          "visualElements": [
+            "decorative-circle (우측, opacity 0.9)"
+          ]
+        },
+        "background": {
+          "type": "split",
+          "left": "#FFFFFF",
+          "right": "linear-gradient(135deg, #FF5722 0%, #FF8A65 100%)"
+        }
+      },
+      {
+        "id": 3,
+        "title": "사업 범위",
+        "template": "content-text",
+        "purpose": "사업 범위 및 추진 전략 설명",
+        "content": {
+          "badge": "사업 범위",
+          "heading": "목표 및 핵심 추진전략",
+          "intro": "제안사의 업무 범위는 총 7단계로 구분 됩니다. 이중 “시스템 분석 및 요구사항 정의＂가 전체 사업 기간의 33%를 차지 합니다.",
+          "steps": [
+            {
+              "number": "1",
+              "title": "시스템 분석 및 요구사항 정의",
+              "description": "현재 시스템 분석, 비즈니스 요구사항 수집, 시스템 개선점 도출."
+            },
+            {
+              "number": "2",
+              "title": "커머스 플랫폼 및 ERP 설계 , 개발 및 연동",
+              "description": "요구 사항을 반영한 커머스 플랫폼 개발 / ERP 연동 구축 물류 시스템등 업무 시스템과의 연계 ."
+            },
+            {
+              "number": "3",
+              "title": "UI/UX 개선",
+              "description": "사용자 중심의 디자인을 적용한 UI/UX 개선."
+            },
+            {
+              "number": "4",
+              "title": "업무 효율성 개선을 위한 시스템 개발",
+              "description": "수불 현황, 제조사 입찰, 입점사 평가, 예약 판매 기능 등"
+            },
+            {
+              "number": "5",
+              "title": "데이터 구조 검증 및 마이그레이션 , 통합",
+              "description": "기존 가비아 시스템에서 새로운 커머스 시스템으로의 데이터 마이그레이션 및 데이터 통합."
+            },
+            {
+              "number": "6",
+              "title": "시스템 테스트 및 검증",
+              "description": "개발된 시스템의 기능성, 성능, 보안 등을 검증하는 테스트 수행."
+            },
+            {
+              "number": "7",
+              "title": "교육 및 지원",
+              "description": "사용자 및 관리자를 위한 시스템 사용법 교육, 기술 지원 및 유지보수."
+            }
+          ],
+          "deliverables": {
+            "title": "최종 산출물",
+            "items": [
+              {
+                "title": "신규 통합 플랫폼 및 ERP 시스템",
+                "description": "기능적 및 비기능적 요구사항을 충족하는 완성된 시스템."
+              },
+              {
+                "title": "시스템 문서",
+                "description": "설계 문서, 화면 기획서 , 사용자 매뉴얼, 유지보수 가이드 등."
+              },
+              {
+                "title": "데이터 마이그레이션 보고서",
+                "description": "마이그레이션 프로세스 및 결과에 대한 상세 보고서."
+              },
+              {
+                "title": "테스트 및 검증 보고서",
+                "description": "시스템 테스트 결과 및 검증 내 문서."
+              }
+            ]
+          }
+        },
+        "background": {
+          "type": "solid",
+          "value": "#FFFFFF"
+        }
+      },
+      {
+        "id": 4,
+        "title": "제안의 특장점",
+        "template": "content-text",
+        "purpose": "제안사의 강점 및 차별화 포인트",
+        "content": {
+          "badge": "제안의 특장점",
+          "heading": "목표 및 핵심 추진전략",
+          "intro": "많은 SI 기업이 커머스 / ERP 구축을 경험 했습니다. 하지만 기업의 레퍼런스와 실제 경험한 개발자가 프로젝트에 투입 되는 것은 다른 이야기 입니다.",
+          "sections": [
+            {
+              "title": "인적 자원의 특장점",
+              "items": [
+                {
+                  "title": "검증된 커머스 구축 경험",
+                  "description": "이미 커머스 플랫폼 및 ERP 연동울 성공적으로 구축한 경험이 있는 모든 팀원들이 프로젝트에 참여합니다. 이는 프로젝트의 리스크를 최소화하고, 실제 시장에서 검증된 솔루션을 제공할 수 있음을 의미 합니다."
+                },
+                {
+                  "title": "전문가 그룹과의 협업",
+                  "description": "ERP 전문가 그룹과의 긴밀한 협업을 통해, 복잡한 회계 및 물류 프로세스에 대한 심층적인 이해와 전문성을 바탕으로 한 고품질의 컨설팅 결과물을 도출합니다."
+                },
+                {
+                  "title": "전문성 있는 기획 결과물",
+                  "description": "커머스 전문 기획 그룹과 협업을 통해 사용자 중심의, 직관적이며 매력적인 쇼핑몰 디자인과 구조를 제공합니다. 이는 사용자 경험을 극대화하고, 사용자 만족도를 높이는 데 기여합니다."
+                }
+              ]
+            },
+            {
+              "title": "기술 특장점",
+              "items": [
+                {
+                  "title": "데이터 기반 의사 결정이 가능한 기술적 기반 마련",
+                  "description": "AWS의 S3를 활용하여 데이터 레이크를 구성할 수 있는 기술 기반을 마련할 수 있습니다."
+                },
+                {
+                  "title": "자체 커머스 솔루션의 고도화 / 공급",
+                  "description": "자체 보유한 커머스 솔루션을 지속적으로 고도화하여, 최신 기능과 기술 트렌드를 반영합니다. 이는 고객에게 현대적이고 경쟁력 있는 쇼핑 경험을 제공할 수 있도록 합니다. (MSA 방식의 솔루션 형태로 공급)"
+                },
+                {
+                  "title": "고객 세분화 마케팅이 가능한 솔루션 제안",
+                  "description": "구글 애널리틱스를 비롯 고객 구매 행동 패턴을 예측하여, 매출을 증진 시킬 수 있는 마케팅 솔루션을 제안 합니다."
+                }
+              ]
+            }
+          ]
+        },
+        "background": {
+          "type": "solid",
+          "value": "#FFFFFF"
+        }
+      }
+    ],
+    "totalSlides": 4
+  },
+  "metadata": {
+    "projectName": "icecreammedia",
+    "version": "1.1.0",
+    "createdAt": "2025-11-28",
+    "source": "User Input",
+    "aspectRatio": "16:9",
+    "printSize": "A4 landscape",
+    "generatedBy": "Haru Presentation Builder",
+    "notes": "사용자 요청에 따라 아이스크림미디어 제안서 내용 업데이트"
+  }
+}
