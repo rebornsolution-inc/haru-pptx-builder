@@ -1,558 +1,868 @@
 {
   "metadata": {
-    "filename": "이음로지스틱-회사소개서.pdf",
-    "analyzedAt": "2025-11-25",
-    "totalSlides": 11,
-    "aspectRatio": "16:9",
-    "language": "ko"
+    "sourceFile": "C:\\Users\\kgl53\\Downloads\\Group 1000010968.pdf",
+    "projectName": "eumlogistic",
+    "analyzedAt": "2025-12-02T09:30:00Z",
+    "analysisMethod": "kapture-visual-analysis",
+    "totalSlides": 15,
+    "templateType": "investor-deck",
+    "aspectRatio": "16:9"
   },
   "designTokens": {
     "colors": {
-      "primary": "#F5A623",
-      "primaryDark": "#E09000",
-      "secondary": "#002D72",
-      "secondaryLight": "#4A90D9",
-      "accent": "#00B4D8",
-      "background": "#FFFFFF",
-      "headerBg": "#002D72",
-      "footerBg": "#002D72",
-      "text": "#333333",
-      "textLight": "#666666",
-      "textOnDark": "#FFFFFF",
-      "highlight": "#FFEB3B",
-      "buttonBg": "#4A90D9",
-      "buttonHover": "#3A7BC8",
-      "labelBg": "#F5A623",
-      "tableBorder": "#CCCCCC",
-      "timelineDate": "#002D72"
+      "primary": {
+        "main": "#FF6B35",
+        "light": "#FF8A5B",
+        "dark": "#E55A25",
+        "description": "Orange accent color - CTAs, highlights, emphasis"
+      },
+      "secondary": {
+        "main": "#FFB800",
+        "light": "#FFC933",
+        "description": "Yellow/Gold accent - progress bars, secondary highlights"
+      },
+      "background": {
+        "dark": "#1A1A1A",
+        "darker": "#0D0D0D",
+        "card": "#2A2A2A",
+        "overlay": "rgba(0, 0, 0, 0.7)",
+        "description": "Dark theme backgrounds"
+      },
+      "text": {
+        "primary": "#FFFFFF",
+        "secondary": "#CCCCCC",
+        "muted": "#888888",
+        "accent": "#FF6B35"
+      },
+      "chart": {
+        "orange": "#FF6B35",
+        "yellow": "#FFB800",
+        "gray": "#4A4A4A"
+      }
     },
     "typography": {
-      "fontFamily": {
-        "heading": "Malgun Gothic, sans-serif",
-        "body": "Malgun Gothic, sans-serif",
-        "english": "Arial, sans-serif"
+      "heading": {
+        "fontFamily": "'Inter', 'Helvetica Neue', sans-serif",
+        "fontWeight": "800",
+        "textTransform": "uppercase",
+        "letterSpacing": "-0.02em"
       },
-      "heading1": {
-        "fontSize": "48px",
-        "fontWeight": 700,
-        "lineHeight": 1.2
-      },
-      "heading2": {
-        "fontSize": "36px",
-        "fontWeight": 700,
-        "lineHeight": 1.3
-      },
-      "heading3": {
-        "fontSize": "24px",
-        "fontWeight": 600,
-        "lineHeight": 1.4
+      "subheading": {
+        "fontFamily": "'Inter', sans-serif",
+        "fontWeight": "600",
+        "letterSpacing": "0"
       },
       "body": {
-        "fontSize": "16px",
-        "fontWeight": 400,
-        "lineHeight": 1.8
+        "fontFamily": "'Inter', sans-serif",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
       },
       "caption": {
-        "fontSize": "14px",
-        "fontWeight": 400,
-        "lineHeight": 1.6
+        "fontFamily": "'Inter', sans-serif",
+        "fontWeight": "400",
+        "fontSize": "12px"
       },
-      "label": {
-        "fontSize": "14px",
-        "fontWeight": 600,
-        "lineHeight": 1.4
+      "sizes": {
+        "hero": "72px",
+        "h1": "48px",
+        "h2": "36px",
+        "h3": "24px",
+        "body": "16px",
+        "caption": "12px",
+        "stat": "64px"
       }
     },
     "spacing": {
-      "sectionPadding": "60px",
-      "elementGap": "24px",
-      "headerHeight": "50px",
-      "footerHeight": "40px",
-      "cardPadding": "20px",
-      "gridGap": "16px"
+      "page": {
+        "horizontal": "60px",
+        "vertical": "48px"
+      },
+      "section": "40px",
+      "element": "24px",
+      "tight": "12px"
     },
-    "borders": {
-      "radius": "8px",
-      "radiusSmall": "4px",
-      "width": "1px",
-      "color": "#CCCCCC"
+    "effects": {
+      "cardRadius": "8px",
+      "imageRadius": "4px",
+      "shadow": "0 4px 20px rgba(0, 0, 0, 0.3)"
+    },
+    "layout": {
+      "aspectRatio": "16:9",
+      "gridColumns": 12,
+      "maxContentWidth": "1200px"
     }
   },
   "slides": [
     {
       "slideNumber": 1,
-      "pageLabel": "표지",
-      "template": "hero-cover",
-      "layout": "center-aligned",
-      "elements": {
-        "header": {
-          "type": "image-grid",
-          "columns": 4,
-          "images": ["비행기", "컨테이너선", "항공기", "항구 크레인"],
-          "height": "40%"
-        },
-        "logo": {
-          "type": "image",
-          "position": "center",
-          "src": "EUM LOGISTIC 로고 (오렌지 원 + 텍스트)"
-        },
-        "companyName": {
-          "text": "이음 로지스틱 주식회사",
-          "style": "heading2"
-        },
-        "footer": {
-          "type": "bar",
-          "background": "#002D72",
-          "leftText": "EUM LOGISTIC CO., LTD.",
-          "rightText": "PAGE : 1",
-          "textColor": "#FFEB3B"
-        }
+      "type": "hero-cover",
+      "title": "INVESTOR DECK",
+      "layout": {
+        "template": "hero-cover",
+        "alignment": "left",
+        "hasImage": true
       },
+      "elements": [
+        {
+          "type": "badge",
+          "text": "August, 2023",
+          "style": {
+            "fontSize": "12px",
+            "color": "#888888",
+            "position": "top-left"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "INVESTOR DECK",
+          "style": {
+            "fontSize": "72px",
+            "fontWeight": "800",
+            "color": "#FFFFFF",
+            "textTransform": "uppercase"
+          }
+        },
+        {
+          "type": "logo",
+          "text": "Greyco",
+          "style": {
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "subheading",
+          "text": "Find The Best Ride Infrastructure\nfor Your Business.",
+          "style": {
+            "fontSize": "16px",
+            "color": "#CCCCCC",
+            "lineHeight": "1.5"
+          }
+        },
+        {
+          "type": "image",
+          "position": "right",
+          "style": {
+            "width": "50%",
+            "height": "100%",
+            "objectFit": "cover"
+          }
+        }
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
       }
     },
     {
       "slideNumber": 2,
-      "pageLabel": "회사개요",
-      "template": "content-text",
-      "layout": "table-form",
-      "elements": {
-        "title": {
-          "text": "COMPANY PROFILE",
-          "style": "heading2"
-        },
-        "infoTable": {
-          "type": "key-value-table",
-          "rows": [
-            {"label": "회 사 명", "value": "이음로지스틱 주식회사", "labelBg": "#F5A623"},
-            {"label": "주 소", "value": "본사: 서울특별시 강서구 마곡중앙로 161-8, 5층 두산더랜드파크 B동 510호\n부산지사: 경남 창원시 진해구 신항7로 63 MS디스트리파크 용동물류센터 2층 206호"},
-            {"label": "전화번호", "value": "+82 2 3662 8150~5"},
-            {"label": "팩스번호", "value": "+82 2 6442 8153"},
-            {"label": "E-mail", "value": "info@e-umlk.com"},
-            {"label": "직원수", "value": "7명"},
-            {"label": "설립일", "value": "2020년 07월 17일"},
-            {"label": "연평균매출액", "value": "35억원"},
-            {"label": "자본금", "value": "3억3300만원"},
-            {"label": "주요사업", "value": ["국제 운송 (항공, 해상)", "내륙운송 - 일반, 보세, 특수", "창고보관 - 일반, 보세, 냉장, 냉동", "특송 - 다양한 국가와 지역의 Door to door", "물류 컨설팅"]}
-          ]
-        }
+      "type": "section-divider",
+      "title": "GRIDLINES",
+      "layout": {
+        "template": "section-divider",
+        "alignment": "center-left"
       },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "GRIDLINES",
+          "style": {
+            "fontSize": "72px",
+            "fontWeight": "800",
+            "color": "#FFFFFF",
+            "textTransform": "uppercase"
+          }
+        }
+      ],
       "background": {
-        "type": "solid",
-        "color": "#FFFFFF"
+        "type": "image-overlay",
+        "color": "#1A1A1A",
+        "imageOpacity": 0.4
       }
     },
     {
       "slideNumber": 3,
-      "pageLabel": "회사연혁",
-      "template": "content-text",
-      "layout": "two-column",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD. - 회사 연혁",
-          "background": "#002D72",
-          "textColor": "#FFEB3B"
-        },
-        "leftColumn": {
-          "type": "info-card",
-          "title": "기본정보",
-          "rows": [
-            {"label": "사명", "value": "이음 로지스틱 주식회사"},
-            {"label": "본사위치", "value": "서울시 강서구 마곡중앙로 161-8 두산더랜드파크 B동 510, 511호"},
-            {"label": "부산지사", "value": "경남창원시 진해구 신항7로 MS디스트리파크 용동물류센터 206호"},
-            {"label": "설립일", "value": "2020년 07월 17일"},
-            {"label": "총업원", "value": "7명"},
-            {"label": "업종", "value": "운수 및 창고업, 국제주선물류업"}
-          ]
-        },
-        "rightColumn": {
-          "type": "timeline",
-          "items": [
-            {"date": "2025.09", "event": "광메탈 운송 및 창고 협력사 체결"},
-            {"date": "2025.07", "event": "삼성헬스토리 냉동 창고 협력사 체결"},
-            {"date": "2024.07", "event": "페트로마인 보관 및 창고협력사 체결"},
-            {"date": "2023.06", "event": "태국 YC리사이클 협력사 체결"},
-            {"date": "2022.03", "event": "삼양식품 보관 및 창고 협력사 체결"},
-            {"date": "2021.06", "event": "비제이신항 협력사 체결"},
-            {"date": "2021.05", "event": "부산 지사 설립"},
-            {"date": "2020.09", "event": "MS디스트리파크 협력사 체결"},
-            {"date": "2020.08", "event": "롯데웰푸드 협력사 등록"},
-            {"date": "2020.08", "event": "가온전선 협력사 등록"},
-            {"date": "2020.07", "event": "이음로지스틱 설립"}
-          ]
-        }
+      "type": "content-split",
+      "title": "HOW RIDESHARE IS CHANGING THE WAY WE COMMUTE",
+      "layout": {
+        "template": "content-split",
+        "splitRatio": "50:50",
+        "imagePosition": "left"
       },
+      "elements": [
+        {
+          "type": "image",
+          "position": "left",
+          "style": {
+            "width": "50%",
+            "height": "100%"
+          }
+        },
+        {
+          "type": "badge",
+          "text": "Grey",
+          "style": {
+            "fontSize": "12px",
+            "color": "#FF6B35"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "HOW RIDESHARE IS CHANGING THE WAY WE COMMUTE",
+          "style": {
+            "fontSize": "36px",
+            "fontWeight": "800",
+            "color": "#FFFFFF",
+            "textTransform": "uppercase"
+          }
+        },
+        {
+          "type": "body",
+          "text": "With a background of over 15 years experience & Know How, Sendinblue team strives for excellence while ensuring long term partnerships to achieve success",
+          "style": {
+            "fontSize": "14px",
+            "color": "#CCCCCC",
+            "lineHeight": "1.6"
+          }
+        }
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
       }
     },
     {
       "slideNumber": 4,
-      "pageLabel": "주요업무1",
-      "template": "content-text",
-      "layout": "image-text-split",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD. - SERVICE PROVIDER",
-          "background": "#002D72"
+      "type": "table-of-contents",
+      "title": "Agenda",
+      "layout": {
+        "template": "table-of-contents",
+        "style": "numbered-list"
+      },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "Agenda",
+          "style": {
+            "fontSize": "24px",
+            "fontWeight": "600",
+            "color": "#888888"
+          }
         },
-        "title": {
-          "text": "COMPANY 주요업무",
-          "style": "heading2"
-        },
-        "image": {
-          "type": "collage",
-          "images": ["컨테이너선", "항공기"]
-        },
-        "description": {
-          "type": "paragraph",
-          "content": "이음로지스틱(주)는 NVOCC (Non-Vessel Operating Common Carrier) 의 Int'l Freight Forwarding 으로서, 해상, 항공 수출입 화물운송에서 모든 관점의 필요조건에 대한 풍부한 경험으로 신뢰할 수 있는 서비스를 제공합니다."
-        },
-        "serviceCards": {
-          "type": "two-column-cards",
-          "cards": [
+        {
+          "type": "toc-item",
+          "items": [
             {
-              "title": "Container 수출입과 항공화물 서비스",
-              "description": "LCL / FCL shipments, Door to Door shipments, 수출입 통관,제반서류, 보세창고와 국내 내륙운송서비스와 같은 다양한 형태의 화물 운송서비스를 제공합니다."
+              "number": "01",
+              "title": "Intro",
+              "numberColor": "#FF6B35",
+              "titleColor": "#FF6B35"
             },
             {
-              "title": "Weekly Ocean & Daily Air Consolidation 서비스",
-              "description": "물류와 상관없이 세계 어떤 지역의 LCL Shipment Consolidation 서비스를 제공합니다. 아울러 항공, 해운 Consolidation의 매우 경쟁력 있는 운임과 가격을 제안해 드릴 것입니다."
+              "number": "02",
+              "title": "Problem",
+              "numberColor": "#FFFFFF",
+              "titleColor": "#FFFFFF"
+            },
+            {
+              "number": "03",
+              "title": "Opportunity",
+              "numberColor": "#FFFFFF",
+              "titleColor": "#FFFFFF"
+            },
+            {
+              "number": "04",
+              "title": "Solution",
+              "numberColor": "#FFFFFF",
+              "titleColor": "#FFFFFF"
             }
-          ]
-        },
-        "centerIcon": {
-          "type": "badge",
-          "text": "해상, 항공\n수출입\n화물운송",
-          "background": "#00B4D8"
+          ],
+          "style": {
+            "numberFontSize": "24px",
+            "titleFontSize": "20px",
+            "gap": "16px"
+          }
         }
-      },
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
       }
     },
     {
       "slideNumber": 5,
-      "pageLabel": "주요업무2",
-      "template": "content-text",
-      "layout": "diagram",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD.",
-          "background": "#002D72"
-        },
-        "title": {
-          "text": "COMPANY 주요업무",
-          "style": "heading2"
-        },
-        "subtitle": {
-          "text": "화물운송의 준비와 상담, 선박의 계약 (Transportation Arrangements and Consultant and Ship Chartering)",
-          "background": "#FFEB3B"
-        },
-        "diagram": {
-          "type": "mind-map",
-          "center": {
-            "text": "E-UM LOGISTIC 의\n전문지식과\n경험",
-            "shape": "circle",
-            "border": "#002D72"
-          },
-          "branches": [
-            "[해상, 항공 소형화물 혼재 선적]",
-            "[수출.입 통관, 서류 대행 및 화물 보관]",
-            "[국내외 육송 및 철송 운송]",
-            "[중장비, 기계류, 특수화물 및 위험물 선적]",
-            "[DOOR TO DOOR SERVICE & Tri-Angle Off-Shore Trade 운송업무]",
-            "[기타 수출.입 관련 수송업무]",
-            "[PROJECT, HEAY CARGO 서비스 및 부정기선 업무]"
-          ]
-        }
+      "type": "content-image",
+      "title": "THE INFRASTRUCTURE IS BROKEN",
+      "layout": {
+        "template": "content-image-overlay",
+        "imagePosition": "background"
       },
+      "elements": [
+        {
+          "type": "badge",
+          "text": "Problem",
+          "style": {
+            "fontSize": "14px",
+            "color": "#888888",
+            "position": "top-left"
+          }
+        },
+        {
+          "type": "label",
+          "text": "The Problem",
+          "style": {
+            "fontSize": "14px",
+            "color": "#888888",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "THE INFRASTRUCTURE IS BROKEN",
+          "style": {
+            "fontSize": "48px",
+            "fontWeight": "800",
+            "color": "#FFFFFF",
+            "textTransform": "uppercase"
+          }
+        }
+      ],
       "background": {
-        "type": "solid",
-        "color": "#FFFFFF"
+        "type": "image-overlay",
+        "imageOpacity": 0.5,
+        "overlayColor": "rgba(0, 0, 0, 0.6)"
       }
     },
     {
       "slideNumber": 6,
-      "pageLabel": "글로벌네트워크",
-      "template": "content-text",
-      "layout": "map-with-table",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD. - SERVICE PROVIDER",
-          "background": "#002D72"
+      "type": "stats",
+      "title": "Market Size",
+      "layout": {
+        "template": "stats-highlight",
+        "columns": 2
+      },
+      "elements": [
+        {
+          "type": "badge",
+          "text": "Our Position",
+          "style": {
+            "fontSize": "12px",
+            "color": "#888888"
+          }
         },
-        "worldMap": {
-          "type": "image",
-          "highlights": "파트너사 위치 표시 (파란색)",
-          "legend": [
-            {"color": "#002D72", "label": "직계약 파트너사"},
-            {"color": "#90CAF9", "label": "연계 협력사"}
+        {
+          "type": "stat-block",
+          "items": [
+            {
+              "value": "$31B",
+              "label": "With 90% of world's data created in the last 4 years, the importance of leveraging one's datasets is becoming",
+              "valueColor": "#FFFFFF",
+              "valueSize": "64px"
+            },
+            {
+              "value": "$24B",
+              "label": "2018 Uber revenue came to $11.3billion - a 43% increase on 2018, while gross",
+              "valueColor": "#FFFFFF",
+              "valueSize": "64px"
+            }
           ]
         },
-        "partnerTable": {
-          "type": "region-table",
-          "columns": ["Middle East", "Europe", "Asia", "America", "Africa"],
-          "data": {
-            "Middle East": ["Saudi Arabia", "Kuwait", "Qatar", "Oman", "U.A.E", "Iran", "Iraq"],
-            "Europe": ["Germany", "Italy", "UK / Spain", "France / Belgium", "Netherland", "Romania / Chzech", "Turkey / Poland", "Finland / Sweden"],
-            "Asia": ["China", "Japan", "Vietnam", "Malaysia", "Philippine", "Singapore", "Indonesia", "Australia"],
-            "America": ["USA", "Canada", "Mexico", "Brazil", "Chile", "Bolivia"],
-            "Africa": ["Algeria", "South Africa"]
-          }
+        {
+          "type": "chart",
+          "chartType": "horizontal-bar",
+          "data": [
+            { "label": "", "value": 90, "color": "#FF6B35" },
+            { "label": "", "value": 42, "color": "#FF6B35" },
+            { "label": "", "value": 12, "color": "#FFB800" }
+          ]
         }
-      },
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
       }
     },
     {
       "slideNumber": 7,
-      "pageLabel": "서비스유형",
-      "template": "bullet-list",
-      "layout": "grid-3x2",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD.",
-          "background": "#002D72"
+      "type": "business-model",
+      "title": "Business Model",
+      "layout": {
+        "template": "three-column",
+        "columns": 3
+      },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "Business Model",
+          "style": {
+            "fontSize": "20px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
         },
-        "serviceCards": {
-          "type": "image-text-cards",
-          "columns": 2,
-          "rows": 3,
-          "cards": [
-            {"image": "컨테이너 크레인", "titleKo": "해상 운송", "titleEn": "Sea Freight Service"},
-            {"image": "컨테이너 트럭", "titleKo": "컨테이너운송", "titleEn": "Container drayage"},
-            {"image": "항공 화물", "titleKo": "항공운송", "titleEn": "Air Freight Service"},
-            {"image": "특수 화물", "titleKo": "프로젝트 카고", "titleEn": "Project & Heavy Cargo"},
-            {"image": "창고 내부", "titleKo": "창고 서비스", "titleEn": "Warehouse"},
-            {"image": "물류 센터", "titleKo": "SCM / 3PL", "titleEn": "Supply Chain Management & 3PL"}
+        {
+          "type": "model-cards",
+          "items": [
+            {
+              "icon": "circle",
+              "iconColor": "#FF6B35",
+              "title": "Freemium Model",
+              "description": "To generate extra income, they run small businesses across 10+ platforms with"
+            },
+            {
+              "icon": "square",
+              "iconColor": "#4A4A4A",
+              "title": "Sponsorship",
+              "description": "To generate extra income, they run small businesses across 10+ platforms with"
+            },
+            {
+              "icon": "triangle",
+              "iconColor": "#FF6B35",
+              "title": "Ads Annual Subscriptions",
+              "description": "To generate extra income, they run small businesses across 10+ platforms with"
+            }
           ]
         }
-      },
+      ],
       "background": {
-        "type": "solid",
-        "color": "#FFFFFF"
+        "type": "gradient",
+        "colors": ["#1A1A1A", "#2A2A2A"]
       }
     },
     {
       "slideNumber": 8,
-      "pageLabel": "주요고객사",
-      "template": "bullet-list",
-      "layout": "button-grid",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD. - MAIN CUSTOMER",
-          "background": "#002D72"
-        },
-        "title": {
-          "text": "COMPANY MAIN CUSTOMER",
-          "style": "heading2"
-        },
-        "description": {
-          "text": "이음로지스틱(주) 는 20 개 이상의 주요 거래처들에게 다양한 TOTAL LOGISTICS SERVICE 를 제공합니다.",
-          "background": "#FFEB3B"
-        },
-        "customerGrid": {
-          "type": "button-grid",
-          "columns": 4,
-          "rows": 5,
-          "buttonStyle": {
-            "background": "linear-gradient(to bottom, #5BA3E0, #3A7BC8)",
-            "textColor": "#FFFFFF",
-            "borderRadius": "8px"
-          },
-          "customers": [
-            "가온전선", "롯데제과", "팔도", "HY",
-            "유앤아이원", "JK인터내셔널", "YC리싸이클", "에코비트프리텍",
-            "CM코아", "광메탈", "페트로마인", "나우리소스",
-            "대건비철", "팜인터내셔널", "신영금속", "죽암FA",
-            "디씨팩", "KNP", "브링스글로벌", "광태산업"
-          ]
-        }
+      "type": "competitor-analysis",
+      "title": "Competitor Analysis",
+      "layout": {
+        "template": "comparison-table",
+        "rows": 5,
+        "columns": 4
       },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "Competitor Analysis",
+          "style": {
+            "fontSize": "20px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "comparison-table",
+          "headers": ["", "Software", "Speed to market", "Web Develop"],
+          "rows": [
+            { "company": "Robinhood", "values": ["check", "check", "check"] },
+            { "company": "My Startup", "values": ["highlight", "highlight", "highlight"] },
+            { "company": "Zillow", "values": ["check", "", "check"] },
+            { "company": "Clearbit", "values": ["check", "check", ""] },
+            { "company": "Honeybook", "values": ["", "check", "check"] },
+            { "company": "Stripe", "values": ["check", "", "check"] }
+          ],
+          "highlightColor": "#FF6B35"
+        }
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
       }
     },
     {
       "slideNumber": 9,
-      "pageLabel": "프로젝트참고자료",
-      "template": "content-text",
-      "layout": "photo-gallery",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD. - PROJECT 참고자료",
-          "background": "#002D72"
-        },
-        "gallery": {
-          "type": "image-grid",
-          "columns": 3,
-          "rows": 2,
-          "images": [
-            {"description": "컨테이너 선적 작업 (야간)"},
-            {"description": "대형 구조물 선적"},
-            {"description": "황색 크레인 작업"},
-            {"description": "특수 화물 운송 트럭"},
-            {"description": "대형 탱크 운송"},
-            {"description": "압력용기 선적"}
-          ]
-        }
+      "type": "content-statement",
+      "title": "Algorithm Solution",
+      "layout": {
+        "template": "center-statement",
+        "alignment": "center"
       },
+      "elements": [
+        {
+          "type": "badge",
+          "text": "Storyline",
+          "style": {
+            "fontSize": "12px",
+            "color": "#888888"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "We have developed an algorithm to solve our user needs",
+          "style": {
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "color": "#FFFFFF",
+            "lineHeight": "1.2"
+          }
+        },
+        {
+          "type": "logo-placeholder",
+          "text": "Logo",
+          "style": {
+            "fontSize": "14px",
+            "color": "#888888",
+            "position": "bottom-right"
+          }
+        }
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
       }
     },
     {
       "slideNumber": 10,
-      "pageLabel": "회사메시지",
-      "template": "content-text",
-      "layout": "text-only",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD. - SERVICE PROVIDER",
-          "background": "#002D72"
-        },
-        "title": {
-          "text": "COMPANY MESSAGE",
-          "style": "heading2"
-        },
-        "message": {
-          "type": "paragraph",
-          "content": [
-            "먼저 이 지면을 빌어 여러분께 폐사를 소개할 수 있음을 진심으로, 영광으로 생각하며 감사 드립니다.",
-            "",
-            "우리 이음로지스틱(주) 는 크지 않습니다.",
-            "반면, 우리의 능력은 작지 않습니다.",
-            "우리의 직원 하나 하나는 귀사의 소중한 화물을 처리하기 위한 만반의 준비가 되어 있습니다.",
-            "우리의 능력을 느껴 보십시요.",
-            "무엇을 해야 할지, 어떻게 해야 할 지, 어디로 가야 할지 잘 알고 있습니다.",
-            "",
-            "이 작은 정신 하나가 우리를 이 만큼 만들었으며 그 동안 당사의 고객들께 보여 드린 우리의 목표이자 바람입니다.",
-            "",
-            "앞으로 저희들의 정성이 귀사께 전달될 수 있기를 바라며 작은 새싹을 보호하듯 귀하의 소중한 화물에 최선을 다하겠습니다.",
-            "",
-            "모든 분들의 건강 및 발전을 기원합니다.",
-            "",
-            "감사합니다."
-          ],
-          "emphasis": ["우리 이음로지스틱(주) 는 크지 않습니다.", "반면, 우리의 능력은 작지 않습니다.", "우리의 직원 하나 하나는 귀사의 소중한 화물을 처리하기 위한 만반의 준비가 되어 있습니다.", "우리의 능력을 느껴 보십시요.", "무엇을 해야 할지, 어떻게 해야 할 지, 어디로 가야 할지 잘 알고 있습니다."]
-        }
+      "type": "content-features",
+      "title": "Underlying Magic",
+      "layout": {
+        "template": "image-features",
+        "imagePosition": "left"
       },
+      "elements": [
+        {
+          "type": "image",
+          "position": "left",
+          "style": {
+            "width": "40%",
+            "borderRadius": "8px"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "Underlying Magic",
+          "style": {
+            "fontSize": "36px",
+            "fontWeight": "700",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "feature-list",
+          "items": [
+            {
+              "title": "Feature One",
+              "description": "With a background of over 15 years experience & Know How, Sendinblue team strives for excellence while ensuring long term partnerships to achieve success"
+            },
+            {
+              "title": "Feature Two",
+              "description": "With a background of over 15 years experience & Know How, Sendinblue team strives for excellence while ensuring long term partnerships to achieve success"
+            },
+            {
+              "title": "Feature Three",
+              "description": "With a background of over 15 years experience & Know How, Sendinblue team strives for excellence while ensuring long term partnerships to achieve success"
+            }
+          ]
+        }
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
       }
     },
     {
       "slideNumber": 11,
-      "pageLabel": "감사페이지",
-      "template": "hero-cover",
-      "layout": "center-aligned",
-      "elements": {
-        "header": {
-          "text": "EUM LOGISTIC CO., LTD.",
-          "background": "#002D72"
-        },
-        "thankYou": {
-          "text": "Thank you.",
-          "style": "heading1",
-          "fontStyle": "italic"
-        },
-        "logo": {
-          "type": "image",
-          "src": "EUM LOGISTIC 로고"
-        },
-        "companyName": {
-          "text": "이음 로지스틱 주식회사",
-          "style": "heading3"
-        },
-        "footer": {
-          "type": "bar",
-          "background": "#002D72"
-        }
+      "type": "section-divider",
+      "title": "Team Players",
+      "layout": {
+        "template": "section-divider",
+        "alignment": "center-right"
       },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "Team",
+          "style": {
+            "fontSize": "96px",
+            "fontWeight": "800",
+            "color": "#FFFFFF",
+            "opacity": 0.3
+          }
+        },
+        {
+          "type": "subheading",
+          "text": "Players",
+          "style": {
+            "fontSize": "72px",
+            "fontWeight": "800",
+            "color": "#FF6B35"
+          }
+        }
+      ],
+      "background": {
+        "type": "image-overlay",
+        "imageOpacity": 0.4
+      }
+    },
+    {
+      "slideNumber": 12,
+      "type": "team",
+      "title": "Meet the Team",
+      "layout": {
+        "template": "team-grid",
+        "columns": 4
+      },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "Meet the Team",
+          "style": {
+            "fontSize": "24px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "team-members",
+          "members": [
+            {
+              "name": "Jared Gibson",
+              "role": "CEO, Founder",
+              "image": "placeholder",
+              "bio": "These new technologies have the potential to revolution"
+            },
+            {
+              "name": "James Ben",
+              "role": "CFO, Finance director",
+              "image": "placeholder",
+              "bio": "These new technologies have the potential to revolution"
+            },
+            {
+              "name": "Seun Tizzle",
+              "role": "CMO, Director of Marketing",
+              "image": "placeholder",
+              "bio": "These new technologies have the potential to revolution"
+            },
+            {
+              "name": "Sarah Zelensky",
+              "role": "Creative Director",
+              "image": "placeholder",
+              "bio": "These new technologies have the potential to revolution"
+            }
+          ]
+        }
+      ],
       "background": {
         "type": "solid",
-        "color": "#FFFFFF"
+        "color": "#1A1A1A"
+      }
+    },
+    {
+      "slideNumber": 13,
+      "type": "stats",
+      "title": "Market Statistics",
+      "layout": {
+        "template": "stats-visual",
+        "style": "icon-grid"
+      },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "9 out of 100",
+          "style": {
+            "fontSize": "48px",
+            "fontWeight": "700",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "subheading",
+          "text": "people living in Amsterdam have a car",
+          "style": {
+            "fontSize": "24px",
+            "color": "#CCCCCC"
+          }
+        },
+        {
+          "type": "icon-grid",
+          "total": 100,
+          "highlighted": 9,
+          "highlightColor": "#FF6B35",
+          "defaultColor": "#4A4A4A"
+        },
+        {
+          "type": "stat-row",
+          "items": [
+            { "value": "78.1k", "label": "Metric 1" },
+            { "value": "95.3k", "label": "Metric 2" }
+          ]
+        }
+      ],
+      "background": {
+        "type": "solid",
+        "color": "#1A1A1A"
+      }
+    },
+    {
+      "slideNumber": 14,
+      "type": "roadmap",
+      "title": "Roadmap",
+      "layout": {
+        "template": "timeline-horizontal",
+        "style": "gantt-like"
+      },
+      "elements": [
+        {
+          "type": "heading",
+          "text": "Roadmap",
+          "style": {
+            "fontSize": "24px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "timeline",
+          "periods": [
+            {
+              "label": "(Q1) 2022",
+              "milestone": "Aenean sodales augue ac aliquam fringilla.",
+              "barColor": "#4A4A4A"
+            },
+            {
+              "label": "(Q2) 2022",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#4A4A4A"
+            },
+            {
+              "label": "(Q3) 2022",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#FF6B35"
+            },
+            {
+              "label": "(Q4) 2022",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#FFB800"
+            },
+            {
+              "label": "(Q1) 2023",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#FF6B35"
+            },
+            {
+              "label": "(Q2) 2023",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#FFB800"
+            },
+            {
+              "label": "(Q3) 2023",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#FF6B35"
+            },
+            {
+              "label": "(Q4) 2023",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#FFB800"
+            },
+            {
+              "label": "(Q1) 2024",
+              "milestone": "Pellentesque pretium turpis vitae ligula.",
+              "barColor": "#FF6B35"
+            }
+          ],
+          "markers": [
+            { "position": "2022", "label": "2022" },
+            { "position": "2023", "label": "2023" },
+            { "position": "Series A", "label": "Series A", "highlight": true }
+          ]
+        }
+      ],
+      "background": {
+        "type": "solid",
+        "color": "#1A1A1A"
+      }
+    },
+    {
+      "slideNumber": 15,
+      "type": "contact",
+      "title": "CONTACT",
+      "layout": {
+        "template": "contact-info",
+        "alignment": "right"
+      },
+      "elements": [
+        {
+          "type": "badge",
+          "text": "Get in Touch",
+          "style": {
+            "fontSize": "14px",
+            "color": "#888888"
+          }
+        },
+        {
+          "type": "heading",
+          "text": "CONTACT",
+          "style": {
+            "fontSize": "96px",
+            "fontWeight": "800",
+            "color": "#FF6B35",
+            "textTransform": "uppercase"
+          }
+        },
+        {
+          "type": "contact-info",
+          "items": [
+            { "type": "email", "value": "hello@pitchform.co" },
+            { "type": "phone", "value": "983 457 7788" },
+            { "type": "website", "value": "pitchform.co" }
+          ],
+          "style": {
+            "fontSize": "18px",
+            "color": "#CCCCCC"
+          }
+        }
+      ],
+      "background": {
+        "type": "solid",
+        "color": "#1A1A1A"
       }
     }
   ],
-  "slideTemplates": {
-    "hero-cover": {
-      "layout": "center-aligned",
-      "elements": ["logo", "heading", "subheading"],
-      "headerBar": true,
-      "footerBar": true
-    },
-    "content-text": {
-      "layout": "flexible",
-      "headerBar": true,
-      "footerBar": true,
-      "variations": ["table-form", "two-column", "image-text-split", "diagram", "map-with-table", "photo-gallery", "text-only"]
-    },
-    "bullet-list": {
-      "layout": "grid",
-      "headerBar": true,
-      "footerBar": true,
-      "variations": ["grid-3x2", "button-grid"]
-    }
-  },
-  "brandElements": {
-    "logo": {
-      "type": "combined",
-      "icon": "오렌지색 원형 EUM 심볼",
-      "text": "E-UM LOGISTIC",
-      "colors": {
-        "icon": "#F5A623",
-        "text": "#002D72"
+  "componentPatterns": {
+    "badges": {
+      "style": {
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "color": "#888888",
+        "textTransform": "none"
       }
     },
-    "headerBar": {
-      "height": "50px",
-      "background": "#002D72",
-      "textColor": "#FFEB3B",
-      "leftContent": "EUM LOGISTIC CO., LTD. - [Section Name]",
-      "rightContent": "PAGE : [N]"
+    "headings": {
+      "hero": {
+        "fontSize": "72px",
+        "fontWeight": "800",
+        "textTransform": "uppercase",
+        "letterSpacing": "-0.02em"
+      },
+      "section": {
+        "fontSize": "48px",
+        "fontWeight": "700"
+      },
+      "content": {
+        "fontSize": "36px",
+        "fontWeight": "700"
+      }
     },
-    "footerBar": {
-      "height": "40px",
-      "background": "#002D72"
+    "cards": {
+      "background": "#2A2A2A",
+      "borderRadius": "8px",
+      "padding": "24px"
     },
-    "highlightBadge": {
-      "background": "#FFEB3B",
-      "textColor": "#333333"
+    "stats": {
+      "valueSize": "64px",
+      "valueWeight": "700",
+      "labelSize": "14px",
+      "labelColor": "#888888"
+    },
+    "charts": {
+      "barHeight": "8px",
+      "barRadius": "4px",
+      "colors": ["#FF6B35", "#FFB800", "#4A4A4A"]
     }
   },
-  "companyInfo": {
-    "name": {
-      "ko": "이음 로지스틱 주식회사",
-      "en": "EUM LOGISTIC CO., LTD."
-    },
-    "headquarters": "서울특별시 강서구 마곡중앙로 161-8, 5층 두산더랜드파크 B동 510호",
-    "branch": "경남 창원시 진해구 신항7로 63 MS디스트리파크 용동물류센터 2층 206호",
-    "phone": "+82 2 3662 8150~5",
-    "fax": "+82 2 6442 8153",
-    "email": "info@e-umlk.com",
-    "employees": 7,
-    "established": "2020-07-17",
-    "capital": "3억3300만원",
-    "annualRevenue": "35억원",
-    "services": [
-      "국제 운송 (항공, 해상)",
-      "내륙운송 - 일반, 보세, 특수",
-      "창고보관 - 일반, 보세, 냉장, 냉동",
-      "특송 - Door to door",
-      "물류 컨설팅",
-      "NVOCC (Non-Vessel Operating Common Carrier)",
-      "SCM / 3PL"
-    ]
+  "implementationReadiness": {
+    "htmlStructure": "✅ Ready",
+    "designTokens": "✅ Extracted",
+    "slideTemplates": "✅ Identified",
+    "contentMapping": "✅ Mapped"
   }
 }
