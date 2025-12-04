@@ -1,872 +1,670 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이음로지스틱스(E-UM Logistics)</title>
-    <style>
-        :root {
-  /* Colors */
-  --primary: #FF6B35;
-  --primary-light: #FF8A5B;
-  --primary-dark: #E55A25;
-  --secondary: #FFB800;
-  --bg-dark: #1A1A1A;
-  --bg-darker: #0D0D0D;
-  --bg-card: #2A2A2A;
-  --bg-overlay: rgba(0, 0, 0, 0.7);
-  --text-primary: #FFFFFF;
-  --text-secondary: #CCCCCC;
-  --text-muted: #888888;
-  --chart-orange: #FF6B35;
-  --chart-yellow: #FFB800;
-  --chart-gray: #4A4A4A;
-  
-  /* Typography */
-  --font-main: 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  
-  /* Font Sizes - from design tokens */
-  --size-hero: 72px;
-  --size-h1: 48px;
-  --size-h2: 36px;
-  --size-h3: 24px;
-  --size-body: 16px;
-  --size-caption: 12px;
-  --size-stat: 64px;
-  
-  /* Font Weights */
-  --weight-extra-bold: 800;
-  --weight-bold: 700;
-  --weight-semi-bold: 600;
-  --weight-regular: 400;
-  
-  /* Spacing - 8px grid system */
-  --space-page-h: 60px;
-  --space-page-v: 48px;
-  --space-section: 40px;
-  --space-element: 24px;
-  --space-tight: 12px;
-  --space-xs: 8px;
-  
-  /* Effects */
-  --radius-card: 8px;
-  --radius-image: 4px;
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-        
-        /* Import Fonts */
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--font-main);
-            background-color: #202020;
-            color: var(--text-primary);
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .slide {
-            width: 297mm;
-            height: 167mm;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            position: relative;
-            overflow: hidden;
-            page-break-after: always;
-            break-after: page;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .slide.last-slide {
-            page-break-after: avoid;
-            break-after: avoid;
-        }
-
-        /* Layout Containers */
-        .content-overlay {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            padding: var(--space-page-v) var(--space-page-h);
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Split Layout (Left Text / Right Image) */
-        .layout-split {
-            display: flex;
-        }
-        
-        .layout-split .content-overlay {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            align-items: stretch;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        /* Image Left Layout */
-        .layout-split.image-left .content-overlay {
-            grid-template-columns: 1fr 1fr;
-        }
-        
-        .layout-split .col-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-            padding: var(--space-page-v) var(--space-section) var(--space-page-v) var(--space-page-h);
-            overflow: hidden;
-        }
-        
-        .layout-split.image-left .col-left {
-            padding: 0;
-            overflow: hidden;
-        }
-        
-        .layout-split.image-left .col-left .element-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0;
-        }
-        
-        .layout-split .col-right {
-            position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .layout-split:not(.image-left) .col-right {
-            padding: 0;
-        }
-        
-        .layout-split.image-left .col-right {
-            padding: var(--space-page-v) var(--space-page-h) var(--space-page-v) var(--space-section);
-        }
-        
-        .layout-split:not(.image-left) .col-right .element-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0;
-        }
-
-        /* Center Layout */
-        .layout-center .content-overlay {
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-        }
-
-        /* Typography - Professional Template Style */
-        .element-heading {
-            font-family: var(--font-heading);
-            font-size: var(--size-h1);
-            font-weight: var(--weight-extra-bold);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: var(--space-element);
-            color: var(--text-primary);
-            text-transform: uppercase;
-            white-space: pre-line;
-        }
-        
-        .element-subheading {
-            font-size: 20px;
-            font-weight: var(--weight-regular);
-            line-height: 1.5;
-            margin-bottom: var(--space-element);
-            color: var(--text-secondary);
-            white-space: pre-line;
-        }
-        
-        .element-badge {
-            font-size: var(--size-caption);
-            font-weight: var(--weight-regular);
-            color: var(--text-muted);
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-tight);
-            display: inline-block;
-            text-transform: none;
-        }
-        
-        .element-body {
-            font-size: var(--size-body);
-            font-weight: var(--weight-regular);
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-tight);
-        }
-        
-        .element-quote {
-            font-size: 18px;
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-top: var(--space-element);
-            padding: 20px;
-            border-left: 3px solid var(--primary);
-            background: rgba(255,255,255,0.03);
-        }
-        
-        .element-logo {
-            font-size: var(--size-h3);
-            font-weight: var(--weight-bold);
-            color: var(--primary);
-            margin-bottom: var(--space-xs);
-        }
-
-        /* Image Handling */
-        .element-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--radius-image);
-            box-shadow: var(--shadow-card);
-        }
-
-        /* Background Image */
-        .bg-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        
-        .bg-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        /* Section Divider - Professional Style */
-        .template-section-divider .content-overlay {
-            justify-content: center;
-            align-items: flex-start;
-            padding: var(--space-page-v) var(--space-page-h);
-            padding-left: 80px;
-        }
-        
-        .template-section-divider.align-center .content-overlay {
-            align-items: center;
-            text-align: center;
-            padding-left: var(--space-page-h);
-            padding-right: var(--space-page-h);
-        }
-        
-        .template-section-divider.align-right .content-overlay {
-            align-items: flex-end;
-            text-align: right;
-            padding-left: var(--space-page-h);
-            padding-right: 80px;
-        }
-        
-        .template-section-divider .element-heading {
-            font-size: 96px;
-            opacity: 0.3;
-            margin-bottom: -16px;
-            letter-spacing: -0.03em;
-            white-space: nowrap;
-        }
-        
-        .template-section-divider .element-subheading {
-            font-size: 72px;
-            font-weight: var(--weight-extra-bold);
-            margin: 0;
-            color: var(--primary);
-            letter-spacing: -0.02em;
-            white-space: nowrap;
-        }
-        
-        .section-divider-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        
-        .section-divider-text .element-heading {
-            font-size: 96px;
-            opacity: 0.3;
-            margin-bottom: -16px;
-            letter-spacing: -0.03em;
-        }
-        
-        .section-divider-text .element-subheading {
-            font-size: 72px;
-            font-weight: var(--weight-extra-bold);
-            margin: 0;
-            color: var(--primary);
-            letter-spacing: -0.02em;
-        }
-        
-        /* Timeline Styles - Greyco Roadmap Style */
-        .timeline-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 0;
-            margin-top: var(--space-section);
-            width: 100%;
-        }
-        
-        .timeline-item {
-            padding: var(--space-tight) var(--space-tight) 0 0;
-            position: relative;
-            border-top: 4px solid var(--primary);
-        }
-        
-        .timeline-year {
-            font-size: 18px;
-            font-weight: var(--weight-extra-bold);
-            margin-bottom: var(--space-xs);
-            letter-spacing: -0.01em;
-        }
-        
-        .timeline-milestone {
-            font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-        
-        /* TOC - Table of Contents (Greyco Style) */
-        .toc-container {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-element);
-            margin-top: var(--space-section);
-        }
-        
-        .toc-item {
-            display: flex;
-            align-items: baseline;
-            gap: var(--space-tight);
-        }
-        
-        .toc-number {
-            font-size: var(--size-h3);
-            font-weight: var(--weight-bold);
-            min-width: 50px;
-            letter-spacing: -0.01em;
-        }
-        
-        .toc-title {
-            font-size: 20px;
-            font-weight: var(--weight-semi-bold);
-        }
-        
-        /* Stats Block - Greyco Style */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-section);
-            margin-top: var(--space-section);
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .stat-value {
-            font-size: var(--size-stat);
-            font-weight: var(--weight-bold);
-            line-height: 1;
-            margin-bottom: var(--space-xs);
-            letter-spacing: -0.02em;
-        }
-        
-        .stat-unit {
-            font-size: var(--size-h3);
-            font-weight: var(--weight-regular);
-            margin-left: 4px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        
-        /* Chart - Horizontal Bar */
-        .chart-container {
-            margin-top: var(--space-section);
-            width: 100%;
-        }
-        
-        .chart-title {
-            font-size: var(--size-body);
-            font-weight: var(--weight-semi-bold);
-            margin-bottom: var(--space-tight);
-            color: var(--text-primary);
-        }
-        
-        .chart-bar-item {
-            margin-bottom: var(--space-tight);
-        }
-        
-        .chart-bar-label {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 4px;
-        }
-        
-        .chart-bar-wrapper {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            height: 8px;
-            overflow: hidden;
-        }
-        
-        .chart-bar {
-            height: 100%;
-            border-radius: 4px;
-        }
-        
-        /* Business Model Cards - Greyco Style */
-        .model-cards-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-element);
-            margin-top: var(--space-section);
-        }
-        
-        .model-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-card);
-            padding: var(--space-section) var(--space-element);
-            text-align: center;
-        }
-        
-        .model-card-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .model-card-title {
-            font-size: 20px;
-            font-weight: var(--weight-bold);
-            color: var(--text-primary);
-            margin-bottom: var(--space-tight);
-        }
-        
-        .model-card-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        
-        /* Comparison Table - Greyco Style */
-        .comparison-table {
-            width: 100%;
-            margin-top: var(--space-section);
-            border-collapse: collapse;
-        }
-        
-        .comparison-table th,
-        .comparison-table td {
-            padding: var(--space-tight);
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .comparison-table th {
-            font-size: 14px;
-            font-weight: var(--weight-semi-bold);
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .comparison-table td:first-child {
-            text-align: left;
-            font-weight: var(--weight-semi-bold);
-        }
-        
-        .comparison-table tr.highlight {
-            background: rgba(255, 107, 53, 0.1);
-        }
-        
-        .comparison-table tr.highlight td {
-            color: var(--primary);
-            font-weight: var(--weight-bold);
-        }
-        
-        .comparison-table .check {
-            color: var(--text-muted);
-            font-size: 18px;
-        }
-        
-        .comparison-table .highlight-check {
-            color: var(--primary);
-            font-weight: var(--weight-bold);
-            font-size: 18px;
-        }
-        
-        /* Icon Grid (6 out of 10 style) - Greyco Style */
-        .icon-grid-container {
-            display: flex;
-            gap: var(--space-tight);
-            margin: var(--space-section) 0;
-            justify-content: center;
-        }
-        
-        .icon-grid-item {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-card);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-        
-        /* Client Logos - Greyco Style */
-        .client-logos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-tight);
-            margin-top: var(--space-element);
-            justify-content: center;
-        }
-        
-        .client-logo-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: var(--space-tight) var(--space-element);
-            border-radius: var(--radius-card);
-            font-size: 14px;
-            font-weight: var(--weight-semi-bold);
-            color: var(--text-secondary);
-        }
-        
-        .client-logo-item.highlighted {
-            background: var(--primary);
-            color: #FFFFFF;
-        }
-        
-        /* Center Statement - Greyco Style */
-        .template-content-statement .content-overlay {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .center-statement-text {
-            max-width: 900px;
-            text-align: center;
-        }
-        
-        .center-statement-text .element-heading {
-            font-size: var(--size-h1);
-            font-weight: var(--weight-bold);
-            line-height: 1.2;
-            text-transform: none;
-            letter-spacing: -0.01em;
-        }
-        
-        /* Contact Info - Greyco Style */
-        .template-contact .content-overlay,
-        .template-contact-info .content-overlay {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: var(--space-element) var(--space-page-h);
-            gap: 4px;
-        }
-        
-        .template-contact .element-heading,
-        .template-contact-info .element-heading {
-            margin-bottom: 0;
-            font-size: 36px !important;
-            line-height: 1.1;
-        }
-        
-        .template-contact .element-badge,
-        .template-contact-info .element-badge {
-            margin-bottom: 0;
-            font-size: 11px !important;
-        }
-        
-        .template-contact .element-logo,
-        .template-contact-info .element-logo {
-            margin: 8px 0;
-            font-size: 16px !important;
-        }
-        
-        .contact-info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            margin: 8px 0;
-            align-items: center;
-        }
-        
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        
-        .contact-info-icon {
-            font-size: 14px;
-            width: 20px;
-            text-align: center;
-        }
-        
-        .template-contact .element-body,
-        .template-contact-info .element-body {
-            font-size: 12px !important;
-            margin-top: 8px;
-        }
-        
-        /* Value Cards (Why E-UM) - Greyco Style */
-        .value-cards-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: var(--space-element);
-            width: 100%;
-        }
-        
-        .value-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-card);
-            padding: 16px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 0;
-        }
-        
-        .value-card-icon {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-        
-        .value-card-title {
-            font-size: 14px;
-            font-weight: var(--weight-bold);
-            margin-bottom: 4px;
-            color: var(--text-primary);
-        }
-        
-        .value-card-desc {
-            font-size: 11px;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-        
-        /* Image Overlay Layout - Greyco Style */
-        .template-content-image .content-overlay {
-            justify-content: center;
-            padding-left: 80px;
-        }
-
-        /* Feature List - Greyco Style */
-        .list-container {
-            margin-top: var(--space-element);
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-tight);
-        }
-        
-        .list-item {
-            display: flex;
-            align-items: flex-start;
-            background: rgba(255,255,255,0.05);
-            padding: var(--space-tight) 20px;
-            border-radius: 10px;
-        }
-        
-        .list-icon {
-            font-size: 20px;
-            margin-right: var(--space-tight);
-            flex-shrink: 0;
-        }
-        
-        .list-content {
-            flex: 1;
-        }
-        
-        .list-title {
-            font-weight: var(--weight-bold);
-            font-size: 17px;
-            margin-bottom: 4px;
-            color: var(--text-primary);
-        }
-        
-        .list-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-        
-        /* Content Features Template - Split Layout with Image */
-        .template-content-features .content-overlay,
-        .template-image-features .content-overlay {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-            gap: var(--space-section);
-            align-items: center;
-            padding: var(--space-page-v) var(--space-page-h);
-            height: 100%;
-        }
-        
-        .template-content-features.image-right .content-overlay,
-        .template-image-features.image-right .content-overlay {
-            grid-template-columns: 3fr 2fr;
-        }
-        
-        .template-content-features .content-left,
-        .template-image-features .content-left {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-element);
-            height: 100%;
-            justify-content: center;
-        }
-        
-        .template-content-features .content-right,
-        .template-image-features .content-right {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-element);
-            height: 100%;
-            justify-content: center;
-        }
-        
-        .template-content-features .element-image,
-        .template-image-features .element-image {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: var(--radius-card);
-        }
-
-        /* Cards Container */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            width: 100%;
-            margin-top: var(--space-section);
-        }
-        
-        .cards-container.service-cards {
-            grid-template-columns: repeat(5, 1fr);
-        }
-        
-        .cards-container.value-cards {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        /* Card Styles */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-card);
-            padding: var(--space-element);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .card-icon {
-            font-size: 32px;
-            margin-bottom: var(--space-tight);
-        }
-        
-        .card-title {
-            font-size: 18px;
-            font-weight: var(--weight-bold);
-            margin-bottom: var(--space-xs);
-            color: var(--primary);
-        }
-        
-        .card-subtitle {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: var(--space-xs);
-        }
-        
-        .card-value {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        
-        /* Client Grid */
-        .clients-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: var(--space-tight);
-        }
-        
-        .client-item {
-            background: white;
-            color: #333;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: var(--weight-bold);
-            font-size: 14px;
-        }
-        
-        .client-item.highlight {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Print Optimization */
-        @media print {
-            @page {
-                size: 297mm 167mm;
-                margin: 0;
-            }
-            html, body {
-                margin: 0 !important;
-                padding: 0 !important;
-                background: white !important;
-            }
-            .slide {
-                margin: 0 !important;
-                box-shadow: none !important;
-                page-break-inside: avoid !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080">
+  <title>E-UM Logistics - Company Profile 2025</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      font-family: 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0D0D0D;
+      color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Slide Container - Centers slides on screen */
+    .slide-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      gap: 20px;
+    }
+    
+    /* Print Styles */
+    @media print {
+      @page { 
+        size: 1920px 1080px;
+        margin: 0; 
+      }
+      
+      html, body { 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        background: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      
+      .slide-container {
+        padding: 0 !important;
+        gap: 0 !important;
+      }
+      
+      .slide {
+        width: 1920px !important;
+        height: 1080px !important;
+        overflow: hidden !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
+      
+      .slide:not(.last-slide) {
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      
+      .last-slide {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
+      
+      .no-print {
+        display: none !important;
+      }
+    }
+    
+    /* Slide Base - Fixed 1920x1080 */
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      min-width: 1920px;
+      min-height: 1080px;
+      max-width: 1920px;
+      max-height: 1080px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Colors */
+    .bg-dark { background-color: #1A1A1A; }
+    .bg-darker { background-color: #0D0D0D; }
+    .bg-card { background-color: #2A2A2A; }
+    .text-white { color: #FFFFFF; }
+    .text-secondary { color: #CCCCCC; }
+    .text-muted { color: #888888; }
+    .text-primary { color: #FF6B35; }
+    .text-accent { color: #FFB800; }
+    
+    /* Typography */
+    .font-bold { font-weight: 700; }
+    .font-extrabold { font-weight: 800; }
+    .font-semibold { font-weight: 600; }
+    .font-normal { font-weight: 400; }
+    .uppercase { text-transform: uppercase; }
+    .italic { font-style: italic; }
+    .tracking-tight { letter-spacing: -0.02em; }
+    
+    /* Layout */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .items-end { align-items: flex-end; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .justify-start { justify-content: flex-start; }
+    .justify-end { justify-content: flex-end; }
+    .gap-4 { gap: 16px; }
+    .gap-6 { gap: 24px; }
+    .gap-8 { gap: 32px; }
+    .gap-10 { gap: 40px; }
+    .gap-12 { gap: 48px; }
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .w-half { width: 50%; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .grid { display: grid; }
+    .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+    
+    /* Spacing */
+    .p-12 { padding: 48px; }
+    .p-16 { padding: 64px; }
+    .px-16 { padding-left: 64px; padding-right: 64px; }
+    .py-12 { padding-top: 48px; padding-bottom: 48px; }
+    .pl-16 { padding-left: 64px; }
+    .pr-16 { padding-right: 64px; }
+    .mt-2 { margin-top: 8px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    
+    /* Image */
+    .object-cover { object-fit: cover; }
+    .rounded { border-radius: 12px; }
+    .rounded-sm { border-radius: 6px; }
+    
+    /* Background Overlay */
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .bg-overlay-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Cards */
+    .card {
+      background: #2A2A2A;
+      border-radius: 16px;
+      padding: 48px;
+    }
+    
+    /* Chart Bar */
+    .chart-bar {
+      height: 12px;
+      border-radius: 6px;
+      background: #4A4A4A;
+      overflow: hidden;
+    }
+    .chart-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+    }
+    
+    /* Timeline */
+    .timeline-line {
+      height: 6px;
+      background: #4A4A4A;
+      border-radius: 3px;
+      position: relative;
+    }
+    .timeline-segment {
+      height: 100%;
+      position: absolute;
+      border-radius: 3px;
+    }
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #FF6B35;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    /* Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 24px 32px;
+      text-align: center;
+      border-bottom: 1px solid #3A3A3A;
+    }
+    .comparison-table th {
+      color: #888888;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .comparison-table td {
+      font-size: 20px;
+    }
+    .comparison-table td:first-child {
+      text-align: left;
+    }
+    .comparison-table tr.highlight {
+      background: rgba(255, 107, 53, 0.1);
+    }
+    .comparison-table tr.highlight td {
+      color: #FF6B35;
+      font-weight: 600;
+    }
+    
+    /* Icon Grid */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .icon-item {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    
+    /* Feature Card */
+    .feature-card {
+      background: #2A2A2A;
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .feature-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+    
+    /* Checkmark */
+    .check {
+      color: #4A4A4A;
+      font-size: 28px;
+    }
+    .check.highlight {
+      color: #FF6B35;
+    }
+  </style>
 </head>
 <body>
-<div class="slide layout-split  template-hero-cover" id="slide-1" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="col-left"><div class="element-badge" style="font-size: 12px; color: #888888; ">Company Profile 2025</div><div class="element-heading" style="font-size: 72px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; ">E-UM
-LOGISTICS</div><div class="element-logo" style="font-size: 24px; font-weight: 700; color: #FF6B35; ">이음로지스틱스</div><div class="element-subheading" style="font-size: 16px; color: #CCCCCC; line-height: 1.5; ">협력 기반 물류 서비스로
-포워더와 함께 성장하는 파트너</div></div><div class="col-right"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=960&h=1080&fit=crop" alt="물류 센터" class="element-image" style="width: 50%; height: 100%; object-fit: cover; "></div></div></div><!-- Slide --><div class="slide  align-left template-section-divider" id="slide-2" style="background-color: #1A1A1A;"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&h=1080&fit=crop" class="bg-image" style="opacity: 0.3;" alt=""><div class="bg-overlay" style="background: rgba(0, 0, 0, 0.7);"></div><div class="content-overlay"><div class="element-heading" style="font-size: 96px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; opacity: 0.3; ">COMPANY</div><div class="element-subheading" style="font-size: 72px; font-weight: 800; color: #FF6B35; ">Overview</div></div></div><!-- Slide --><div class="slide layout-split image-left  template-content-split" id="slide-3" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="col-left"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=1080&fit=crop" alt="컨테이너 야드" class="element-image" style="width: 50%; height: 100%; object-fit: cover; "></div><div class="col-right"><div class="element-badge" style="font-size: 12px; color: #FF6B35; ">회사 개요</div><div class="element-heading" style="font-size: 36px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; ">협력 기반 물류로
-함께 성장하는
-파트너십</div><div class="element-body" style="font-size: 14px; color: #CCCCCC; line-height: 1.6; ">이음로지스틱스는 경쟁이 아닌 협력을 통해 포워더와 화주 모두가 성장할 수 있는 물류 환경을 만들어갑니다. Neutral Warehouse 운영으로 다양한 파트너와의 협업을 지원합니다.</div></div></div></div><!-- Slide --><div class="slide   template-table-of-contents" id="slide-4" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="element-heading" style="font-size: 24px; font-weight: 600; color: #888888; ">Agenda</div><div class="toc-container"><div class="toc-item"><span class="toc-number" style="color: #FF6B35;">01</span><span class="toc-title" style="color: #FF6B35;">Company Profile</span></div><div class="toc-item"><span class="toc-number" style="color: #FFFFFF;">02</span><span class="toc-title" style="color: #FFFFFF;">Our Services</span></div><div class="toc-item"><span class="toc-number" style="color: #FFFFFF;">03</span><span class="toc-title" style="color: #FFFFFF;">Key Strengths</span></div><div class="toc-item"><span class="toc-number" style="color: #FFFFFF;">04</span><span class="toc-title" style="color: #FFFFFF;">Why E-UM</span></div></div></div></div><!-- Slide --><div class="slide   template-stats-highlight" id="slide-5" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="element-badge" style="font-size: 12px; color: #888888; ">Our Growth</div><div class="stats-container"><div class="stat-item"><div class="stat-value" style="color: #FFFFFF; font-size: 64px;">50억<span class="stat-unit">원</span></div><div class="stat-label">연간 매출 규모로 안정적인 성장세를 유지하며 대기업 고객사와의 파트너십을 확대하고 있습니다.</div></div><div class="stat-item"><div class="stat-value" style="color: #FFFFFF; font-size: 64px;">13<span class="stat-unit">명</span></div><div class="stat-label">물류 전문 인력이 포워딩, 창고운영, 라벨링 등 각 분야에서 전문성을 발휘합니다.</div></div></div><div class="chart-container"><div class="chart-title">서비스 비중</div><div class="chart-bar-item"><div class="chart-bar-label">창고운영/3PL (45%)</div><div class="chart-bar-wrapper"><div class="chart-bar" style="width: 45%; background: #FF6B35;"></div></div></div><div class="chart-bar-item"><div class="chart-bar-label">포워딩 (30%)</div><div class="chart-bar-wrapper"><div class="chart-bar" style="width: 30%; background: #FF6B35;"></div></div></div><div class="chart-bar-item"><div class="chart-bar-label">라벨링 (25%)</div><div class="chart-bar-wrapper"><div class="chart-bar" style="width: 25%; background: #FFB800;"></div></div></div></div></div></div><!-- Slide --><div class="slide   template-timeline-horizontal" id="slide-6" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="element-heading" style="font-size: 24px; font-weight: 600; color: #FFFFFF; ">History</div><div class="timeline-container"><div class="timeline-item" style="border-top: 4px solid #4A4A4A;"><div class="timeline-year" style="color: #4A4A4A; ">2018</div><div class="timeline-milestone">이음로지스틱스 법인 설립</div></div><div class="timeline-item" style="border-top: 4px solid #4A4A4A;"><div class="timeline-year" style="color: #4A4A4A; ">2019</div><div class="timeline-milestone">부산지사 설립, 냉동/냉장 창고 운영</div></div><div class="timeline-item" style="border-top: 4px solid #FF6B35;"><div class="timeline-year" style="color: #FF6B35; ">2020</div><div class="timeline-milestone">롯데제과 계약, 3PL 확대</div></div><div class="timeline-item" style="border-top: 4px solid #FFB800;"><div class="timeline-year" style="color: #FFB800; ">2021</div><div class="timeline-milestone">삼성웰스토리 계약, 라벨링센터 구축</div></div><div class="timeline-item" style="border-top: 4px solid #FF6B35;"><div class="timeline-year" style="color: #FF6B35; ">2022</div><div class="timeline-milestone">팔도/삼양식품 계약, 매출 30억</div></div><div class="timeline-item" style="border-top: 4px solid #FFB800;"><div class="timeline-year" style="color: #FFB800; ">2023</div><div class="timeline-milestone">롯데웰푸드, Neutral Warehouse</div></div><div class="timeline-item" style="border-top: 4px solid #FF6B35;"><div class="timeline-year" style="color: #FF6B35; ">2024</div><div class="timeline-milestone">인력 13명, 매출 50억 달성</div></div><div class="timeline-item" style="border-top: 4px solid #FFB800;"><div class="timeline-year" style="color: #FFB800; background: #FFB800; color: white; padding: 4px 8px; border-radius: 4px;">2025</div><div class="timeline-milestone">LG에너지솔루션 배터리 계약</div></div></div></div></div><!-- Slide --><div class="slide  align-right template-section-divider" id="slide-7" style="background-color: #1A1A1A;"><img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1920&h=1080&fit=crop" class="bg-image" style="opacity: 0.4;" alt=""><div class="bg-overlay" style="background: rgba(0, 0, 0, 0.6);"></div><div class="content-overlay"><div class="element-heading" style="font-size: 96px; font-weight: 800; color: #FFFFFF; opacity: 0.3; ">Our</div><div class="element-subheading" style="font-size: 72px; font-weight: 800; color: #FF6B35; ">Services</div></div></div><!-- Slide --><div class="slide   template-three-column" id="slide-8" style="background: linear-gradient(135deg, #1A1A1A, #2A2A2A);"><div class="content-overlay"><div class="element-heading" style="font-size: 20px; font-weight: 600; color: #FFFFFF; ">Service Structure</div><div class="model-cards-container"><div class="model-card"><div class="model-card-icon" style="color: #FF6B35;">●</div><div class="model-card-title">Forwarding</div><div class="model-card-desc">FCL/LCL 해상운송, 항공화물, Door-to-Door 서비스로 글로벌 물류 네트워크 운영</div></div><div class="model-card"><div class="model-card-icon" style="color: #FFB800;">■</div><div class="model-card-title">Warehouse & 3PL</div><div class="model-card-desc">상온/냉장/냉동 창고, WMS 기반 재고관리, Neutral Warehouse 운영</div></div><div class="model-card"><div class="model-card-icon" style="color: #FF6B35;">▲</div><div class="model-card-title">Labeling Center</div><div class="model-card-desc">식품 라벨링 전문센터, 수출입 보수작업, 리패킹 서비스 제공</div></div></div></div></div><!-- Slide --><div class="slide   template-content-image-overlay" id="slide-9" style="background-color: #1A1A1A;"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&h=1080&fit=crop" class="bg-image" style="opacity: 0.5;" alt=""><div class="bg-overlay" style="background: rgba(0, 0, 0, 0.6);"></div><div class="content-overlay"><div class="element-badge" style="font-size: 14px; color: #888888; ">핵심 서비스</div><div class="element-body" style="font-style: italic; font-size: 14px; color: #888888; font-style: italic; ">Core Service</div><div class="element-heading" style="font-size: 48px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; ">NEUTRAL
-WAREHOUSE</div><div class="element-subheading" style="font-size: 18px; color: #CCCCCC; ">경쟁이 아닌 협력, 포워더 친화적 창고 운영</div></div></div><!-- Slide --><div class="slide   template-image-features" id="slide-10" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="content-left"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=800&fit=crop" alt="" class="element-image" style="width: 40%; border-radius: 8px; "></div><div class="content-right"><div class="element-heading" style="font-size: 36px; font-weight: 700; color: #FFFFFF; ">Warehouse
-Operation</div><div class="list-container"><div class="list-item"><span class="list-icon">●</span><div class="list-content"><div class="list-title">Temperature Control</div><div class="list-desc">상온/냉장/냉동 구역별 온도관리로 식품 품질 보장. 콜드체인 전문 운영 역량 보유.</div></div></div><div class="list-item"><span class="list-icon">●</span><div class="list-content"><div class="list-title">WMS Integration</div><div class="list-desc">실시간 재고 모니터링, LOT 관리, 유통기한 관리로 체계적인 물류 운영.</div></div></div><div class="list-item"><span class="list-icon">●</span><div class="list-content"><div class="list-title">Neutral Warehouse</div><div class="list-desc">포워더 친화적 운영으로 다양한 파트너와의 협업 지원. 개방형 창고 시스템.</div></div></div></div></div></div></div><!-- Slide --><div class="slide image-right  template-image-features" id="slide-11" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="content-left"><div class="element-heading" style="font-size: 36px; font-weight: 700; color: #FFFFFF; ">Labeling
-Center</div><div class="list-container"><div class="list-item"><span class="list-icon">●</span><div class="list-content"><div class="list-title">식품 라벨링 전문</div><div class="list-desc">수입식품 성분표기, 유통기한 표시 등 식품 관련 라벨링 작업 전문 수행.</div></div></div><div class="list-item"><span class="list-icon">●</span><div class="list-content"><div class="list-title">대기업 실적</div><div class="list-desc">롯데, 삼성웰스토리, 팔도, 삼양식품 등 대기업 중심 라벨링 수행 경험.</div></div></div><div class="list-item"><span class="list-icon">●</span><div class="list-content"><div class="list-title">Inspection & Rework</div><div class="list-desc">수입식품 보수작업, 리패킹, 소분 작업까지 원스톱 서비스 제공.</div></div></div></div></div><div class="content-right"><img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=800&fit=crop" alt="" class="element-image" style="width: 40%; border-radius: 8px; "></div></div></div><!-- Slide --><div class="slide   template-comparison-table" id="slide-12" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="element-heading" style="font-size: 20px; font-weight: 600; color: #FFFFFF; ">Competitive Advantage</div><table class="comparison-table"><thead><tr><th></th><th>콜드체인</th><th>Neutral Warehouse</th><th>라벨링 전문</th></tr></thead><tbody><tr class=""><td>일반 물류사 A</td><td class="check">✓</td><td></td><td></td></tr><tr class="highlight"><td>E-UM Logistics</td><td class="highlight-check">✓</td><td class="highlight-check">✓</td><td class="highlight-check">✓</td></tr><tr class=""><td>일반 물류사 B</td><td class="check">✓</td><td class="check">✓</td><td></td></tr><tr class=""><td>일반 물류사 C</td><td></td><td class="check">✓</td><td class="check">✓</td></tr><tr class=""><td>일반 물류사 D</td><td class="check">✓</td><td></td><td></td></tr></tbody></table></div></div><!-- Slide --><div class="slide   template-stats-visual" id="slide-13" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="element-heading" style="font-size: 48px; font-weight: 700; color: #FFFFFF; ">6 out of 10</div><div class="element-subheading" style="font-size: 24px; color: #CCCCCC; ">대기업 고객사가 이음로지스틱스와 함께합니다</div><div class="icon-grid-container"><div class="icon-grid-item" style="background: #FF6B35;">●</div><div class="icon-grid-item" style="background: #FF6B35;">●</div><div class="icon-grid-item" style="background: #FF6B35;">●</div><div class="icon-grid-item" style="background: #FF6B35;">●</div><div class="icon-grid-item" style="background: #FF6B35;">●</div><div class="icon-grid-item" style="background: #FF6B35;">●</div><div class="icon-grid-item" style="background: #4A4A4A;">●</div><div class="icon-grid-item" style="background: #4A4A4A;">●</div><div class="icon-grid-item" style="background: #4A4A4A;">●</div><div class="icon-grid-item" style="background: #4A4A4A;">●</div></div><div class="client-logos-container"><div class="client-logo-item highlighted">롯데제과</div><div class="client-logo-item highlighted">롯데웰푸드</div><div class="client-logo-item highlighted">삼성웰스토리</div><div class="client-logo-item highlighted">삼양식품</div><div class="client-logo-item highlighted">팔도</div><div class="client-logo-item highlighted">LG에너지솔루션</div></div></div></div><!-- Slide --><div class="slide layout-center  template-center-statement" id="slide-14" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="element-badge" style="font-size: 12px; color: #888888; ">철학</div><div class="element-heading" style="font-size: 48px; font-weight: 700; color: #FFFFFF; line-height: 1.2; ">경쟁이 아닌 협력을 통해
-포워더와 화주 모두가
-성장하는 물류 생태계</div><div style="margin-top: 32px; font-size: 14px; color: #FF6B35; font-size: 14px; color: #FF6B35; ">E-UM</div></div></div><!-- Slide --><div class="slide   template-feature-grid" id="slide-15" style="background: linear-gradient(135deg, #1A1A1A, #2A2A2A);"><div class="content-overlay"><div class="element-badge" style="font-size: 12px; color: #FF6B35; ">왜 이음로지스틱스인가</div><div class="element-heading" style="font-size: 48px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; ">WHY E-UM</div><div class="cards-container value-cards"><div class="card"><div class="card-icon">🤝</div><div class="card-title" style="color: #FF6B35;">협력 기반 운영</div><div class="card-value">경쟁이 아닌 협력으로 포워더와 화주 모두가 성장</div></div><div class="card"><div class="card-icon">🏭</div><div class="card-title" style="color: #FFB800;">통합 물류 서비스</div><div class="card-value">포워딩부터 창고, 라벨링까지 원스톱 솔루션</div></div><div class="card"><div class="card-icon">❄️</div><div class="card-title" style="color: #FF6B35;">콜드체인 전문성</div><div class="card-value">냉동/냉장 식품 물류 특화 운영 역량</div></div><div class="card"><div class="card-icon">🏢</div><div class="card-title" style="color: #FFB800;">대기업 파트너십</div><div class="card-value">롯데, 삼성, LG 등 검증된 협력 관계</div></div><div class="card"><div class="card-icon">🏷️</div><div class="card-title" style="color: #FF6B35;">라벨링 전문센터</div><div class="card-value">식품 라벨링 및 수출입 보수 전문</div></div><div class="card"><div class="card-icon">🌍</div><div class="card-title" style="color: #FFB800;">글로벌 네트워크</div><div class="card-value">해외 포워더 파트너와 함께하는 글로벌 물류</div></div></div></div></div><!-- Slide --><div class="slide  align-center template-section-divider" id="slide-16" style="background-color: #1A1A1A;"><img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&h=1080&fit=crop" class="bg-image" style="opacity: 0.3;" alt=""><div class="bg-overlay" style="background: rgba(0, 0, 0, 0.7);"></div><div class="content-overlay"><div class="element-heading" style="font-size: 72px; font-weight: 800; color: #FFFFFF; opacity: 0.3; ">Get in</div><div class="element-subheading" style="font-size: 96px; font-weight: 800; color: #FF6B35; ">Touch</div></div></div><!-- Slide --><div class="slide last-slide layout-center  template-contact-info" id="slide-17" style="background-color: #1A1A1A;"><div class="content-overlay"><div class="element-badge" style="font-size: 12px; color: #888888; ">Contact Us</div><div class="element-heading" style="font-size: 36px; font-weight: 800; color: #FF6B35; text-transform: uppercase; ">CONTACT</div><div class="element-logo" style="font-size: 28px; font-size: 16px; font-weight: 600; color: #FFFFFF; ">이음로지스틱스 (E-UM Logistics)</div><div class="contact-info-list"><div class="contact-info-item"><span class="contact-info-icon">📧</span><span>eumbus@e-umlk.com</span></div><div class="contact-info-item"><span class="contact-info-icon">📞</span><span>055-546-8153</span></div><div class="contact-info-item"><span class="contact-info-icon">📠</span><span>055-546-8154</span></div></div><div class="element-body" style="font-size: 12px; color: #888888; font-style: italic; ">협력 기반 물류, 포워더와 함께 성장하는 파트너</div></div></div></body></html>
+<div class="slide-container">
+<!-- Slide 1: Hero Cover -->
+<div class="slide bg-dark">
+  <div class="w-half h-full flex flex-col justify-center" style="padding-left: 120px; padding-right: 80px;">
+    <span style="font-size: 18px; color: #888888; margin-bottom: 40px; letter-spacing: 3px; text-transform: uppercase;">Company Profile 2025</span>
+    <h1 style="font-size: 140px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9;">E-UM<br>LOGISTICS</h1>
+    <div style="margin-top: 48px;">
+      <span style="font-size: 42px; font-weight: 700; color: #FF6B35;">이음로지스틱스</span>
+    </div>
+    <p style="font-size: 26px; color: #CCCCCC; line-height: 1.6; margin-top: 32px;">협력 기반 물류 서비스로<br>포워더와 함께 성장하는 파트너</p>
+  </div>
+  <div class="w-half h-full">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=960&h=1080&fit=crop" alt="물류 센터" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+</div><!-- Slide 2: Section Divider - Company Overview -->
+<div class="slide" style="position: relative;">
+  <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&h=1080&fit=crop" alt="창고" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+  <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.7);"></div>
+  <div class="w-full h-full flex flex-col justify-center items-start" style="position: relative; z-index: 2; padding-left: 120px;">
+    <span style="font-size: 160px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; opacity: 0.3; letter-spacing: -0.02em;">COMPANY</span>
+    <span style="font-size: 120px; font-weight: 800; color: #FF6B35; margin-top: -30px;">Overview</span>
+  </div>
+</div><!-- Slide 3: Company Profile - Content Split -->
+<div class="slide bg-dark">
+  <div class="w-half h-full">
+    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=960&h=1080&fit=crop" alt="컨테이너 야드" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+  <div class="w-half h-full flex flex-col justify-center" style="padding: 100px;">
+    <span style="font-size: 18px; color: #FF6B35; margin-bottom: 24px; letter-spacing: 2px; text-transform: uppercase;">회사 개요</span>
+    <h2 style="font-size: 56px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; line-height: 1.15;">협력 기반 물류로<br>함께 성장하는<br>파트너십</h2>
+    <p style="font-size: 22px; color: #CCCCCC; line-height: 1.7; margin-top: 40px;">이음로지스틱스는 경쟁이 아닌 협력을 통해 포워더와 화주 모두가 성장할 수 있는 물류 환경을 만들어갑니다. Neutral Warehouse 운영으로 다양한 파트너와의 협업을 지원합니다.</p>
+  </div>
+</div><!-- Slide 4: Table of Contents / Agenda -->
+<div class="slide bg-dark flex flex-col justify-center" style="padding: 120px 200px;">
+  <h3 style="font-size: 32px; font-weight: 600; color: #888888; margin-bottom: 80px; letter-spacing: 2px;">AGENDA</h3>
+  <div class="flex flex-col" style="gap: 48px;">
+    <div class="flex items-center" style="gap: 48px;">
+      <span style="font-size: 48px; font-weight: 700; color: #FF6B35; width: 100px;">01</span>
+      <span style="font-size: 36px; font-weight: 600; color: #FF6B35;">Company Profile</span>
+    </div>
+    <div class="flex items-center" style="gap: 48px;">
+      <span style="font-size: 48px; font-weight: 700; color: #FFFFFF; width: 100px;">02</span>
+      <span style="font-size: 36px; font-weight: 600; color: #FFFFFF;">Our Services</span>
+    </div>
+    <div class="flex items-center" style="gap: 48px;">
+      <span style="font-size: 48px; font-weight: 700; color: #FFFFFF; width: 100px;">03</span>
+      <span style="font-size: 36px; font-weight: 600; color: #FFFFFF;">Key Strengths</span>
+    </div>
+    <div class="flex items-center" style="gap: 48px;">
+      <span style="font-size: 48px; font-weight: 700; color: #FFFFFF; width: 100px;">04</span>
+      <span style="font-size: 36px; font-weight: 600; color: #FFFFFF;">Why E-UM</span>
+    </div>
+  </div>
+</div><!-- Slide 5: Company Stats -->
+<div class="slide bg-dark flex" style="padding: 100px 120px;">
+  <div class="w-half flex flex-col justify-center" style="padding-right: 80px;">
+    <span style="font-size: 18px; color: #888888; margin-bottom: 48px; letter-spacing: 2px; text-transform: uppercase;">Our Growth</span>
+    <div style="margin-bottom: 64px;">
+      <div class="flex items-end gap-4">
+        <span style="font-size: 120px; font-weight: 700; color: #FFFFFF; line-height: 1;">50억</span>
+        <span style="font-size: 36px; color: #FFFFFF; margin-bottom: 24px;">원</span>
+      </div>
+      <p style="font-size: 22px; color: #888888; line-height: 1.6; margin-top: 16px;">연간 매출 규모로 안정적인 성장세를 유지하며<br>대기업 고객사와의 파트너십을 확대하고 있습니다.</p>
+    </div>
+    <div>
+      <div class="flex items-end gap-4">
+        <span style="font-size: 120px; font-weight: 700; color: #FFFFFF; line-height: 1;">13</span>
+        <span style="font-size: 36px; color: #FFFFFF; margin-bottom: 24px;">명</span>
+      </div>
+      <p style="font-size: 22px; color: #888888; line-height: 1.6; margin-top: 16px;">물류 전문 인력이 포워딩, 창고운영, 라벨링 등<br>각 분야에서 전문성을 발휘합니다.</p>
+    </div>
+  </div>
+  <div class="w-half flex flex-col justify-center" style="padding-left: 80px;">
+    <h4 style="font-size: 28px; font-weight: 600; color: #FFFFFF; margin-bottom: 48px;">서비스 비중</h4>
+    <div class="flex flex-col" style="gap: 40px;">
+      <div>
+        <div class="flex justify-between" style="margin-bottom: 16px;">
+          <span style="font-size: 22px; color: #CCCCCC;">창고운영/3PL</span>
+          <span style="font-size: 22px; color: #FF6B35; font-weight: 600;">45%</span>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-fill" style="width: 45%; background: #FF6B35;"></div>
+        </div>
+      </div>
+      <div>
+        <div class="flex justify-between" style="margin-bottom: 16px;">
+          <span style="font-size: 22px; color: #CCCCCC;">포워딩</span>
+          <span style="font-size: 22px; color: #FF6B35; font-weight: 600;">30%</span>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-fill" style="width: 30%; background: #FF6B35;"></div>
+        </div>
+      </div>
+      <div>
+        <div class="flex justify-between" style="margin-bottom: 16px;">
+          <span style="font-size: 22px; color: #CCCCCC;">라벨링</span>
+          <span style="font-size: 22px; color: #FFB800; font-weight: 600;">25%</span>
+        </div>
+        <div class="chart-bar">
+          <div class="chart-bar-fill" style="width: 25%; background: #FFB800;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- Slide 6: History Timeline -->
+<div class="slide bg-dark flex flex-col justify-center" style="padding: 100px 120px;">
+  <h3 style="font-size: 36px; font-weight: 600; color: #FFFFFF; margin-bottom: 80px;">History</h3>
+  <div style="position: relative; width: 100%;">
+    <!-- Timeline Bar -->
+    <div style="display: flex; width: 100%; height: 12px; border-radius: 6px; overflow: hidden; margin-bottom: 32px;">
+      <div style="flex: 1; background: #4A4A4A;"></div>
+      <div style="flex: 1; background: #4A4A4A;"></div>
+      <div style="flex: 1; background: #FF6B35;"></div>
+      <div style="flex: 1; background: #FFB800;"></div>
+      <div style="flex: 1; background: #FF6B35;"></div>
+      <div style="flex: 1; background: #FFB800;"></div>
+      <div style="flex: 1; background: #FF6B35;"></div>
+      <div style="flex: 1; background: #FFB800;"></div>
+    </div>
+    <!-- Timeline Labels -->
+    <div class="grid" style="grid-template-columns: repeat(8, 1fr); gap: 16px;">
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FFFFFF; margin-bottom: 16px;">2018</span>
+        <span style="font-size: 16px; color: #888888; text-align: center; line-height: 1.5;">이음로지스틱스<br>법인 설립</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FFFFFF; margin-bottom: 16px;">2019</span>
+        <span style="font-size: 16px; color: #888888; text-align: center; line-height: 1.5;">부산지사 설립<br>냉동/냉장 창고</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FF6B35; margin-bottom: 16px;">2020</span>
+        <span style="font-size: 16px; color: #CCCCCC; text-align: center; line-height: 1.5;">롯데제과 계약<br>3PL 확대</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FFB800; margin-bottom: 16px;">2021</span>
+        <span style="font-size: 16px; color: #CCCCCC; text-align: center; line-height: 1.5;">삼성웰스토리 계약<br>라벨링센터 구축</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FF6B35; margin-bottom: 16px;">2022</span>
+        <span style="font-size: 16px; color: #CCCCCC; text-align: center; line-height: 1.5;">팔도/삼양식품<br>매출 30억</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FFB800; margin-bottom: 16px;">2023</span>
+        <span style="font-size: 16px; color: #CCCCCC; text-align: center; line-height: 1.5;">롯데웰푸드<br>Neutral Warehouse</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FF6B35; margin-bottom: 16px;">2024</span>
+        <span style="font-size: 16px; color: #CCCCCC; text-align: center; line-height: 1.5;">인력 13명<br>매출 50억 달성</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span style="font-size: 28px; font-weight: 700; color: #FFB800; margin-bottom: 16px;">2025</span>
+        <span style="font-size: 16px; color: #FFFFFF; text-align: center; line-height: 1.5; font-weight: 600;">LG에너지솔루션<br>배터리 계약</span>
+      </div>
+    </div>
+  </div>
+</div><!-- Slide 7: Section Divider - Services -->
+<div class="slide" style="position: relative;">
+  <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1920&h=1080&fit=crop" alt="해상운송" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+  <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6);"></div>
+  <div class="w-full h-full flex flex-col justify-center items-end" style="position: relative; z-index: 2; padding-right: 120px;">
+    <span style="font-size: 160px; font-weight: 800; color: #FFFFFF; opacity: 0.3;">Our</span>
+    <span style="font-size: 120px; font-weight: 800; color: #FF6B35; margin-top: -30px;">Services</span>
+  </div>
+</div><!-- Slide 8: Service Structure - Business Model -->
+<div class="slide flex flex-col justify-center" style="background: linear-gradient(180deg, #1A1A1A 0%, #2A2A2A 100%); padding: 100px 120px;">
+  <h3 style="font-size: 36px; font-weight: 600; color: #FFFFFF; margin-bottom: 64px;">Service Structure</h3>
+  <div class="grid grid-cols-3" style="gap: 48px;">
+    <div class="card flex flex-col" style="gap: 32px;">
+      <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(255, 107, 53, 0.2); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 32px; color: #FF6B35; font-weight: 700;">01</span>
+      </div>
+      <h4 style="font-size: 32px; font-weight: 700; color: #FFFFFF;">Forwarding</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">FCL/LCL 해상운송, 항공화물, Door-to-Door 서비스로 글로벌 물류 네트워크 운영</p>
+    </div>
+    <div class="card flex flex-col" style="gap: 32px;">
+      <div style="width: 80px; height: 80px; border-radius: 12px; background: rgba(255, 184, 0, 0.2); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 32px; color: #FFB800; font-weight: 700;">02</span>
+      </div>
+      <h4 style="font-size: 32px; font-weight: 700; color: #FFFFFF;">Warehouse & 3PL</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">상온/냉장/냉동 창고, WMS 기반 재고관리, Neutral Warehouse 운영</p>
+    </div>
+    <div class="card flex flex-col" style="gap: 32px;">
+      <div style="width: 80px; height: 80px; border-radius: 12px; background: rgba(255, 107, 53, 0.2); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 32px; color: #FF6B35; font-weight: 700;">03</span>
+      </div>
+      <h4 style="font-size: 32px; font-weight: 700; color: #FFFFFF;">Labeling Center</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">식품 라벨링 전문센터, 수출입 보수작업, 리패킹 서비스 제공</p>
+    </div>
+  </div>
+</div><!-- Slide 9: Neutral Warehouse - Image Overlay -->
+<div class="slide" style="position: relative;">
+  <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&h=1080&fit=crop" alt="창고 내부" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
+  <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6);"></div>
+  <div class="w-full h-full flex flex-col justify-center items-start" style="position: relative; z-index: 2; padding-left: 120px;">
+    <span style="font-size: 20px; color: #888888; margin-bottom: 12px; letter-spacing: 2px;">핵심 서비스</span>
+    <span style="font-size: 20px; color: #888888; font-style: italic; margin-bottom: 40px;">Core Service</span>
+    <h2 style="font-size: 96px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; line-height: 1.05;">NEUTRAL<br>WAREHOUSE</h2>
+    <p style="font-size: 28px; color: #CCCCCC; margin-top: 40px;">경쟁이 아닌 협력, 포워더 친화적 창고 운영</p>
+  </div>
+</div><!-- Slide 10: Warehouse Operation - Image Features -->
+<div class="slide bg-dark flex" style="padding: 100px 120px;">
+  <div style="width: 40%; padding-right: 80px;">
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=1000&fit=crop" alt="물류센터" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+  </div>
+  <div style="width: 60%; display: flex; flex-direction: column; justify-content: center;">
+    <h2 style="font-size: 56px; font-weight: 700; color: #FFFFFF; margin-bottom: 56px;">Warehouse<br>Operation</h2>
+    <div class="flex flex-col" style="gap: 40px;">
+      <div>
+        <h4 style="font-size: 28px; font-weight: 600; color: #FF6B35; margin-bottom: 16px;">Temperature Control</h4>
+        <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">상온/냉장/냉동 구역별 온도관리로 식품 품질 보장. 콜드체인 전문 운영 역량 보유.</p>
+      </div>
+      <div>
+        <h4 style="font-size: 28px; font-weight: 600; color: #FF6B35; margin-bottom: 16px;">WMS Integration</h4>
+        <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">실시간 재고 모니터링, LOT 관리, 유통기한 관리로 체계적인 물류 운영.</p>
+      </div>
+      <div>
+        <h4 style="font-size: 28px; font-weight: 600; color: #FF6B35; margin-bottom: 16px;">Neutral Warehouse</h4>
+        <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">포워더 친화적 운영으로 다양한 파트너와의 협업 지원. 개방형 창고 시스템.</p>
+      </div>
+    </div>
+  </div>
+</div><!-- Slide 11: Labeling Center - Image Features -->
+<div class="slide bg-dark flex" style="padding: 100px 120px;">
+  <div style="width: 60%; display: flex; flex-direction: column; justify-content: center; padding-right: 80px;">
+    <h2 style="font-size: 56px; font-weight: 700; color: #FFFFFF; margin-bottom: 56px;">Labeling<br>Center</h2>
+    <div class="flex flex-col" style="gap: 40px;">
+      <div>
+        <h4 style="font-size: 28px; font-weight: 600; color: #FFB800; margin-bottom: 16px;">식품 라벨링 전문</h4>
+        <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">수입식품 성분표기, 유통기한 표시 등 식품 관련 라벨링 작업 전문 수행.</p>
+      </div>
+      <div>
+        <h4 style="font-size: 28px; font-weight: 600; color: #FFB800; margin-bottom: 16px;">대기업 실적</h4>
+        <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">롯데, 삼성웰스토리, 팔도, 삼양식품 등 대기업 중심 라벨링 수행 경험.</p>
+      </div>
+      <div>
+        <h4 style="font-size: 28px; font-weight: 600; color: #FFB800; margin-bottom: 16px;">Inspection & Rework</h4>
+        <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">수입식품 보수작업, 리패킹, 소분 작업까지 원스톱 서비스 제공.</p>
+      </div>
+    </div>
+  </div>
+  <div style="width: 40%;">
+    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&h=1000&fit=crop" alt="항만" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+  </div>
+</div><!-- Slide 12: Competitive Advantage - Comparison Table -->
+<div class="slide bg-dark flex flex-col justify-center" style="padding: 100px 120px;">
+  <h3 style="font-size: 36px; font-weight: 600; color: #FFFFFF; margin-bottom: 64px;">Competitive Advantage</h3>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th style="text-align: left; width: 30%;"></th>
+        <th>콜드체인</th>
+        <th>Neutral Warehouse</th>
+        <th>라벨링 전문</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color: #CCCCCC;">일반 물류사 A</td>
+        <td><span class="check">✓</span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="highlight">
+        <td style="color: #FF6B35; font-weight: 600; font-size: 24px;">E-UM Logistics</td>
+        <td><span class="check highlight">✓</span></td>
+        <td><span class="check highlight">✓</span></td>
+        <td><span class="check highlight">✓</span></td>
+      </tr>
+      <tr>
+        <td style="color: #CCCCCC;">일반 물류사 B</td>
+        <td><span class="check">✓</span></td>
+        <td><span class="check">✓</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="color: #CCCCCC;">일반 물류사 C</td>
+        <td></td>
+        <td><span class="check">✓</span></td>
+        <td><span class="check">✓</span></td>
+      </tr>
+      <tr>
+        <td style="color: #CCCCCC;">일반 물류사 D</td>
+        <td><span class="check">✓</span></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div><!-- Slide 13: Client Success - Icon Grid Stats -->
+<div class="slide bg-dark flex flex-col justify-center items-center" style="padding: 100px 120px;">
+  <span style="font-size: 18px; color: #888888; margin-bottom: 32px; letter-spacing: 3px; text-transform: uppercase;">Our Partners</span>
+  <h2 style="font-size: 72px; font-weight: 700; color: #FFFFFF; margin-bottom: 24px;">6 out of 10</h2>
+  <p style="font-size: 32px; color: #CCCCCC; margin-bottom: 80px;">대기업 고객사가 이음로지스틱스와 함께합니다</p>
+  <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 32px; width: 100%; max-width: 1400px;">
+    <div style="background: #2A2A2A; border-radius: 16px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 2px solid #FF6B35;">
+      <span style="font-size: 28px; color: #FFFFFF; font-weight: 700;">롯데제과</span>
+      <span style="font-size: 16px; color: #888888;">2020~ 파트너</span>
+    </div>
+    <div style="background: #2A2A2A; border-radius: 16px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 2px solid #FF6B35;">
+      <span style="font-size: 28px; color: #FFFFFF; font-weight: 700;">롯데웰푸드</span>
+      <span style="font-size: 16px; color: #888888;">2023~ 파트너</span>
+    </div>
+    <div style="background: #2A2A2A; border-radius: 16px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 2px solid #FFB800;">
+      <span style="font-size: 28px; color: #FFFFFF; font-weight: 700;">삼성웰스토리</span>
+      <span style="font-size: 16px; color: #888888;">2021~ 파트너</span>
+    </div>
+    <div style="background: #2A2A2A; border-radius: 16px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 2px solid #FF6B35;">
+      <span style="font-size: 28px; color: #FFFFFF; font-weight: 700;">삼양식품</span>
+      <span style="font-size: 16px; color: #888888;">2022~ 파트너</span>
+    </div>
+    <div style="background: #2A2A2A; border-radius: 16px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 2px solid #FF6B35;">
+      <span style="font-size: 28px; color: #FFFFFF; font-weight: 700;">팔도</span>
+      <span style="font-size: 16px; color: #888888;">2022~ 파트너</span>
+    </div>
+    <div style="background: #2A2A2A; border-radius: 16px; padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 2px solid #FFB800;">
+      <span style="font-size: 28px; color: #FFFFFF; font-weight: 700;">LG에너지솔루션</span>
+      <span style="font-size: 16px; color: #888888;">2025~ 파트너</span>
+    </div>
+  </div>
+</div><!-- Slide 14: Our Philosophy - Center Statement -->
+<div class="slide bg-dark flex flex-col justify-center items-center" style="padding: 100px 200px; text-align: center;">
+  <span style="font-size: 20px; color: #888888; margin-bottom: 48px; letter-spacing: 3px; text-transform: uppercase;">철학</span>
+  <h2 style="font-size: 72px; font-weight: 700; color: #FFFFFF; line-height: 1.3;">경쟁이 아닌 협력을 통해<br>포워더와 화주 모두가<br>성장하는 물류 생태계</h2>
+  <div style="position: absolute; bottom: 80px; right: 120px;">
+    <span style="font-size: 24px; color: #FF6B35; font-weight: 600;">E-UM</span>
+  </div>
+</div><!-- Slide 15: Why E-UM - Feature Grid -->
+<div class="slide flex flex-col justify-center" style="background: linear-gradient(180deg, #1A1A1A 0%, #2A2A2A 100%); padding: 100px 120px;">
+  <span style="font-size: 18px; color: #FF6B35; margin-bottom: 24px; letter-spacing: 2px; text-transform: uppercase;">왜 이음로지스틱스인가</span>
+  <h2 style="font-size: 72px; font-weight: 800; color: #FFFFFF; text-transform: uppercase; margin-bottom: 64px;">WHY E-UM</h2>
+  <div class="grid grid-cols-3" style="gap: 32px;">
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255, 107, 53, 0.2);"><span style="font-size: 28px; color: #FF6B35; font-weight: 700;">01</span></div>
+      <h4 style="font-size: 28px; font-weight: 600; color: #FFFFFF;">협력 기반 운영</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">경쟁이 아닌 협력으로 포워더와 화주 모두가 성장</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255, 184, 0, 0.2);"><span style="font-size: 28px; color: #FFB800; font-weight: 700;">02</span></div>
+      <h4 style="font-size: 28px; font-weight: 600; color: #FFFFFF;">통합 물류 서비스</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">포워딩부터 창고, 라벨링까지 원스톱 솔루션</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255, 107, 53, 0.2);"><span style="font-size: 28px; color: #FF6B35; font-weight: 700;">03</span></div>
+      <h4 style="font-size: 28px; font-weight: 600; color: #FFFFFF;">콜드체인 전문성</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">냉동/냉장 식품 물류 특화 운영 역량</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255, 184, 0, 0.2);"><span style="font-size: 28px; color: #FFB800; font-weight: 700;">04</span></div>
+      <h4 style="font-size: 28px; font-weight: 600; color: #FFFFFF;">대기업 파트너십</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">롯데, 삼성, LG 등 검증된 협력 관계</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255, 107, 53, 0.2);"><span style="font-size: 28px; color: #FF6B35; font-weight: 700;">05</span></div>
+      <h4 style="font-size: 28px; font-weight: 600; color: #FFFFFF;">라벨링 전문센터</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">식품 라벨링 및 수출입 보수 전문</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255, 184, 0, 0.2);"><span style="font-size: 28px; color: #FFB800; font-weight: 700;">06</span></div>
+      <h4 style="font-size: 28px; font-weight: 600; color: #FFFFFF;">글로벌 네트워크</h4>
+      <p style="font-size: 20px; color: #CCCCCC; line-height: 1.6;">해외 포워더 파트너와 함께하는 글로벌 물류</p>
+    </div>
+  </div>
+</div><!-- Slide 16: Section Divider - Contact -->
+<div class="slide" style="position: relative;">
+  <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&h=1080&fit=crop" alt="세계지도" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+  <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.7);"></div>
+  <div class="w-full h-full flex flex-col justify-center items-center" style="position: relative; z-index: 2;">
+    <span style="font-size: 120px; font-weight: 800; color: #FFFFFF; opacity: 0.3;">Get in</span>
+    <span style="font-size: 160px; font-weight: 800; color: #FF6B35; margin-top: -30px;">Touch</span>
+  </div>
+</div><!-- Slide 17: Contact Info -->
+<div class="slide bg-dark flex flex-col justify-center items-end last-slide" style="padding: 100px 160px; text-align: right;">
+  <span style="font-size: 20px; color: #888888; margin-bottom: 32px; letter-spacing: 2px; text-transform: uppercase;">Contact Us</span>
+  <h2 style="font-size: 140px; font-weight: 800; color: #FF6B35; text-transform: uppercase; margin-bottom: 48px;">CONTACT</h2>
+  <h3 style="font-size: 36px; font-weight: 600; color: #FFFFFF; margin-bottom: 40px;">이음로지스틱스 (E-UM Logistics)</h3>
+  <div class="flex flex-col" style="gap: 16px; margin-bottom: 48px;">
+    <span style="font-size: 28px; color: #CCCCCC;">Email: eumbus@e-umlk.com</span>
+    <span style="font-size: 28px; color: #CCCCCC;">Tel: 055-546-8153</span>
+    <span style="font-size: 28px; color: #CCCCCC;">Fax: 055-546-8154</span>
+  </div>
+  <p style="font-size: 24px; color: #888888; font-style: italic;">협력 기반 물류, 포워더와 함께 성장하는 파트너</p>
+</div>
+</div></body>
+</html>
